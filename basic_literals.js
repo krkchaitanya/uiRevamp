@@ -1,2 +1,40 @@
 let name="PersonOne";
 console.log(name);
+
+const name2="Person2";
+console.log(name2);
+
+const book= {
+    title: "Book one",
+    author: 'John Doe',
+    year: '2013',
+    getSummary: function()  {
+        return `${this.title} is written by ${this.author} in the year ${this.year}`
+    }
+};
+
+console.log(`Book summary ---${book.getSummary()}`);
+
+//  CONSTRUCTORS 
+function bookOne(title, author, year) {
+    this.title=title;
+    this.author=author;
+    this.year=year;
+};
+
+const book1=new bookOne('Raining in middle','charles strut',1995);
+const book2=new bookOne('Show done','kristen',2008);
+console.log(`book titles -- ${book1.title}, ${book2.title}`);
+console.log(`Author names-- ${book1.author}, ${book2.author}`);
+
+// functions
+const human = (name,age,address) => {
+ return {
+     personName: name,
+     personAge: age,
+     personAddress: address
+ }
+};
+const human1=human("mikel",24,"houston tx");
+const human2=human('john',30,"Austin tx");
+console.log('human names--',human1.personName,human2.personName);
