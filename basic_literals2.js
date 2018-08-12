@@ -7,11 +7,16 @@ class Book{
     };
     getBookDetails() {
         console.log(
-            `Book details-->${this.title}_${this.author}_${this.year}`
+            `Book details
+             title- ${this.title}
+             author- ${this.author}
+             year- ${this.year}   
+            `
         );
+        return "Method in class got triggered..";
     }
 }
 
 // instantiate object
 const book1=new Book('the heart of spirit', 'miel fddf',1992);
-console.log(`book info-->${Book.getBookDetails}`); 
+console.log(`Method in calss == ${book1.getBookDetails()}`); 
