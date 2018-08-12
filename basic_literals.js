@@ -1,3 +1,5 @@
+// TM
+// basic_literals
 let name="PersonOne";
 console.log(name);
 
@@ -15,19 +17,20 @@ const book= {
 
 console.log(`Book summary ---${book.getSummary()}`);
 
-//  CONSTRUCTORS 
+//  CONSTRUCTORIAL PATTERN 
 function bookOne(title, author, year) {
     this.title=title;
     this.author=author;
     this.year=year;
 };
 
+// .....instantiate an object
 const book1=new bookOne('Raining in middle','charles strut',1995);
 const book2=new bookOne('Show done','kristen',2008);
 console.log(`book titles -- ${book1.title}, ${book2.title}`);
 console.log(`Author names-- ${book1.author}, ${book2.author}`);
 
-// functions
+// MODULAR PATTERN
 const human = (name,age,address) => {
  return {
      personName: name,
@@ -38,3 +41,15 @@ const human = (name,age,address) => {
 const human1=human("mikel",24,"houston tx");
 const human2=human('john',30,"Austin tx");
 console.log('human names--',human1.personName,human2.personName);
+
+// food
+const foodVendor = {
+    name: "tacos",
+    address: "slc ut",
+    getFoof: function() {
+        return `food details--> ${this.name}...${this.address}`;
+    }
+}
+
+console.log('--info about the stuff--',foodVendor.getFoof());
+console.log('........', foodVendor.name);
