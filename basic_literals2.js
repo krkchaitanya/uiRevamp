@@ -20,3 +20,24 @@ class Book{
 // instantiate object
 const book1=new Book('the heart of spirit', 'miel fddf',1992);
 console.log(`Method in calss == ${book1.getBookDetails()}`); 
+
+class laptop {
+    constructor(name, processor, memory ) {
+        this.name=name;
+        this.processor=processor;
+        this.memory=memory;
+    }
+    getLaptopDetails() {
+        console.log(
+            `Laptop details 
+            name-${this.name}
+            processor-${this.processor}
+            memory-${this.memory}
+            `
+        );
+        return 'laptop method got triggered';
+    }
+}
+
+const laptop1=new laptop('Dell', 'intel-7', '512SSD');
+console.log(laptop1.getLaptopDetails());
