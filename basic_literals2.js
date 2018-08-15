@@ -21,6 +21,7 @@ class Book{
 const book1=new Book('the heart of spirit', 'miel fddf',1992);
 console.log(`Method in calss == ${book1.getBookDetails()}`); 
 
+// Extends __ import features from parent class
 class laptop {
     constructor(name, processor, memory ) {
         this.name=name;
@@ -39,5 +40,24 @@ class laptop {
     }
 }
 
-const laptop1=new laptop('Dell', 'intel-7', '512SSD');
-console.log(laptop1.getLaptopDetails());
+class GamingPc extends laptop {
+    constructor(name,processor,memory,graphicCard){
+        super(name,processor,memory);
+        this.graphicCard=graphicCard;
+    }
+    getGmaingPcDetails() {
+        console.log(
+            `Gmaing pc details
+            name-${this.name}
+            processor-${this.processor}
+            memory-${this.memory}
+            graphicCard-${this.graphicCard}
+            `
+        );
+        return 'Graphic Method got triggered';
+    }
+}
+
+// instantiate object
+const laptop1=new GamingPc('Dell', 'intel-7', '512SSD', "Nvidia");
+console.log(laptop1.getGmaingPcDetails());
