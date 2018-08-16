@@ -53,3 +53,43 @@ const foodVendor = {
 
 console.log('--info about the stuff--',foodVendor.getFoof());
 console.log('........', foodVendor.name);
+
+// JS iteration
+const food=[
+    {
+        name:"califlower",
+        type:"vegitable"
+    },
+    {
+        name:"chicken",
+        type:"meat"
+    },
+    {
+        name: "fish",
+        type:"meat"
+    },
+    {
+        name:"tamato",
+        type:"vegetable"
+    },
+    {
+        name:"apple",
+        type:"fruit"
+    },
+    {
+        name:"banana",
+        type:"fruit"
+    }
+];
+
+const getMeatItems = () => {
+    const meatItems = [];
+     food.map((item) => {
+        if(item.type === "meat"){
+            meatItems.push(item);
+        }
+    });
+    return meatItems;
+};
+const meatinformation = getMeatItems();
+console.log(`meat items -- ${meatinformation}`);
