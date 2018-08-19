@@ -37,3 +37,15 @@ const mapMethodHandler =  companies.map((ele) => {
     return `${ele.name}..${ele.category}`;
 });
 console.log(mapMethodHandler);
+
+// reduce
+const randomNos = [1,2,3,4,5];
+const reduceMethod = randomNos.reduce((total,age) => total+age, 0);
+console.log(reduceMethod);
+
+// combined methods
+const combined = ages
+    .map(age => age*2)
+    .filter(age => age >= 40)
+    .reduce((a,b) => a+b,0);
+console.log(combined);

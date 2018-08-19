@@ -11,7 +11,8 @@ const fs=require("fs");
 const app=express();
 
 app.use(cors());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 // res.sendFile.......
 app.get('/',(req,res) => {
