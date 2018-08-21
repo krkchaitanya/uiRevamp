@@ -1,0 +1,45 @@
+{
+    "totalSystems": 5,
+    "systemDetailsVo":[
+        {
+            "systemDetailVo":{
+                "name":"Dell systems",
+                "processor":"intel i-7",
+                "model":"Inspiron 15",
+                "cost":899
+            }
+        },
+        {
+            "systemDetailVo":{
+                "name":"Hp",
+                "processor":"intel i-5",
+                "model":"Spectra",
+                "cost":1200
+            }
+        },
+        {
+            "systemDetailVo":{
+                "name":"Alienware",
+                "processor":"intel i-7",
+                "model":"a-15",
+                "cost":1599
+            }
+        },
+        {
+            "systemDetailVo":{
+                "name":"Mac book",
+                "processor":"intel i-9",
+                "model":"Pro",
+                "cost":2300
+            }
+        },
+        {
+            "systemDetailVo":{
+                "name":"Acer",
+                "processor":"intel i-5",
+                "model":"Aspire-5",
+                "cost":599
+            }
+        }
+    ]
+}

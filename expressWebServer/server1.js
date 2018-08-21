@@ -3,11 +3,13 @@
 // path.join()
 //path.resove()
 // cors --> cross origin request access
+// lodash --> npm module used to validate and structure the data
 const express = require("express");
 const path=require("path");
 const cors= require("cors");
 const bodyParser=require("body-parser");
 const fs=require("fs");
+const _ = require("lodash");
 const app=express();
 
 app.use(cors());
@@ -27,9 +29,23 @@ app.get('/getUserInformation',(req,res)=>{
         }
         return data;
     });
-    res.send(userCardsFile);
+    console.log(!_.isEmpty(userCardsFile));
+    if(!_.isEmpty(userCardsFile)){
+        res.send(userCardsFile);
+    }
 });
 
+app.get('/getMachinesInformation', (req,res)=>{
+    const machinesDataFile = fs.readFileSync(path.join(__dirname,"mockResponses/getMachineInformation.json"), "utf-8", (error,data) => {
+        if(error){
+            console.log("Error in readingTheJsonFile",error);
+        }
+        return data;
+    });
+    if(!_.isEmpty(machinesDataFile)){
+        res.send(machinesDataFile);
+    }
+});
 
 const port="3034";
 app.listen(port, () => {
