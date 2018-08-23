@@ -7,14 +7,14 @@
 const express = require("express");
 const path=require("path");
 const cors= require("cors");
-const bodyParser=require("body-parser");
 const fs=require("fs");
 const _ = require("lodash");
 const app=express();
 
+const {urlPatterns} = require("./urlPatterns/url_patterns");
+// import urlPatterns from "./urlPatterns/url_patterns";
+
 app.use(cors());
-app.use(bodyParser.urlencoded());
-app.use(bodyParser.json());
 
 // res.sendFile.......
 app.get('/',(req,res) => {
@@ -22,7 +22,7 @@ app.get('/',(req,res) => {
 });
 
 // readFileSync(Sync ...blocking executuin of other stmt) vs readFile(Asynchronous ...runs in background...no blocking)
-app.get('/getUserInformation',(req,res)=>{
+app.get(urlPatterns.user_information,(req,res)=>{
     const userCardsFile=fs.readFileSync(path.join(__dirname,"mockResponses/getUserInformation.json"), "utf-8", (error,data) => {
         if(error){
             console.log(`Error fetching data...`);
@@ -35,7 +35,7 @@ app.get('/getUserInformation',(req,res)=>{
     }
 });
 
-app.get('/getMachinesInformation', (req,res)=>{
+app.get(urlPatterns.machine_information, (req,res)=>{
     const machinesDataFile = fs.readFileSync(path.join(__dirname,"mockResponses/getMachineInformation.json"), "utf-8", (error,data) => {
         if(error){
             console.log("Error in readingTheJsonFile",error);
