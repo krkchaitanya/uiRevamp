@@ -4,10 +4,41 @@
         <title>Basic HTML</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./src/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="./src/css/bootstrap.min.css />"
     </head>
     <body>
-        <h3>Basic HTML page</h3>
+        <!-- Bootstrap4 
+            Extra color classses
+            Grid system is improved
+            Grid now uses flex box d-flex / d-inline-flex / d-sm-flex / d-md-inline-flex
+            Insted of pixels we are using rem/em for more responsive
+            Cards ..  replaces panels of boot3
+        -->
+         <!--   BASIC TYPOGRAPHY  -->
+        <div class="container">
+            <header>
+                <h1 class="display-3 text-center my-4">Typography</h1>
+            </header>
+            <section>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-danger btn-block">
+                            javascript
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-info btn-block">
+                            Utilities
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <script src="./expressWebServer/server1.js"></script>
+
+        <script type="text/javascript" src="./src/js/jquery.min.js" />
+        <script type="text/javascript" src="./src/js/bootstrap.min.js"/>
+        <script type="text/javascript" src="./expressWebServer/server1.js"></script>
     </body>
 </html>
