@@ -1,5 +1,9 @@
 const path = require("path");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractPlugin = new ExtractTextPlugin({
+  filename: './css/style.css'
+});
 
 module.exports = {
     entry: "./entry/entryHandler.js",
@@ -18,22 +22,18 @@ module.exports = {
           },
           {
             test: /\.scss$/,
-            use: [
-              {
-                loader: "style-loader" // creates style nodes from JS strings
-              },
-              {
-                loader: "css-loader" // translates CSS into CommonJS
-              },
-              {
-                loader: "sass-loader" // compiles Sass to CSS
-              }
-            ]
+            use: extractPlugin.extract({
+              use: ['css-loader', 'sass-loader'],
+              fallback: 'style-loader'
+            })
           },
           {
             test:/\.css$/,
             use:['style-loader','css-loader']
         },
         ]
-      }
+      },
+      plugins: [
+        extractPlugin
+      ],
     };

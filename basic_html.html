@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+          
         <title>Basic HTML</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./src/css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="./src/css/bootstrap.min.css />"
+        <link rel="stylesheet" href="./src/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="./src/css/bootstrap.min.css />" />
+        <link rel="stylesheet" href="./dist/css/style.css" />
     </head>
     <body>
-        <!-- Bootstrap4 
+        <div class="container body-wrapper"> 
+            <!-- Bootstrap4 
             Extra color classses
             Grid system is improved
             Grid now uses flex box d-flex / d-inline-flex / d-sm-flex / d-md-inline-flex
@@ -17,26 +20,58 @@
         -->
          <!--   BASIC TYPOGRAPHY  -->
         <div class="container">
-            <header>
-                <h1 class="display-3 text-center my-4">Typography</h1>
-            </header>
-            <section>
-                <div class="row">
-                    <div class="col-md-6">
-                        <button class="btn btn-danger btn-block">
-                            javascript
-                        </button>
+                <header>
+                    <h1 class="display-3 text-center my-4">Typography</h1>
+                </header>
+                <section>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <button class="btn btn-danger btn-block">
+                                javascript
+                            </button>
+                        </div>
+                        <div class="col-xl-6">
+                            <button class="btn btn-info btn-block">
+                                Utilities
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <button class="btn btn-info btn-block">
-                            Utilities
-                        </button>
+                </section>
+            </div>
+            <br />
+            <!-- Bootstrap4 grid system / felx-box -->
+            <!-- bootstra4 grid uses flex box.. -->
+            <br />
+            <h3 class="header text-center">Grid / Flex box</h3>
+            <br />
+            <div
+             class="container border-secondary"
+             style="border: 1px solid grey"
+             >
+                <div class="row text-center">
+                    <div class="col-sm-4 bg-primary">
+                        <p>column</p>
+                    </div> 
+                    <div class="col-sm-4 bg-dark">
+                        <p>column</p>
+                    </div> 
+                    <div class="col-sm-4 bg-warning">
+                        <p>column</p>
+                    </div> 
+                </div>
+            </div>
+            <br />
+            <div style="border: 1px solid green">
+                <div class="row">
+                    <div class="col-xs-6 offset-sm-3 bg-secondary">
+                        <h3>Offset information</h3>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
 
+        <!-- javascript files -->
         <script type="text/javascript" src="./src/js/jquery.min.js" />
         <script type="text/javascript" src="./src/js/popper.min.js" />
         <script type="text/javascript" src="./src/js/bootstrap.min.js"/>
