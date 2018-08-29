@@ -1,7 +1,9 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+// extract text pulgin --> compiles scss and gives output of css...used in HTML.
 const extractPlugin = new ExtractTextPlugin({
+  // output -->> ./dist/css/style.css
   filename: './css/style.css'
 });
 
@@ -11,6 +13,8 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    // Automatically compile when files change.
+  watch: true,
     module: {
         rules: [
           {
@@ -32,6 +36,13 @@ module.exports = {
             use:['style-loader','css-loader']
         },
         ]
+      },
+      devServer: {
+        contentBase: path.join(__dirname, 'indexHtml'),
+        compress: true,
+        port: 9000,
+         // Automatically reload the page when compilation is done.
+        inline: true
       },
       plugins: [
         extractPlugin
