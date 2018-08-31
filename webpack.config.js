@@ -37,13 +37,6 @@ module.exports = {
         },
         ]
       },
-      devServer: {
-        contentBase: path.join(__dirname, 'indexHtml'),
-        compress: true,
-        port: 9000,
-         // Automatically reload the page when compilation is done.
-        inline: true
-      },
       plugins: [
         extractPlugin
       ],
