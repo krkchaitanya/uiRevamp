@@ -93,3 +93,26 @@ const getMeatItems = () => {
 };
 const meatinformation = getMeatItems();
 console.log(`meat items -- ${meatinformation}`);
+
+// ES6 PROMISES
+const userInfoPromise  = (userinfo) => {
+    return new Promise((resolve,reject) => {
+        const userInfoHandler = (firstName, lastName, phone, address) =>{
+            return `user details-${firstName},${lastName},${phone},${address}`;
+        }
+        resolve(userInfoHandler(userinfo.firstName,userinfo.lastName,userinfo.phone,userinfo.address));
+    });    
+}
+const userInfoObj = {
+    firstName: "personOne",
+    lastName: "lastii",
+    phone: 6734676734,
+    address: "123 street houston tx"
+};
+userInfoPromise(userInfoObj).then((res) => {
+    if(res) {
+        console.log(res);
+    }
+}).catch((error) => {
+    console.log(error);
+});
