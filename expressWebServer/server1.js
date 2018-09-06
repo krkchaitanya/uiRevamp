@@ -47,6 +47,7 @@ app.get(urlPatterns.machine_information, (req,res)=>{
     }
 });
 
+
 const port="3034";
 app.listen(port, () => {
     console.log(`app is running on prot ${port}`);
