@@ -1,40 +1,38 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const bodyParser = require("body-parser");
-const cors = require("cors");
-// initializing APP
-const app = express();
+
+// app initializes
+const app =express();
 
 // middlewares
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cors());
-// middleware to load the static files like css in parallax HTML
-app.use("/assets", express.static('assets'));
+app.use('/assets', express.static(path.join(__dirname,"/assets")));
 
-
-// sending loading HTML page
-app.get('/parallax', (req,res) => {
-    console.log(path.join(__dirname));
+// parallax API for HTML
+app.get("/parallax", (req,res) => {
     res.sendFile(path.join(__dirname,"/parallax.html"));
 });
 
-// server1
-app.get("/", (req,res) => {
+// getJsonData API
+app.get("/jsonHandler", (req,res) => {
     res.send({
-        "name": "mikeljohn",
-        "addres": {
-            "street": "123 street",
-            "apt": "123",
-            "city": "austin",
-            "postal_code": "37483"
+        "personVO": {
+            "name":"great Person",
+            "last name" : "user",
+            "phone no": "1231231231",
+            "address": "13 some great address",
+            "postal code": "34534"
         }
     });
 });
 
-
-// port_Number 
-const port = 8989;
+// prot
+const port = process.env.port || "3535";
+// running app on server
 app.listen(port, () => {
-    console.log(`Parallax app is running on port ${port}`);
+    console.log(`App is running on port ${port}`);
 });

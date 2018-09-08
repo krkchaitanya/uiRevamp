@@ -1,22 +1,57 @@
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="x-ua-compatible" content="ie-edge" />
-        <title>Parallax Things</title>
-        <link  href="./assets/style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML / CSS / RESPONSIVE</title>
+        <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
-          <h1>Parallax Effects</h1>
-          <p>Effective styling using css</p>   
+            <div class="container">
+                <div id="branding">
+                    <h1><span class="highlight">Responsive</span> design</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-
-        <footer>
-            <section>
-                <h3>Footer section</h3>
-                <h5>copyrights@Chay2018</h5>
-            </section>
-        </footer>
+        <section id="showcase">
+            <div class="container">
+                <h1><span class="highlight">Responsive</span> web design / No Framework </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in feugiat ipsum. Sed luctus elit ac blandit posuere.
+                     Vestibulum sodales feugiat tortor eget suscipit. Aenean at maximus nunc, at sagittis nulla.</p>
+            </div>
+        </section>
+        <section id="newsletter">
+            <div class="container">
+                <h1>Subscribe to our newsletter</h1>
+                <form>
+                    <input type="email" placeholder="Enter email..">
+                    <button type="submit" class="button_1">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <section id="boxes">
+            <div class="container">
+                <img src="./assets//images/html.png">
+                <h3>HTML5 Markup</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in feugiat ipsum. Sed luctus elit ac blandit posuere.</p>
+            </div>
+            <div class="container">
+                <img src="./assets//images/css.png">
+                <h3>CSS3 Styling</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in feugiat ipsum. Sed luctus elit ac blandit posuere.</p>
+            </div>
+            <div class="container">
+                <img src="./assets//images/javascript.png">
+                <h3>Graphic Design</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in feugiat ipsum. Sed luctus elit ac blandit posuere.</p>
+            </div>
+        </section>
     </body>
 </html>
