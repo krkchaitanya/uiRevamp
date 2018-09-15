@@ -55,3 +55,37 @@ img{
     width: 100px;
     height: 100px;
 }
+#showcase {
+    text-align: center;
+    background: url("../images/4x4-desert-dust-1149066.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    top: -200px;
+    min-height: 500px;
+    background-position: 50% 200%;
+    background-size: cover;
+}
+#showcase .highlight {
+    margin-top: 200px;
+    color: #ffffff;
+    font-size: 50px;
+}
+#newsletter {
+    text-align: center;
+    background-color: #b48888;
+    border-top: 5px solid #944f4f;
+    border-bottom: 5px solid #944f4f;
+}
+form input {
+    border-radius: 10px;
+    border: 2px solid #180202;
+    height: 30px;
+    width: 230px;
+}
+button {
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: #bdacac;
+}
