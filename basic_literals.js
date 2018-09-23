@@ -116,3 +116,25 @@ userInfoPromise(userInfoObj).then((res) => {
 }).catch((error) => {
     console.log(error);
 });
+
+
+// call, bind and Apply
+
+// call .... functionName(obj, functionArguments);
+var obj = {number: 20};
+
+var addToThis = function(a) {
+    return this.number+a;
+}
+
+var addArrITems = function(a,b,c) {
+    return this.numer+a+b+c;
+}
+
+const callResponse1 = addToThis.call(obj,5);
+const callResponse2 = addToThis.call(obj, 1,2,3);
+const callResponse3 = addToThis.call(obj, [2,3,4]);
+
+console.log("==call-1 ==", callResponse1);
+console.log("==call-2 ==", callResponse2);
+console.log("==call-3 ==", callResponse3);
