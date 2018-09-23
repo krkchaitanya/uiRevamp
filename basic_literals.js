@@ -117,7 +117,7 @@ userInfoPromise(userInfoObj).then((res) => {
     console.log(error);
 });
 
-
+// ***********************************************
 // call, bind and Apply
 
 // call .... functionName(obj, functionArguments);
@@ -128,13 +128,29 @@ var addToThis = function(a) {
 }
 
 var addArrITems = function(a,b,c) {
-    return this.numer+a+b+c;
+    return this.number+a+b+c;
 }
 
-const callResponse1 = addToThis.call(obj,5);
-const callResponse2 = addToThis.call(obj, 1,2,3);
-const callResponse3 = addToThis.call(obj, [2,3,4]);
+var itemArr = [5,5,10];
+
+const callResponse1 = addToThis.call(obj, 5);
+const callResponse2 = addArrITems.call(obj, 1,2,3);
+const callResponse3 = addArrITems.apply(obj, [2,3,4]);
+const callResponse4 = addArrITems.apply(obj, itemArr);
 
 console.log("==call-1 ==", callResponse1);
 console.log("==call-2 ==", callResponse2);
 console.log("==call-3 ==", callResponse3);
+console.log("==call-4 ==", callResponse4);
+
+// bind() returns an function..
+const bindCtrl = (a,b,c) => {
+    return this.number+a+b+c;
+}
+
+var bindFun = bindCtrl.bind(obj);
+const bindVal = bindFun(3,3,3);
+console.log("==Bind val==", bindVal);
+
+
+// ***************************************************
