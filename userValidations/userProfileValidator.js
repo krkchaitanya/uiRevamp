@@ -1,27 +1,28 @@
+const moment = require("moment");
+
 // Email validation
 const validateUserEmail = (email) => {
-
     let errorMsg = '';
     let errorInfo = {};
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    console.log('--started user email validation--');
-
     if (email === '' || email === undefined || email === null || email.length === 0) {
-        errorMsg = "Email address is mandatory";
-    } else if (email.indexOf(' ')) {
-        errorMsg = "No spaces were allowed";
+        errorMsg = 'Email address is mandatory';
     } else if (!email.match(emailRegex)) {
-        errorMsg = "Regex failure / Not a valid email";
+        errorMsg = 'Regex failure / Not a valid email';
     }
     errorInfo.email = errorMsg;
-    console.log(errorInfo);
+    Object.keys(errorInfo).forEach((ele) => {
+        if(errorInfo[ele] === '') {
+            errorMsg = 'Valid email address';
+        } else {
+            errorMsg = 'Not a valid email address'; 
+        }
+    });
+    console.log(errorMsg);
+    console.log('------');
 };
 
-// validateUserEmail(null);
-// validateUserEmail("gerat rabiti ruie@gmail.com");
-// validateUserEmail("greatnikeuser672@gmail.com");
-// validateUserEmail(" isudfksd@gmail.com");
 
 
 // validate first name (Mandatory)
@@ -30,40 +31,57 @@ const validateFirstName = (firstName) => {
     let fnameMsg = '';
     let fNameErrObj = {};
     const fNameReg = /^[a-z]+$/i;
-    if (firstName === null || firstName === undefined || firstName.length === 0 || firstName === "") {
-        fnameMsg = "First name is mandatory";
+    if (firstName === null || firstName === undefined || firstName.length === 0 || firstName === '') {
+        fnameMsg = 'First name is mandatory';
     } else if (!firstName.match(fNameReg)) {
-        fnameMsg = "Not a valid first name";
-    } else {
-        fnameMsg = "Valid first name";
-    }
+        fnameMsg = 'Not a valid first name';
+    };
 
-    fNameErrObj.fname = fnameMsg;
-    console.log('---validate fname---');
-    console.log(fNameErrObj);
+    fNameErrObj .fname = fnameMsg;
+    Object.keys(fNameErrObj).forEach((ele) => {
+        if(fNameErrObj[ele] === '') {
+            fnameMsg = 'Valid First name';
+        } else {
+            fnameMsg = 'Invalid first name';
+        }
+    });
+    console.log(fnameMsg);
+    console.log('***********');
 }
-
-// validateFirstName("greatrabbit");
-// validateFirstName("askhk 98 ehj");
-
 
 // validate user phone number
 const validatePhoneNum = (phone) => {
-    let phoneMsg = "";
-    let phoneErrMsg = {};
+    let phoneMsg = '';
+    let phoneErrObj = {};
     var phoneNoRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (phone === null || phone === undefined || phone.length === 0 || phone === "") {
-        phoneMsg = "Phone number is mandatory";
+    if (phone === null || phone === undefined || phone.length === 0 || phone === '') {
+        phoneMsg = 'Phone number is mandatory';
     }   else if (phone[0] === "0" || !phone.match(phoneNoRegex)) {
-        phoneMsg = "Not a valid phone number";
-    } else {
-        phoneMsg = "Valid phone number";
-    }
+        phoneMsg = 'Not a valid phone number';
+    };
 
-    phoneErrMsg.phone = phoneMsg;
-    console.log('--phone validation--');
-    console.log(phoneErrMsg);
+    phoneErrObj.phone = phoneMsg;
+    Object.keys(phoneErrObj).forEach((ele) => {
+        if (phoneErrObj[ele] === '') {
+            phoneMsg = 'Valid Phone number';
+        } else {
+            phoneMsg = 'Invalid phone number';
+        }
+    });
+    console.log(phoneMsg);
+    console.log('^^^^^^^^^^^^^');
 }
+
+
+
+
+// Calling validations
+validateUserEmail(null);
+validateUserEmail("gerat rabiti ruie@gmail.com");
+validateUserEmail("isudfksd@gmail.com");
+
+validateFirstName("greatrabbit");
+validateFirstName("askhk 98 ehj");
 
 validatePhoneNum("2398478923");
 validatePhoneNum("0430336392");
