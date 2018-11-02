@@ -50,6 +50,19 @@ main {
     color: #888;
 }
 
+#landing-image {
+    background: url(../images/camera.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: 0 1 60vw;
+    height: 50vh;
+    flex: 0 1 60vw;
+    margin: 0;
+    opacity: 0.8;
+    border-bottom: 1px solid #333;
+}
+
 .btn {
     padding: 0.5rem 2rem;
     border: 1px #ccc solid;
@@ -65,4 +78,49 @@ main {
     background: #f4f4f4;
 }
 
+#header {
+    padding: 1.5rem;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
 
+#header h2 {
+    border-left: dotted 1px #fff;
+    border-right: dotted 1px #fff;
+    display: inline-block;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.caption {
+    padding: 0.8rem;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: auto;
+    color: #333;
+}
+
+footer h3 {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+/* media queries */
+/* screen size 500px and up */
+@media(min-width: 500px) {
+    #landing {
+        display: flex;
+        height: 100%;
+    }
+    #landing-text {
+        height: 100vh;
+    }
+    #landing-image {
+        height: 100vh;
+    }
+}
