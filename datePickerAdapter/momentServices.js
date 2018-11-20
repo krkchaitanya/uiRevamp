@@ -12,6 +12,7 @@ const getCurrentDate = () => {
 // lower bound DOB 01/01/1910
 
 const validateUserDob = (dob, dateFormat) => {
+    var userAge = moment().diff(moment(dob, dateFormat), 'years')
     let validationMsg = "";
     const lowerBoundDate = moment("01/01/1910").format(dateFormat);
     const currentDate = moment().format(dateFormat);
@@ -21,12 +22,14 @@ const validateUserDob = (dob, dateFormat) => {
         validationMsg = "Enter valid date of birth";
     } else if(!isBetween) {
         validationMsg = "Enter Date after JAN 01 1910 and before "+currentDate;
+    } else if (userAge < 18) {
+        validationMsg = "User to be atleast 18 years";
     } else {
         validationMsg = "Great , Entered valid DOB";
     }
     return validationMsg;
 }
 
-const userDobValidation1 = validateUserDob("09/11/2323","MM/DD/YYYY");
+const userDobValidation1 = validateUserDob("23/11/2000","MM/DD/YYYY");
 
 console.log("user DOB validation Result >>>", userDobValidation1);
