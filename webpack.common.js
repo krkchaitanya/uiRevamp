@@ -8,13 +8,7 @@ const extractPlugin = new ExtractTextPlugin({
 });
 
 module.exports = {
-    entry: "./entry/entryHandler.js",
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
-    // Automatically compile when files change.
-  watch: true,
+    entry: "./src/index.js",
     module: {
         rules: [
           {

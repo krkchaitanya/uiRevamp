@@ -1,4 +1,16 @@
 .container {
     border: 5px solid #eed77a;;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container2 {
+    border: 5ps solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.home {
+    margin-right: auto;
 }
