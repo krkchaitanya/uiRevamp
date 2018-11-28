@@ -1,4 +1,4 @@
-.container {
+#container1 {
     border: 5px solid #eed77a;;
     display: flex;
     flex-direction: row;
@@ -8,9 +8,16 @@
 #container2 {
     border: 5ps solid grey;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
+}
+#container3 {
+    display: flex;
+    border: 5px solid lightblue;
+}
+#container3 > div {
+    flex: 1;
 }
 .home {
     margin-right: auto;
-}
+}s
