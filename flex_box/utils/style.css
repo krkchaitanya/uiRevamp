@@ -62,6 +62,16 @@
     border: 5px solid lightsteelblue;
 }
 #container6 > div:nth-child(1) {
+    /* 
+    >> flex: grow shrink basis;
+    
+    Example1:
+    >> (divOne)flex: 1 1 200px;
+    >> (divTwo)flex:10 1 200px;
+    >> divTwo will grow 10 times faster than than divOne in Example1.
+    >> Shrinking will be same for both the div's
+
+    */
     /* flex-grow: 0; */
     flex-grow: 1;
     flex-shrink: 1;
@@ -72,4 +82,19 @@
     /* flex-grow: 1; */
     flex-shrink: 1;
     flex-basis: 200px;
+}
+
+/* flex container items order */
+#container7 { 
+    display: flex;
+    border: 5px solid rgb(202, 117, 117); 
+}
+#container7 > div {
+    flex: 1;
+}
+#container7 > div:nth-child(1){
+    order: 1;
+}
+#container7 > div:nth-child(3){
+    order: -1;
 }
