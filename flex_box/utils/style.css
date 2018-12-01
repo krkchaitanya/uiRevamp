@@ -9,8 +9,9 @@
     border: 5ps solid grey;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
+
+/* flex:1 for keeping the items with same width */
 #container3 {
     display: flex;
     border: 5px solid lightblue;
@@ -20,4 +21,14 @@
 }
 .home {
     margin-right: auto;
-}s
+}
+/* align items */
+#container4 {
+    border: 5px solid blue;
+    display: flex;
+    height: 250px;;
+    align-items: flex-end;
+}
+#container4 > div:nth-child(2) {
+    flex: 2;
+}
