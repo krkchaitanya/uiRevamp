@@ -4,25 +4,26 @@
     font-size: 2rem;
     color: #ffeead;
     font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.2rem;
 }
 
 html body {
-    background-color: #ffeead;
+    background-color: #5c5e5f;
     margin: 10px;
     height: 100%;
 }
 
 h2 {
-    color: #443838;
+    color: #dfcfcf;
 }
 .container > div:nth-child(1) {
     background-color: #8598a7;;
 }
 
 .container > div:nth-child(2) {
-    background-color: #ff6f69;
+    background-color: #966361;
 }
 
 .container > div:nth-child(3) {
-    background-color: #8598a7;
+    background-color: #a9bd8b;
 }
