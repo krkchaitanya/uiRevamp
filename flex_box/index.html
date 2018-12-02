@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./utils/basic.css">
 </head>
 <body>
-    <h2><strong>Flex box Obervations</strong></h2>
+    <h2 id="mainHeader"><strong>Flex box Obervations</strong></h2>
     <br />
     <!-- Flex is a container where we can place the divs or elements in a pattern manner -->
     <!-- display flex -->
@@ -17,6 +17,19 @@
     <!-- Spacing = // justify-content space-evenly space-between flex-end center space-around //-->
     <!-- positioning items =  -->
     <!-- one of the items in the container doing all the flexing or the other way around // flex:1  // flex:2 -->
+    <div class="flex-content">
+        <h3>/// Content ///</h3>
+        <p>Display Flex</p>
+        <p>Flex Direction</p>
+        <p>Justify Content</p>
+        <p>Align Items</p>
+        <p>Flex Grow</p>
+        <p>Flex Shrink</p>
+        <p>Flex Basis</p>
+        <p>Flex Order</p>
+        <p>Flex Wrap</p>
+    </div>
+    <br />
     <div class="container" id="container1">
         <div>DivOne</div>
         <div>DivTwo</div>
@@ -65,7 +78,7 @@
     </div>
     <br />
     <p>================</p>
-    <h3 style="color:whitesmoke">FLEX =>> grow / shrink / basis</h3>
+    <h3 style="color:whitesmoke">FLEX =>> Order of flex container items</h3>
     <p>================</p>
     <br />
     <!-- order of items in flex container -->
@@ -74,5 +87,18 @@
         <div class="DivTwo">DivTwo</div>
         <div class="DivThree">DivThree</div>
     </div>
+    <br />
+    <!-- Media queries -->
+    <p>================</p>
+    <h3 style="color:whitesmoke">Media queries along with flex-wrap</h3>
+    <p>================</p>
+    <br />
+    <div class="container8">
+        <div class="DivOne">DivOne</div>
+        <div class="DivTwo">DivTwo</div>
+        <div class="DivThree">DivThree</div>
+        <div class="DivFour">DivFour</div>
+    </div>
+    <br />
 </body>
 </html>
