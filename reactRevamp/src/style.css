@@ -1,0 +1,10 @@
+.accordHeader {
+    padding:0.5rem 0 0.5rem 0;
+    background: lightseagreen;
+    margin: 0;
+}
+.accordBodyInfo {
+    padding:2rem 0.2rem 2rem 0.2rem;
+    background: lightgray;
+    margin-top: 0;
+}
