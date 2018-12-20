@@ -1,3 +1,15 @@
+/* Accordion section */
+.componentHeading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    background-color: lightcoral;
+    padding: 0.5rem;
+    color: darkblue;
+    border-radius: 15px;
+    border: 8px solid darkblue;
+    text-align: center;
+    opacity: 0.6;
+}
 .accordHeader {
     padding:0.5rem 0 0.5rem 0;
     background: lightseagreen;
