@@ -14,14 +14,18 @@
     padding:0.5rem 0 0.5rem 0;
     background: lightseagreen;
     margin: 0;
+    text-align: center;
+    border:3px solid rgb(18, 80, 77);
 }
 .toggleBodyInfo {
     padding:2rem 0.2rem 2rem 0.2rem;
     background: lightgray;
-    margin-top: 0;
+    margin: 0;
+    border: 3px solid gray;
 }
 .toggleButton {
-    margin-left: 6rem;
+    float: right;
+    margin-right: 3rem;
     background-color: green;
     align-content: center;
 }

@@ -21,7 +21,7 @@ class Toggler extends Component {
 
         return(
             <div>
-                <h2 className='componentHeading'>Toggler component...</h2>
+                {/* <h2 className='componentHeading'>Toggler component...</h2> */}
                 {
                     <React.Fragment>
                         <h2 className='toggleHeader'>
@@ -36,7 +36,6 @@ class Toggler extends Component {
                 }
             </div>
         );
-
 
     }
 }
