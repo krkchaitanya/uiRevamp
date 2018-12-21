@@ -1,25 +1,16 @@
 import React, { Component } from 'react';
-import PersonInfo from './FunctionalComponents/PersonInfo/PersonInfo'; 
-import AccordionSection from './FunctionalComponents/Accordion/AccordionSection';
+import PersonInfo from './ReusableComponents/PersonInfo/PersonInfo'; 
+import Toggler from './ReusableComponents/Toggler/Toggler';
 
 class App extends Component {
     constructor() {
         super();
         this.state={
-            accordionArrData: [
+            togglerDataObj: 
                 {
                     header: 'AppHeader',
                     bodyInfo: 'ljdhsfakhjafs  eadujfk awoeidszkhfaod f aouds uoh iuadshka su usodfghoisdfg oeris guois'
-                },
-                {
-                    header: 'AppHeader',
-                    bodyInfo: 'sdjghf pewiaujas ewap ufpsodiou uh espui oai sirf ujpae poersigporseg rpeisujgrp'
-                }, 
-                {
-                    header: 'AppHeader',
-                    bodyInfo: 'sediurg aweo oawuei idas sadhfsai s dfjhads fhfdsjk sahrfg fdkjhgasidfg uhjsdf siofd'
                 }
-            ]
         }
     }   
     render() {
@@ -31,7 +22,7 @@ class App extends Component {
                 {/* person component */}
                 <PersonInfo />
                 <br />
-                <AccordionSection accordionArrData= {this.state.accordionArrData}/>
+                <Toggler togglerDataObj= {this.state.togglerDataObj}/>
             </div>
         );
     }

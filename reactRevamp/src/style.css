@@ -1,4 +1,4 @@
-/* Accordion section */
+/* Toggler section */
 .componentHeading {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
@@ -10,13 +10,18 @@
     text-align: center;
     opacity: 0.6;
 }
-.accordHeader {
+.toggleHeader {
     padding:0.5rem 0 0.5rem 0;
     background: lightseagreen;
     margin: 0;
 }
-.accordBodyInfo {
+.toggleBodyInfo {
     padding:2rem 0.2rem 2rem 0.2rem;
     background: lightgray;
     margin-top: 0;
+}
+.toggleButton {
+    margin-left: 6rem;
+    background-color: green;
+    align-content: center;
 }
