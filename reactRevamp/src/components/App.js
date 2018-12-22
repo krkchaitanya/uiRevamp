@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PersonInfo from './ReusableComponents/PersonInfo/PersonInfo'; 
 import GroupTogglersSection from './ReusableComponents/Toggler/GroupTogglersSection';
+import Navbar from './ReusableComponents/Navbar/navbar';
 
 class App extends Component {
     constructor() {
@@ -36,6 +37,10 @@ class App extends Component {
                 <PersonInfo />
                 {/* GroupTogglersSection component */}
                 <GroupTogglersSection groupTogglesInputArr={this.state.togglerDataObj}/>
+                <br />
+                <br />
+                <br />
+                <Navbar />
             </div>
         );
     }

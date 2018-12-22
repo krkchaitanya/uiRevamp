@@ -16,16 +16,42 @@
     margin: 0;
     text-align: center;
     border:3px solid rgb(18, 80, 77);
+    border-radius: 0.5rem;
 }
 .toggleBodyInfo {
     padding:2rem 0.2rem 2rem 0.2rem;
     background: lightgray;
     margin: 0;
     border: 3px solid gray;
+    border-radius: 0.5rem;
 }
 .toggleButton {
     float: right;
     margin-right: 3rem;
     background-color: green;
     align-content: center;
+}
+.navbar {
+    display: flex;
+    border: 3px solid lightpink;
+    border-radius: 0.1rem;
+}
+.navbar > div {
+    flex: 1;
+    background-color: rgb(95, 122, 131);
+    padding: 1rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 3px solid lightpink;
+}
+.navbar > div > a {
+    text-decoration: none;
+}
+.navBody {
+    display: flex;
+    height: 12rem;
+    border: 3px solid lightpink;
+    border-radius: .2rem;
 }
