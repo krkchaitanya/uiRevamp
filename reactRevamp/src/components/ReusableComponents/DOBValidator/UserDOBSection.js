@@ -47,11 +47,9 @@ validateDateOfBirth(event) {
         return (
             <div className="dobSection">
                 <label> {this.state.label} </label>
-                <input type="text" maxLength="10" onBlur={this.validateDateOfBirth.bind(this)} 
+                <input type="text" maxLength="10" onChange={this.validateDateOfBirth.bind(this)} 
                     name="validateDOB"  placeholder={this.state.dateFormat}>
                 </input>
-                <br />
-                <button type="button" onClick={this.validateDateOfBirth.bind(this)}>Validate</button>
                 <br />
                 {
                     this.state.errorMsg && this.state.errorMsg !== " " &&
