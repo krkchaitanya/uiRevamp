@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PersonInfo from './ReusableComponents/PersonInfo/PersonInfo'; 
 import GroupTogglersSection from './ReusableComponents/Toggler/GroupTogglersSection';
 import Navbar from './ReusableComponents/Navbar/navbar';
+import UserDOBSection from './ReusableComponents/DOBValidator/UserDOBSection';
 
 class App extends Component {
     constructor() {
@@ -41,6 +42,9 @@ class App extends Component {
                 <br />
                 <br />
                 <Navbar />
+                <br />
+                <br />
+                <UserDOBSection />
             </div>
         );
     }
