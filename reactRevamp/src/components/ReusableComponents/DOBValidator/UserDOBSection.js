@@ -14,17 +14,13 @@ constructor(props) {
 }
 
 validateDateOfBirth(event) {
-    // const validationMsg = "lkajsaclk";
     let validationMsg = "";
     const dob = event.target.value;
     const dateFormat = this.state.dateFormat;
-    console.log(dob);
-    console.log(dateFormat);
     var userAge = moment().diff(moment(dob, dateFormat), 'years')
     const lowerBoundDate = moment("01/01/1910").format(dateFormat);
     const currentDate = moment().format(dateFormat);
     const isValidDate = moment(dob, dateFormat, true).isValid();
-    console.log(isValidDate);
     const isBetween = moment(dob).isBetween(lowerBoundDate, currentDate, 'date');
     if(!isValidDate){
         validationMsg = "Enter valid date of birth";

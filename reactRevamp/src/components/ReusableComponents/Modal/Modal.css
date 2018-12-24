@@ -1,0 +1,26 @@
+.modalSection { 
+    display: flex;
+    padding: 3rem;
+    background-color: #789ab1;
+}
+.modalSection > button {
+    padding: 0.6rem;
+    background-color: #b8bdc0;
+    border-radius: 0.8rem;
+}
+.popupModal {
+    background-color: bisque;
+    padding: 2rem;
+    height: 7rem;
+    z-index: 9000;
+}
+.popupModal > header {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.popupModal > section {
+    font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
+}

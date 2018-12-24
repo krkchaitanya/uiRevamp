@@ -3,6 +3,7 @@ import PersonInfo from './ReusableComponents/PersonInfo/PersonInfo';
 import GroupTogglersSection from './ReusableComponents/Toggler/GroupTogglersSection';
 import Navbar from './ReusableComponents/Navbar/navbar';
 import UserDOBSection from './ReusableComponents/DOBValidator/UserDOBSection';
+import Modal from "./ReusableComponents/Modal/Modal";
 
 class App extends Component {
     constructor() {
@@ -31,11 +32,14 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h2>App Component</h2>
-                <h3>Hitting in the app component</h3>
-                <p>lorem akjfh ahsfoia uehy oiuahasdilog oeuwa suohgo saroiautiuro jdhfgosi gosierto isreutpo</p>
-                {/* person component */}
-                <PersonInfo />
+                <h2 
+                style={{
+                    color: 'lightgray',
+                    textAlign: 'center',
+                    opacity: 0.9,    
+                    }}>
+                    React Components
+                </h2>
                 {/* GroupTogglersSection component */}
                 <GroupTogglersSection groupTogglesInputArr={this.state.togglerDataObj}/>
                 <br />
@@ -45,6 +49,9 @@ class App extends Component {
                 <br />
                 <br />
                 <UserDOBSection />
+                <br />
+                <br />
+                <Modal />
             </div>
         );
     }
