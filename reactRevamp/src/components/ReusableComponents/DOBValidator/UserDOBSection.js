@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from "moment";
 
 class UserDOBSection extends Component {
 constructor(props) {
@@ -7,16 +8,56 @@ constructor(props) {
     this.state = {
         dobValue: props.userDateOfBirth,
         dateFormat: props.dateFormat,
-        label: props.label
+        label: props.label,
+        errorMsg: null
     }
 }
+
+validateDateOfBirth(event) {
+    // const validationMsg = "lkajsaclk";
+    let validationMsg = "";
+    const dob = event.target.value;
+    const dateFormat = this.state.dateFormat;
+    console.log(dob);
+    console.log(dateFormat);
+    var userAge = moment().diff(moment(dob, dateFormat), 'years')
+    const lowerBoundDate = moment("01/01/1910").format(dateFormat);
+    const currentDate = moment().format(dateFormat);
+    const isValidDate = moment(dob, dateFormat, true).isValid();
+    console.log(isValidDate);
+    const isBetween = moment(dob).isBetween(lowerBoundDate, currentDate, 'date');
+    if(!isValidDate){
+        validationMsg = "Enter valid date of birth";
+    } else if(!isBetween) {
+        validationMsg = "Enter Date after JAN 01 1910 and before "+currentDate;
+    } else if (userAge < 18) {
+        validationMsg = "User to be atleast 18 years";
+    } else {
+        validationMsg = "Great , Entered valid DOB";
+    }
+    if(validationMsg !== " "){
+        this.setState({
+            errorMsg: validationMsg
+        })
+    }
+    return validationMsg;
+}
+
     render() {
         return (
-            <React.Fragment>
-                <input type="text" placeholder={this.state.dateFormat}>
-
+            <div className="dobSection">
+                <label> {this.state.label} </label>
+                <input type="text" maxLength="10" onBlur={this.validateDateOfBirth.bind(this)} 
+                    name="validateDOB"  placeholder={this.state.dateFormat}>
                 </input>
-            </React.Fragment>
+                <br />
+                <button type="button" onClick={this.validateDateOfBirth.bind(this)}>Validate</button>
+                <br />
+                {
+                    this.state.errorMsg && this.state.errorMsg !== " " &&
+                    <h3>{this.state.errorMsg}</h3>
+                }
+            </div>
         );
     }
 }
@@ -29,7 +70,7 @@ UserDOBSection.propTypes = {
 
 UserDOBSection.defaultProps = {
     userDateOfBirth: "12/11/1989",
-    dateFormat: "MM/DD/YYYY",
+    dateFormat: "MM-DD-YYYY",
     label: "Date Of Birth"
 }
 

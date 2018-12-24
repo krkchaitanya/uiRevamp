@@ -68,8 +68,18 @@
 }
 
 /* DOB validator component */
-input {
+.dobSection {
     display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+}
+.dobSection > label {
+    font-weight: 400;
+    color: gray;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.dobSection > input {
     font-weight: 300;
     font-size: 1.5rem;
     font-family: sans-serif;
@@ -79,4 +89,18 @@ input {
     border-radius: 0.5rem;
     height: 3rem;
     padding-left: 0.3rem;
+}
+.dobSection > h3 {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 4px solid lightyellow;
+    border-radius: 1rem;
+    padding: 0.6rem;
+    background-color: rgb(134, 131, 180)
+}
+.dobSection > button {
+    flex: 1;
+    width: 10rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
