@@ -15,22 +15,28 @@ showModalSection() {
     console.log('showmodal');
     this.setState({
         showPopupModal : true
+    });
+}
+closeModal() {
+    this.setState({
+        showPopupModal : false
     })
 }
 
     render() {
         return (
-            <div className="modalSection">
+            <React.Fragment>
+                <PopupModalSection showModal={this.state.showPopupModal} closeModal={() => this.closeModal()}>
+                    <div>
+                        <h3>Some randondom data to be sent to child</h3>
+                        <p>******************</p>
+                        <br />
+                        <button onClick={() => this.closeModal()}>Close</button>
+                    </div>
+                </PopupModalSection>
                 <br />
-                <button onClick={this.showModalSection.bind(this)}>ShowModal</button>
-                {
-                    this.state.showPopupModal &&
-                    <PopupModalSection
-                    popupModalHeader={'Modal Header'}
-                    popupModalBody={"soerh uryuey ioerwu ier ieuiorue georguioreu gfdklfjsdjgieru  iorusekjr e wireu jrgklksfjg iosfd"}
-                    />
-                }
-            </div>
+                <button onClick={() => this.showModalSection()}>OnClick</button>
+            </React.Fragment>
         );
     }
 }

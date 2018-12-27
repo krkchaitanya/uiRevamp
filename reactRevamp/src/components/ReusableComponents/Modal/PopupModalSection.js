@@ -1,35 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Modal.css';
 
-class PopupModalSection extends Component {
-    constructor(props) {
-        super();
-        this.state= {
-            popupModalHeader: props.popupModalHeader,
-            popupModalBody: props.popupModalBody
-        }
-    }
-    
-    render() {
-        return (
-            <div className='popupModal'>
-                <header>{this.state.popupModalHeader}</header>
+
+const PopupModalSection = ({showModal, children}) => {
+    const showHideModal = showModal ? 'modal display-modal' : 'modal display-none'
+    return (
+        <div className={showHideModal}>
+            <section className="modal-main">
+                <header>Header section in modal section</header>
                 <section>
-                    <p>{this.state.popupModalBody}</p>
+                    <h3>sduhgukash iursha gfijikaw iuerhg fvnesigv dfkj eiurh giufdsvg fd</h3>
+                    <h3>sfdeig oisju gjgvsnjfdn oiawe jfsdn feoisrujtoire jgnx esroei gjhiojag </h3>
                 </section>
-            </div>
-        )
-    }
-}
-
-PopupModalSection.propTypes = {
-    popupModalHeader: PropTypes.string,
-    popupModalBody: PropTypes.string.isRequired,
-}
-
-PopupModalSection.defaultProps = {
-    popupModalHeader: 'Modal Header One!',
+                <br />
+                {children}
+            </section>
+        </div>
+    );
 }
 
 export default PopupModalSection;
