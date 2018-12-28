@@ -25,18 +25,18 @@ closeModal() {
 
     render() {
         return (
-            <React.Fragment>
+            <div className="modalRoot">
+               <h3>Show and Hide Modal</h3>
                 <PopupModalSection showModal={this.state.showPopupModal} closeModal={() => this.closeModal()}>
                     <div>
-                        <h3>Some randondom data to be sent to child</h3>
-                        <p>******************</p>
-                        <br />
-                        <button onClick={() => this.closeModal()}>Close</button>
+                        <h3>Modal component will come into play on click of button</h3>
+                        <p>Its a popup section that should be displayed</p>
+                        <p>ksajd uskhfdndj iszdf ioaw jzsdj fpoi fujszdij vmklf dxifuj gpofdi spfdozuozkc</p>
                     </div>
                 </PopupModalSection>
                 <br />
-                <button onClick={() => this.showModalSection()}>OnClick</button>
-            </React.Fragment>
+                <button onClick={() => this.showModalSection()} className="modalBtn">ShowModal</button>
+            </div>
         );
     }
 }

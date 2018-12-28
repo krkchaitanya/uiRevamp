@@ -1,6 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const htmlWebpackplugin = new HtmlWebpackPlugin({ template: './reactRevamp/src/index.html'});
+const babelClassProperties = require("@babel/core").transform("code", {
+  plugins: ["@babel/plugin-proposal-class-properties"]
+});
+
 module.exports = {
   entry: './reactRevamp/src/index.js',
   module: {
@@ -11,7 +16,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env','react']
+            presets: ['env','react','es2015']
           }
         }
       },
@@ -22,8 +27,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './reactRevamp/src/index.html'
-  })
+    htmlWebpackplugin
   ]
 };
