@@ -1,0 +1,50 @@
+.sampleRouteComponent {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #8a7e7e;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sampleRouteComponent > h2 {
+    flex: 1;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.sampleRouteComponent > p {
+    flex: 1;
+    color: antiquewhite;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.sampleRouteComponent > #aboutHeader {
+    color: darkorange;
+}
+.sampleRouteComponent > #contactHeader {
+    color: darkmagenta;
+}
+.sampleRouteComponent > #errorHeader {
+    color: red;
+    background-color: lightcyan;
+    text-align: center;
+}
+/* navigation bar */
+.navigationRouter > div {
+    background-color: rgb(20, 19, 19);
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 0;
+}
+.navigationRouter > div >.navlink {
+    color: #8a7e7e;
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.navigationRouter > div >.navlink:hover {
+    color: white;
+}

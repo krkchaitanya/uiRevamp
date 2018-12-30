@@ -3,7 +3,8 @@ import PersonInfo from './ReusableComponents/PersonInfo/PersonInfo';
 import GroupTogglersSection from './ReusableComponents/Toggler/GroupTogglersSection';
 import Navbar from './ReusableComponents/Navbar/navbar';
 import UserDOBSection from './ReusableComponents/DOBValidator/UserDOBSection';
-import Modal from "./ReusableComponents/Modal/Modal";
+import Modal from './ReusableComponents/Modal/Modal';
+import Header from './ReusableComponents/ReactRouterFeature/Header';
 
 class App extends Component {
     constructor() {
@@ -40,6 +41,9 @@ class App extends Component {
                     }}>
                     React Components
                 </h2>
+                <br />
+                <Header />
+                <br />
                 {/* GroupTogglersSection component */}
                 <GroupTogglersSection groupTogglesInputArr={this.state.togglerDataObj}/>
                 <br />
@@ -52,6 +56,7 @@ class App extends Component {
                 <br />
                 <br />
                 <Modal />
+                <br />
             </div>
         );
     }
