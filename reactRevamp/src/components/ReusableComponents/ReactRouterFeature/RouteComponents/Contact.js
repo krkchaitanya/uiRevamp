@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = (props) => {
+    console.log(props);
     return (
         <div className='sampleRouteComponent'>
             <h2 id='contactHeader'>Contact Component</h2>
             <br />
-            <p>jysfrg dsiure fkidsfueytg erjkdsv oari8 resiodugori9sugjvklfxd oierugujolu </p>
+            <h3>Writers Information</h3>
         </div>
     );
 }

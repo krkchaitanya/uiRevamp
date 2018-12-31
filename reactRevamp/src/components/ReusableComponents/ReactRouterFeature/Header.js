@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 import Home from './RouteComponents/Home';
 import About from './RouteComponents/About';
@@ -10,28 +11,32 @@ import './Style/style.css';
 
 
 class Header extends Component {
-     constructor() {
-        super();
+
+    state={
+         writers:[]
+     }
+
+     componentDidMount() {
+        //  Run server >>> ./MockServer/index.js
+        axios.get("http://localhost:2625/writers").then((res) => {
+         this.setState({
+             writers: res.data.writers
+         })
+     }).catch((error) => {
+         console.log(error);
+     });
     }
 
     render() {
-        console.log(this.props);
         return(
             <React.Fragment>
                 <Router>
                     <div>
                         <NavbarSection />
                         <Switch>
-                            <Route exact path='/' component={Home} />
-                            <Route path='/about' component={About} />
-                            <Route 
-                                path={{
-                                    pathname:'/contact',
-                                    hash:'#submit',
-                                    serch:'?quick-submit=true',
-                                }} 
-                                component={Contact}
-                            />
+                            <Route exact path='/' render={() => <Home />} />
+                            <Route path='/about' render={() => <About title='About Component'/>} />
+                            <Route path='/contact' render= {(props) => <Contact {...props} writers={this.state.writers}/>} />
                             <Route component={Error} />
                         </Switch>
                     </div>

@@ -1,0 +1,20 @@
+{
+    "writers": [
+        {
+            "name":"stephen hulk",
+            "age":23
+        },
+        {
+            "name":"Brad Maccullum",
+            "age":35
+        },
+        {
+            "name":"Sachin Tendulkar",
+            "age":33
+        },
+        {
+            "name":"mikel korsstuf",
+            "age":41
+        }
+    ]
+}

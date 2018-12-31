@@ -11,7 +11,7 @@ class About extends Component {
     render() {
         return (
             <div className='sampleRouteComponent'>
-                <h2 id='aboutHeader'>About Component</h2>
+                <h2 id='aboutHeader'>{this.props.title}</h2>
                 <br />
                 <p>jhewgf kdsh aewoihcjdnzs uaid jsdsu fhaoiewufjdvknliju </p>
             </div>
