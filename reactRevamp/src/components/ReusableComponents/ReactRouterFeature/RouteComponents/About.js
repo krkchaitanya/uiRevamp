@@ -1,13 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const About = () => {
-    return (
-        <div className='sampleRouteComponent'>
-            <h2 id='aboutHeader'>About Component</h2>
-            <br />
-            <p>jhewgf kdsh aewoihcjdnzs uaid jsdsu fhaoiewufjdvknliju </p>
-        </div>
-    );
+class About extends Component {
+    constructor(props){
+        super();
+    }
+    componentDidMount() {
+        console.log(this.props);
+    }
+    
+    render() {
+        return (
+            <div className='sampleRouteComponent'>
+                <h2 id='aboutHeader'>About Component</h2>
+                <br />
+                <p>jhewgf kdsh aewoihcjdnzs uaid jsdsu fhaoiewufjdvknliju </p>
+            </div>
+        );
+    }
 }
 
 export default About;
