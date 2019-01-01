@@ -4,7 +4,7 @@ import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 import Home from './RouteComponents/Home';
 import About from './RouteComponents/About';
-import Contact from './RouteComponents/Contact';
+import Writers from './RouteComponents/Writers';
 import Error from './RouteComponents/Error';
 import NavbarSection from './Navigator/NavbarSection';
 import './Style/style.css';
@@ -28,15 +28,16 @@ class Header extends Component {
     }
 
     render() {
+        const {writers} = this.state;
         return(
             <React.Fragment>
                 <Router>
                     <div>
                         <NavbarSection />
                         <Switch>
-                            <Route exact path='/' render={() => <Home />} />
+                            <Route exact path='/' render={() => <Home title='Home Component'/>} />
                             <Route path='/about' render={() => <About title='About Component'/>} />
-                            <Route path='/contact' render= {(props) => <Contact {...props} writers={this.state.writers}/>} />
+                            <Route path='/writers' render= {(props) => <Writers {...props} writers={writers}/>} />
                             <Route component={Error} />
                         </Switch>
                     </div>

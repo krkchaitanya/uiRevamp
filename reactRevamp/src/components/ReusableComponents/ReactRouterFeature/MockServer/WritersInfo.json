@@ -1,20 +1,28 @@
 {
     "writers": [
         {
-            "name":"stephen hulk",
-            "age":23
+            "id":2301,
+            "name":"John Steinbeck",
+            "age":47,
+            "description": "John Ernst Steinbeck Jr. was an American author. He won the 1962 Nobel Prize in Literature !for his realistic and imaginative writings, combining as they do sympathetic humour and keen social perception"
         },
         {
-            "name":"Brad Maccullum",
-            "age":35
+            "id":2302,
+            "name":"Herman Melville",
+            "age":57,
+            "description": "Herman Melville was an American novelist, short story writer, and poet of the American Renaissance period. His best known works include Typee, a romantic account of his experiences in Polynesian life, and his whaling novel Moby-Dick. His work was almost forgotten during his last 30 years."
         },
         {
-            "name":"Sachin Tendulkar",
-            "age":33
+            "id":2303,
+            "name":"Emily Dickinson",
+            "age":33,
+            "description": "Emily Elizabeth Dickinson was an American poet. Dickinson was born in Amherst, Massachusetts into a prominent family with strong ties to its community."
         },
         {
-            "name":"mikel korsstuf",
-            "age":41
+            "id":2304,
+            "name":"Robert Frost",
+            "age":41,
+            "description": "Robert Lee Frost was an American poet. His work was initially published in England before it was published in America"
         }
     ]
 }

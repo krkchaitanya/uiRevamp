@@ -7,7 +7,7 @@ const NavbarSection = () => {
     `       <div>
                 <NavLink exact className="navlink" to="/">Home</NavLink>
                 <NavLink className="navlink" to="/about">About</NavLink>
-                <NavLink className="navlink" to="/contact">Contact</NavLink>
+                <NavLink className="navlink" to="/writers">Writers</NavLink>
             </div>
         </nav>
     );

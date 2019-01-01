@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className='sampleRouteComponent'>
-            <h2>Home Component</h2>
+            <h2>{props.title}</h2>
             <br />
             <p>skdjuh uisahd jkszd iuash fjvnsd klagsuiorew gjnkvsmv</p>
         </div>
