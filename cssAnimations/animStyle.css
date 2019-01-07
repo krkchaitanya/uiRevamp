@@ -1,0 +1,13 @@
+body {
+    padding: 1rem;
+    margin: 0;
+}
+.animDivOne {
+    width: 8rem;
+    height: 6rem;
+    background-image: linear-gradient(to right,red,yellow);
+    border-radius: 0.8rem;
+    text-align: center;
+    font-family: sans-serif;    
+    padding-top: 3rem;
+}
