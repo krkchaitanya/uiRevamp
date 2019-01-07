@@ -2,7 +2,18 @@ body {
     padding: 1rem;
     margin: 0;
 }
-.animDivOne {
+
+.anim-outer-container > header {
+    justify-content: center;
+    width: 15rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-image: radial-gradient(gray,lightblue);
+    text-align: center;
+    align-items: center;
+}
+
+.anim-outer-container > .divOne {
     width: 8rem;
     height: 6rem;
     background-image: linear-gradient(to right,red,yellow);
@@ -10,4 +21,26 @@ body {
     text-align: center;
     font-family: sans-serif;    
     padding-top: 3rem;
+}
+
+.anim-outer-container > .divTwo {
+    width: 8rem;
+    height: 6rem;
+    /* alpha...opacity */
+    /* linear / radial gradients */
+    background-image: linear-gradient(to bottom, rgba(24, 39, 46, 0.3), rgba(4,4,4,1));
+    border-radius: 0.8rem;
+    text-align: center;
+    font-family: sans-serif;    
+    padding-top: 3rem;
+}
+
+.anim-outer-container > .divThree {
+    padding: 0.8rem;
+    background-color: yellow;
+    box-shadow: 0.4rem 0.4rem 0.6rem lightgreen;
+}
+
+.anim-outer-container > .divThree > h2 {
+    text-shadow: 0.2rem 0.2rem 0.2rem lightgreen;
 }
