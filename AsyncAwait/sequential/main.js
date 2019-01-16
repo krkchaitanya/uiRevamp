@@ -1,5 +1,6 @@
-const { process01, process02 } = require('./processes');
+const { process01, process02 } = require('../processes/processes');
 
+// Sequential execution of functions
 async function main() {
     try {
         console.time("Total running time");
