@@ -3,17 +3,17 @@
         {
             "name":"Name of the Wind",
             "genre":"Fantasy",
-            "id":1
+            "id":"1"
         },
         {
             "name":"The Final Empire",
             "genre":"Fantasy",
-            "id":2
+            "id":"2"
         },
         {
             "name":"The Long earth",
             "genre":"SCI-FI",
-            "id":3
+            "id":"3"
         }
     ]
 }
