@@ -1,0 +1,34 @@
+{
+    "authors":[
+        {
+            "name":"Daniel Richard",
+            "age":44,
+            "id":"1"
+        },
+        {
+            "name":"Branden sanderson",
+            "age":67,
+            "id":"2"
+        },
+        {
+            "name":"Terry Pratchett",
+            "age":53,
+            "id":"3"
+        },
+        {
+            "name":"Terry Pratchett",
+            "age":39,
+            "id":"4"
+        },
+        {
+            "name":"Scott parker",
+            "age":72,
+            "id":"5"
+        },
+        {
+            "name":"Chetan bhagat",
+            "age":44,
+            "id":"6"
+        }
+    ]
+}

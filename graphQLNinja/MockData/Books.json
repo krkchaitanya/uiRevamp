@@ -3,17 +3,50 @@
         {
             "name":"Name of the Wind",
             "genre":"Fantasy",
-            "id":"1"
+            "id":"1",
+            "authorId":"2"
         },
         {
             "name":"The Final Empire",
             "genre":"Fantasy",
-            "id":"2"
+            "id":"2",
+            "authorId":"2"
         },
         {
             "name":"The Long earth",
-            "genre":"SCI-FI",
-            "id":"3"
+            "genre":"Action",
+            "id":"3",
+            "authorId":"1"
+        },
+        {
+            "name":"The Hunters Prayer",
+            "genre":"thriller",
+            "id":"4",
+            "authorId":"5"
+        },
+        {
+            "name":"Leave no traces",
+            "genre":"Drama",
+            "id":"5",
+            "authorId":"5"
+        },
+        {
+            "name":"Into to the wild",
+            "genre":"Drama",
+            "id":"6",
+            "authorId":"5"
+        },
+        {
+            "name":"Life Itself",
+            "genre":"Suspence",
+            "id":"7",
+            "authorId":"4"
+        },
+        {
+            "name":"Black Box",
+            "genre":"Thriller",
+            "id":"8",
+            "authorId":"3"
         }
     ]
 }

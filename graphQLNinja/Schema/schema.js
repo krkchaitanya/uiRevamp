@@ -11,14 +11,16 @@ const {
     GraphQLID,
     GraphQLList,
     GraphQLSchema
-     }= graphql;
+     } = graphql;
 
 
 // JSON file paths
-const bookFilePath = path.join(__dirname, '../MockData/Books.json');
+const booksJsonFilePath = path.join(__dirname, '../MockData/Books.json');
+const authorsJsonFilePAth = path.join(__dirname,'../MockData/Authors.json');
 
-const booksJsonContent = JSON.parse(fs.readFileSync(bookFilePath, 'utf-8'));
-console.log('Mocked booksJsonData fetched -> ', booksJsonContent.books);
+
+const booksJsonContent = JSON.parse(fs.readFileSync(booksJsonFilePath, 'utf-8'));
+const authorsJsonContent = JSON.parse(fs.readFileSync(authorsJsonFilePAth, 'utf-8'));
 
 // const booksJsonDataPromise = () => {
 //     return new Promise((resolve,reject) => {
@@ -32,19 +34,34 @@ console.log('Mocked booksJsonData fetched -> ', booksJsonContent.books);
 //     });
 // };
 
-
-const books = 
-    [ { name: 'Name of the Wind', genre: 'Fantasy', id: "1" },
-      { name: 'The Final Empire', genre: 'Fantasy', id: "2" },
-      { name: 'The Long earth', genre: 'SCI-FI', id: "3" } ];
-
 const BookType = new GraphQLObjectType({
    name: 'Book',
    fields: () => ({
        id: {type: GraphQLID},
        name: {type: GraphQLString},
-       genre: {type: GraphQLString}
+       genre: {type: GraphQLString},
+       author: {
+           type: AuthorType,
+           resolve(parent, args) {
+                return _.find(authorsJsonContent.authors, {id: parent.authorId});
+           }
+       }
    }) 
+});
+
+const AuthorType = new GraphQLObjectType({
+    name:'Author',
+    fields: () => ({
+        id: {type: GraphQLID},
+        name: {type: GraphQLString},
+        age: {type: GraphQLInt},
+        books: {
+            type: new GraphQLList(BookType),
+            resolve(parent, args) {
+                return _.filter(booksJsonContent.books, {authorId: parent.id});
+            }
+        }
+    })
 });
 
 
@@ -56,8 +73,26 @@ const RootQuery = new GraphQLObjectType({
             args: {id: {type: GraphQLString}},
             // resolve function is used to fetch data from DB or other sources
             resolve(parent,args) {
-                console.log('hitting resolve function...');
                  return _.find(booksJsonContent.books, {id:args.id} );
+            }
+        },
+        author: {
+            type: AuthorType,
+            args: {id: {type: GraphQLString}},
+            resolve(parent,args) {
+                return _.find(authorsJsonContent.authors, {id:args.id});
+            }
+        },
+        books: {
+            type: new GraphQLList(BookType),
+            resolve(parent, args) {
+                return booksJsonContent.books;
+            }
+        },
+        authors: {
+            type: new GraphQLList(AuthorType),
+            resolve(parent, args) {
+                return authorsJsonContent.authors;
             }
         }
     }
