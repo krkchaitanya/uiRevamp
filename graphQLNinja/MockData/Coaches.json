@@ -1,0 +1,28 @@
+{
+    "coaches":[
+        {
+            "game": "Cricket",
+            "coach": "CricketCoach",
+            "gameProperties": "Batting and bowling",
+            "id":"3001"
+        },
+        {
+            "game": "Baseball",
+            "coach": "BaseballCoach",
+            "gameProperties": "Baseball and hardBat",
+            "id":"3002"
+        },
+        {
+            "game": "Tennis",
+            "coach": "TennisCoach",
+            "gameProperties": "net and shuttle bats",
+            "id":"3003"
+        },
+        {
+            "game": "Football",
+            "coach": "FootballCoach",
+            "gameProperties": "Football and stadium",
+            "id":"3004"
+        }
+    ]
+}

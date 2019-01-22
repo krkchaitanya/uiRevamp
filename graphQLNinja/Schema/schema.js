@@ -17,10 +17,12 @@ const {
 // JSON file paths
 const booksJsonFilePath = path.join(__dirname, '../MockData/Books.json');
 const authorsJsonFilePAth = path.join(__dirname,'../MockData/Authors.json');
+const coachesJsonFilePath = path.join(__dirname,"../MockData/Coaches.json");
 
 
 const booksJsonContent = JSON.parse(fs.readFileSync(booksJsonFilePath, 'utf-8'));
 const authorsJsonContent = JSON.parse(fs.readFileSync(authorsJsonFilePAth, 'utf-8'));
+const coachesJsonContent = JSON.parse(fs.readFileSync(coachesJsonFilePath,"utf-8"));
 
 // const booksJsonDataPromise = () => {
 //     return new Promise((resolve,reject) => {
@@ -64,6 +66,15 @@ const AuthorType = new GraphQLObjectType({
     })
 });
 
+const CoachType = new GraphQLObjectType({
+    name:"Coach",
+    fields: () => ({
+        id: {type: GraphQLID},
+        game: {type: GraphQLString},
+        coach: {type: GraphQLString},
+        gameProperties: {type: GraphQLString}
+    })
+});
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -93,6 +104,13 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(AuthorType),
             resolve(parent, args) {
                 return authorsJsonContent.authors;
+            }
+        },
+        coach: {
+            type: CoachType,
+            args: {id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return _.find(coachesJsonContent.coaches, {id: args.id});
             }
         }
     }
