@@ -2,12 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const graphqlHTTP = require("express-graphql");
 const { buildSchema } = require("graphql");
+const mongoose = require("mongoose");
+//  Event constructor
+const Event = require("./mongoModals/events");
 
 const app = express();
 
-const events = [];
-
+// Middlewares
 app.use(bodyParser.json());
+
 app.use('/graphql', graphqlHTTP({
     schema: buildSchema(`
 
@@ -38,22 +41,40 @@ app.use('/graphql', graphqlHTTP({
             query: RootQuery
             mutation: RootMutation
         }
-        
+
     `),
     rootValue: {
+
         events: () => {
-            return events;                
+            return Event
+            .find()
+            .then(events => {
+                return events.map(event =>{
+                    return {...event._doc};
+                }); 
+            })
+            .catch(error => {
+                console.log(error);
+            });       
         },
+
         createEvent: (args) => {
-            const event = {
-                _id: Math.random().toString(),
+            const event = new Event({
                 title: args.eventInput.title,
                 description: args.eventInput.description,
                 price: args.eventInput.price,
-                date: args.eventInput.date
-            }
-            events.push(event);
-            return event;
+                date: new Date(args.eventInput.date)
+            });
+            return event
+            .save()
+            .then(result => {
+                console.log(result);
+                return {...result._doc};
+            })
+            .catch(err => {
+                console.log(err);
+                throw err;
+            });
         }
     },
     graphiql: true
@@ -65,6 +86,12 @@ app.get("/", (req,res) => {
 });
 
 
-app.listen(7678, () => {
-    console.log(' --> graphQLServerTwo is running on port /--7678--/ ');
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@projectz-f61na.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`)
+.then(() => {
+    app.listen(7678, () => {
+        console.log(' --> graphQLServerTwo is running on port /--7678--/ ');
+    });
+})
+.catch((mongoDBConnectionError) => {
+    console.warn(mongoDBConnectionError);
 });

@@ -9,7 +9,8 @@
     "development": "webpack --mode development --watch",
     "production": "webpack --mode production",
     "develop": "webpack --watch --config webpack.dev.js",
-    "build": "webpack --mode development --config webpack.prod.js"
+    "build": "webpack --mode development --config webpack.prod.js",
+    "graphQLServerTwo": "nodemon ./graphQLNinja/graphQLServerTwo.js"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
+    "mongoose": "^5.4.6",
     "popper.js": "^1.14.4",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
