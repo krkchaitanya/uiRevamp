@@ -6,7 +6,7 @@ graphQL server is built on node JS using Express module.
 It's a Server side runtime env for executing queries as graphQL is a query lang. 
 ```
 
-Concepts
+Elements
 - GraphQL Schema
 - Object Types
 - Relation between types
@@ -14,15 +14,32 @@ Concepts
 - Queries
 - Mutation
 
-#### NPM Dependencies
+
 ```
+NPM Dependencies
+
 > express
 > graphql
-> express-graphq
+> express-graphql
 > fs
 > lodash
+> axios
+> nodemon
+> body-parser
 ```
 
-#### Start the server using CMD
-> node graphQLServer.js
+### Run Server using CMD's
+> nodemon graphQLServer.js
+
+> nodemon graphQLServerTwo.js
+
+
+```
+
+---//URL's//---
+
+> http://localhost:7677/graphql
+
+> http://localhost:7678/graphql
+```
 
