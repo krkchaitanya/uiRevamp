@@ -34,11 +34,6 @@ var schema = buildSchema(`
     type RootMutation {
         createEvent(eventInput: EventInput): Event
     }
-
-    schema {
-        query: RootQuery
-        mutation: RootMutation
-    }
 `);
 
 var root = {
@@ -85,7 +80,7 @@ app.get("/", (req,res) => {
     res.send("..Basic route implemented here..");
 });
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@projectz-f61na.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`)
+mongoose.connect("mongodb+srv://"+process.env.MONGO_USER+":"+process.env.MONGO_PASSWORD+"@projectz-f61na.mongodb.net/"+process.env.MONGO_DB+"?retryWrites=true")
 .then(() => {
     app.listen(7678, () => {
         console.log(' --> graphQLServerTwo is running on port /--7678--/ ');
