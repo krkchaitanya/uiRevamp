@@ -1,11 +1,19 @@
+import fetch from "node-fetch";
+import axios from "axios";
+
 // Temaplate literals
 
-const templateStrings = 'Template literals';
+const templateStrings = 
+`
+Template literals
+------------------
+`;
+document.querySelector("#z-template-literals").innerText = templateStrings; 
 const templateStrings1 = 
     `Here is the best way 
-    to define the template lietrals`;
+    to define 
+    the template literals`;
 
-document.getElementById("z-template-literals").innerText = templateStrings;
 document.getElementById("z-template-literals-1").innerText = templateStrings1;
 
 // Object destructuring
@@ -65,3 +73,29 @@ document.getElementById("z-array-destructuring-2").innerText =
 `
 ${first} , ${bass}
 `;
+
+
+// For of loop
+const forOfLoop = `
+For Of Loop
+-----------------
+`;
+document.querySelector("#z-for-of-loop").innerText = forOfLoop;;
+
+const userList = axios.get('https://jsonplaceholder.typicode.com/users');
+userList
+.then(userLst => console.log(userLst.data))
+.catch(error => console.log(error));
+
+
+userList
+.then (usersList => {
+    for(var user of usersList.data) {
+        let ul = document.getElementById("z-for-of-loop-1");
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${user.id} - ${user.name}   ---  ${user.website}`));
+        ul.appendChild(li);
+    };
+});
+
+
