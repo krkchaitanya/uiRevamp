@@ -99,3 +99,34 @@ userList
 });
 
 
+// spread operator
+const spreadOperator = `
+Spread Operator
+---------------------------
+`;
+document.getElementById("z-spread-oper").innerText = spreadOperator;
+const smartArray1 = [1,2,3];
+const smartArray2 = [...smartArray1];
+smartArray2.push(4,5);
+document.querySelector("#z-spread-oper-1").innerText = smartArray2;
+
+
+const survivorInfoMaker = (name, email, community) => {
+    return {name, email, community};
+};
+const survivorEngineer = ["Monty", "montyscint22@yahoo.com", "skycrew"];
+const survivorObj =  survivorInfoMaker(...survivorEngineer);
+document.querySelector("#z-spread-oper-2").innerText = 
+    `${survivorObj.name}, ${survivorObj.email}, ${survivorObj.community}`;
+
+// rest operator
+const restOperator = `
+Rest Operator
+-------------------
+`;
+document.getElementById("z-rest-oper").innerText = restOperator;
+const survivorInfoMaker2 = (name, email, ...communityBlood) => {
+    const [community, blood] = [...communityBlood];
+    return {name, email, community, blood};
+};
+document.getElementById("z-rest-oper-1").innerText = survivorInfoMaker2("Jasper", "jasperskycrew22@gmail.com", "skycrew", "redBlood").name;
