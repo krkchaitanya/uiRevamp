@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import axios from "axios";
+import {ageCalculator, survivorInfMaker} from "./jsFeatures2";
 
 // Temaplate literals
 
@@ -99,7 +100,14 @@ userList
 });
 
 
-// spread operator
+// =====================================================================================
+// Es6 - spread & Rest operator's
+// The spread operator allows us to expand elements. 
+// With rest parameters we were able to get a list of arguments into an array. 
+// Packing elements in an array to single/individual argument and can pass it to a function.
+// Javascript's (...)Dot's can be used for both Rest and Spread operators
+// =====================================================================================
+
 const spreadOperator = `
 Spread Operator
 ---------------------------
@@ -119,14 +127,100 @@ const survivorObj =  survivorInfoMaker(...survivorEngineer);
 document.querySelector("#z-spread-oper-2").innerText = 
     `${survivorObj.name}, ${survivorObj.email}, ${survivorObj.community}`;
 
-// rest operator
+// rest operator 
 const restOperator = `
-Rest Operator
+Rest Operator (Collects remaining elements into an Array)
+Rest parameter have to be at last argument
 -------------------
 `;
+
+function restAdd(...args) {
+    console.log('--Entering restAdd function of jsFeatures.js file--');
+    let restAddFnResult = 0;
+    for (let num of args) restAddFnResult += num;
+    console.log('--Entering restAdd function of jsFeatures.js file--');
+    return restAddFnResult;
+};
+console.log("--restAdd fn result--" + restAdd(1,2,3,4));
+
+
 document.getElementById("z-rest-oper").innerText = restOperator;
 const survivorInfoMaker2 = (name, email, ...communityBlood) => {
-    const [community, blood] = [...communityBlood];
+    const [community, blood] = communityBlood;
     return {name, email, community, blood};
 };
-document.getElementById("z-rest-oper-1").innerText = survivorInfoMaker2("Jasper", "jasperskycrew22@gmail.com", "skycrew", "redBlood").name;
+
+const aObj = survivorInfoMaker2("Jasper", "jasperskycrew22@gmail.com", "skycrew", "redBlood");
+document.getElementById("z-rest-oper-1").innerText = 
+`Name: ${aObj.name}
+   Email: ${aObj.email}
+     Community: ${aObj.community}
+        Blood: ${aObj.blood}`
+
+// Array concatenation
+const fruitArr1 = ["grape", "orange", "watermelon"];
+const fruitArr2 = ["Apple", "Kewi", "strwberry"];
+console.log(`-- Array concatenation -- ${[...fruitArr1, ...fruitArr2]}`);
+
+
+// Object Literals
+const objLiteralsHead = `Object Literals
+--------------------`;
+function es6ObjLiteFn(tech1, tech2, tech3) {
+    return {tech1, tech2, tech3};
+}
+console.log("--Object Literals--", es6ObjLiteFn('node', 'express', 'mongoDB'));
+document.querySelector("#z-obj-literals").innerText = objLiteralsHead;
+document.querySelector("#z-obj-literals-1").innerText = `--------------------------------------------------------------
+{tech1: "node", tech2: "express", tech3: "mongoDB"}
+--------------------------------------------------------------
+tech1: ${es6ObjLiteFn('node', 'express', 'mongoDB').tech1}
+tech2: ${es6ObjLiteFn('node', 'express', 'mongoDB').tech2}
+tech3: ${es6ObjLiteFn('node', 'express', 'mongoDB').tech3}`;
+
+
+// reduce() Methos
+// Reduces an Array into a single variable
+
+const reduceMethodHead= `
+Javascript Reduce()
+Reduces an array into a single variable
+---------------------------------------------------
+`;
+const randomNums = [1,2,3,4];
+const reduceResult = randomNums.reduce((acc, val) => acc+val, 100);
+document.getElementById("z-js-reduce").innerText = reduceMethodHead;
+document.getElementById("z-js-reduce-1").innerText = `Summing up [1,2,3,4] and adding +100 = ${reduceResult}`;
+
+
+// Default parameters
+// Setting default value to a variable
+const getBunkerInformation = (name="Default Bunker", desc= "Helps to protect Humankind from severe natural disasters") => {
+    return {name, desc};
+};
+
+console.log('-- ES6 Default parameters--', getBunkerInformation('Woncrew Bunker'));
+
+// Includes
+const clansInfo = ["skycrew", "woncrew", "mountainMan", "heilncrew"];
+console.log("--Javascript inclued method--", clansInfo.includes("skycrew"));
+
+
+// export & import
+const jsExportImport = `
+JS export & import
+-------------------------
+`;
+document.querySelector("#z-export-import").innerText = jsExportImport;
+document.querySelector("#z-export-import-1").innerText = `importing the ageCalculator, survivorInfMaker functions from jsFeatures2.js
+ageCalculator(1993) = ${ageCalculator(1993)}
+survivorInfMaker()
+    --name: ${survivorInfMaker("Jasper", "Arkadia", "kjrn wrkjnwkrj wrkjgkrw").name} 
+    --community: ${survivorInfMaker("Jasper", "Arkadia", "kjrn wrkjnwkrj wrkjgkrw").community}
+`;
+
+
+
+
+
+
