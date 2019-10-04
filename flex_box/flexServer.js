@@ -12,6 +12,10 @@ app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname,"./index.html"));
 });
 
+app.get("/flextheme", (req,res) => {
+    res.sendFile(path.join(__dirname,"./flexTheme.html"));
+});
+
 
 //port
 const port = process.env.PORT || 5657;

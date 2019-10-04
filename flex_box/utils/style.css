@@ -138,3 +138,39 @@
         background-color: rgb(121, 141, 121);
     }
 }
+
+
+
+#flex-main-img {
+    z-index: 0;
+    align-content: center;
+}
+
+.margin-right-20 {
+    margin-right: 20px;
+}
+#flextheme-main-box {
+    box-sizing: border-box;
+}
+.pad-right-left-10 {
+  padding-right: 10px;
+  padding-left: 10px;  
+}
+.align-items-center {
+    align-items: center;
+}
+.flexbox-display {
+    display: flex;
+}
+.flexbox-direction-row {
+    flex-direction: row;
+}
+.flexbox-direction-column {
+    flex-direction: column;
+}
+.flexbox-justify-content-sb {
+    justify-content: space-between;
+}
+.flexbox-justify-content-se {
+    justify-content: space-evenly;
+}
