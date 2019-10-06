@@ -4,26 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="chaitanya" content="flex theme">
-    <link rel="stylesheet" href="./utils/style.css" >
+    <link rel="stylesheet" href="./utils/flex.css" >
     <title>Flex Theme</title>
 </head>
-<body class="margin-zero">
+<body>
 
-    <div id="flextheme-main">
-        <div id="flextheme-main-img">
-            <div id="flextheme-header" class="flexbox-display flexbox-justify-content-sb background-color-ltgray">
-                <div id="flextheme-header-left">
-                    <h2>FlexeTheme</h2>
-                </div>
-                <div id="flextheme-header-right" class="flexbox-display align-items-center font-family-ss">
-                    <div id="flextheme-header-right-1" class="pad-right-left-10">Overview</div>
-                    <div id="flextheme-header-right-2" class="pad-right-left-10">Pages</div>
-                    <div id="flextheme-header-right-3" class="pad-right-left-10">Components</div>
-                    <div id="flextheme-header-right-4" class="pad-right-left-10">Docs</div>
+    <div>
+        <div id="flextheme-main">
+            <div id="flextheme-main-img">
+                <div id="flextheme-header" class="flexbox-display flexbox-justify-content-sb background-color-ltgray">
+                    <div id="flextheme-header-left">
+                        <h2 class="color-white">FlexeTheme</h2>
+                    </div>
+                    <div id="flextheme-header-right" class="flexbox-display align-items-center font-family-ss">
+                        <div id="flextheme-header-right-1" class="pad-right-left-10 color-white"><a class="nav-btn" href="../">Overview</a></div>
+                        <div id="flextheme-header-right-2" class="pad-right-left-10 color-white"><a class="nav-btn" href="../">Pages</a></div>
+                        <div id="flextheme-header-right-3" class="pad-right-left-10 color-white"><a class="nav-btn" href="../">Comments</a></div>
+                        <div id="flextheme-header-right-4" class="pad-right-left-10 color-white"><a class="nav-btn" href="../">Docs</a></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="flextheme-main-overlay">
+            <div id="flextheme-movscreens-img">
+            </div>
+        </div>
+        <div id="flextheme-gamer-signup">
+            <div class="flexbox-display align-items-baseline">
+                <h3 class="flex-theme-label">Username</h3>
+                <input type="text" placeholder=" enter username">
+            </div>
+            <div class="flexbox-display align-items-baseline">
+                <h3 class="flex-theme-label">Emailaddress</h3>
+                <input type="text" placeholder=" enter emailaddress">
+            </div>
+            <div class="flexbox-display align-items-baseline">
+                <h3 class="flex-theme-label">Password</h3>
+                <input type="text" placeholder=" enter password">
+            </div>
+            <br />
+            <button type="button" class="primary-button" id="gamer-signup-btn">Sign UP</button>
+        </div>
     </div>
+
 
 </body>
 </html>
