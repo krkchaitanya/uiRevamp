@@ -29,24 +29,27 @@
             <div id="flextheme-movscreens-img">
             </div>
         </div>
-        <div id="flextheme-gamer-signup">
+
+        <form id="flextheme-gamer-signup">
             <div class="flexbox-display align-items-baseline">
-                <h3 class="flex-theme-label">Username</h3>
-                <input type="text" placeholder=" enter username">
+                <label for="username" class="flex-theme-label">Username</label>
+                <input type="text" name="username" id="gamer-username">
             </div>
             <div class="flexbox-display align-items-baseline">
-                <h3 class="flex-theme-label">Emailaddress</h3>
-                <input type="text" placeholder=" enter emailaddress">
+                <label for="emailaddress" class="flex-theme-label">Emailaddress</label>
+                <input type="text" name="username" id="gamer-emailaddress">
             </div>
             <div class="flexbox-display align-items-baseline">
-                <h3 class="flex-theme-label">Password</h3>
-                <input type="text" placeholder=" enter password">
+                <label for="password" class="flex-theme-label">Password</label>
+                <input type="text" name="username" id="gamer-password">
             </div>
             <br />
-            <button type="button" class="primary-button" id="gamer-signup-btn">Sign UP</button>
-        </div>
+            <input type="button" value="Submit" class="primary-button" id="gamersignup-subt-btn">
+        </form>
+
     </div>
 
 
+    <script src="./utils/js/flex.js"></script>
 </body>
 </html>
