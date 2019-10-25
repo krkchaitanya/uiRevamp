@@ -89,3 +89,65 @@ console.log(carInf1);
 
 const subaruCarInf = new Subaru("Subaru", "Outback", "2019", "Automatic", 25);
 console.log(subaruCarInf);
+
+
+
+// Traveler -> Person
+// Add support location
+// override getting
+
+class Person {
+    constructor(name, age) {
+        this.name=name;
+         this.age=age;
+    }
+
+    getGreeting() {
+        return `HI I am ${this.name}`;
+    }
+
+    getDescription() {
+        return `HI I'm ${this.name} and i am ${this.age} years old`;
+    }
+}
+
+class Traveler extends Person {
+    constructor(name, age, homeLocation) {
+        super(name,age);
+        this.homeLocation = homeLocation;
+    }
+
+    getGreeting() {
+        let greeting =  super.getGreeting();
+        if(this.homeLocation) {
+            greeting += `I am visiting ${this.homeLocation}.`;
+        }
+        return greeting;
+    }
+}
+
+const travelerloc = new Traveler("nancywheeler","21","Colorado");
+console.log("traveler greetings: ",travelerloc.getGreeting());
+
+class Student extends Person {
+    constructor(name,age,major) {
+        super(name,age);
+        this.major=major;
+    }
+
+    hasMajor() {
+        return !!this.major;
+    }
+
+    getDescription() {
+        let description = super.getDescription();
+        if(this.hasMajor()) {
+            description += `. The major is ${this.major}`;
+        }
+        return description;
+    }
+}
+
+const studentDtls = new Student("will buyers", "14", "computer science");
+console.log("is student has major : ", studentDtls.hasMajor());
+console.log("student description :", studentDtls.getDescription());
