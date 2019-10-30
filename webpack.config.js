@@ -7,7 +7,8 @@ module.exports = {
     main : './src/index.js',
     es6_es7: './Spotlight/es6-es7/jsFeatures.js' ,
     dropdown_fn_handler: './vanillaJS/dropdown_navigation/dropdown-fn-handler.js',
-    es6es7classes: './es2015-classes/es6es7classes.js'
+    es6es7classes: './es2015-classes/es6es7classes.js',
+    index: './reactRevamp/src/index.js'
     },
     output :{
       path :path.join(__dirname, './dist'),
@@ -22,13 +23,22 @@ module.exports = {
                 use: {
                   loader: 'babel-loader',
                   options: {
-                    presets: ['@babel/preset-env']
+                    presets: ['@babel/preset-env', '@babel/preset-react'],
+                    plugins: ["@babel/plugin-proposal-class-properties"]
                   }
                 }
-              }
+            },
+            {
+              test: /\.css$/i,
+              use: ['style-loader', 'css-loader'],
+            }
         ]
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        template: "./reactRevamp/src/index.html"
+      }),
       new HtmlWebpackPlugin({
         filename: "html/index.html"
       })
@@ -36,7 +46,8 @@ module.exports = {
     devServer: {
         port: 2811,
         compress: true,
-        contentBase: path.join(__dirname, "./dist/html"),
+        hot: true,
+        contentBase: path.join(__dirname, "./reactRevamp/src/index.html"),
         proxy: {
             "/api": "http://localhost:2600"
         }

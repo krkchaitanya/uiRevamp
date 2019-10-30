@@ -219,7 +219,19 @@ survivorInfMaker()
     --community: ${survivorInfMaker("Jasper", "Arkadia", "kjrn wrkjnwkrj wrkjgkrw").community}
 `;
 
+// callback functions -> Passing functions as arguments to another function
+// Promises
+// Async Await
+const processUerInput = (personInfObj, callback) => {
+    setTimeout(() => {
+        callback(`name: ${personInfObj.name}  email: ${personInfObj.email}`);
+    }, 2000);
+};
+const logUserInput = (info) => {
+    console.log('--Logged user input-->', info);
+};
 
+processUerInput({name: "Maya", email: "Mayauniverse@gmail.com"}, logUserInput);
 
 
 
