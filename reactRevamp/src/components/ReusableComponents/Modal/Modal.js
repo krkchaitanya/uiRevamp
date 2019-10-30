@@ -17,7 +17,7 @@ showModalSection() {
         showPopupModal : true
     });
 }
-closeModal() {
+closeModal = () => {
     this.setState({
         showPopupModal : false
     })

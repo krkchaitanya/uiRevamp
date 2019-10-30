@@ -8,7 +8,9 @@ module.exports = {
     es6_es7: './Spotlight/es6-es7/jsFeatures.js' ,
     dropdown_fn_handler: './vanillaJS/dropdown_navigation/dropdown-fn-handler.js',
     es6es7classes: './es2015-classes/es6es7classes.js',
-    index: './reactRevamp/src/index.js'
+    index: './reactRevamp/src/index.js',
+    jsFeature: './Spotlight/es6-es7/jsFeatures.js',
+    jsFeature: './Spotlight/es6-es7/jsFeatures2.js'
     },
     output :{
       path :path.join(__dirname, './dist'),
@@ -36,11 +38,12 @@ module.exports = {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: "./reactRevamp/src/index.html"
+        filename: "jsFeatures.html",
+        template: "./Spotlight/es6-es7/jsFeatures.html"
       }),
       new HtmlWebpackPlugin({
-        filename: "html/index.html"
+        filename: "index.html",
+        template: "./reactRevamp/src/index.html"
       })
     ],
     devServer: {
