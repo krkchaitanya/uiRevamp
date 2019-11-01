@@ -6,6 +6,7 @@ import UserDOBSection from './ReusableComponents/DOBValidator/UserDOBSection';
 import Modal from './ReusableComponents/Modal/Modal';
 import Header from './ReusableComponents/ReactRouterFeature/Header'; 
 import Dropdown from './ReusableComponents/Dropdown/Dropdown';
+import "./style.css";
 
 class App extends Component {
     constructor() {
@@ -28,7 +29,8 @@ class App extends Component {
                     header: 'Fourth AppHeader',
                     bodyInfo: 'ljdhsfakhjafs  eadujfk awoeidszkhfaod f aouds uoh iuadshka su usodfghoisdfg oeris guois'
                 }
-            ]
+            ],
+            dropdownItemsList: ["userone", "usertwo", "userthree", "userfour"]
         }
     }   
     render() {
@@ -43,23 +45,19 @@ class App extends Component {
                     React Components
                 </h2>
                 <br />
-                <Header />
+                <Header/>
                 <br />
                 {/* GroupTogglersSection component */}
                 <GroupTogglersSection groupTogglesInputArr={this.state.togglerDataObj}/>
-                <br />
-                <br />
-                <br />
+                <div className="padding-2rem"></div>
                 <Navbar />
-                <br />
-                <br />
+                <div className="padding-2rem"></div>
                 <UserDOBSection />
-                <br />
-                <br />
+                <div className="padding-2rem"></div>
                 <Modal />
-                <br />
-                <br />
-                <Dropdown dropdownlist = {["userone", "usertwo", "userthree", "userfour"]} />
+                <div className="padding-2rem"></div>
+                <Dropdown dropdownlist = {this.state.dropdownItemsList} />
+                <div className="padding-2rem"></div>
             </div>
         );
     }
