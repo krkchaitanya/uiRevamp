@@ -4,7 +4,8 @@ import GroupTogglersSection from './ReusableComponents/Toggler/GroupTogglersSect
 import Navbar from './ReusableComponents/Navbar/navbar';
 import UserDOBSection from './ReusableComponents/DOBValidator/UserDOBSection';
 import Modal from './ReusableComponents/Modal/Modal';
-import Header from './ReusableComponents/ReactRouterFeature/Header';
+import Header from './ReusableComponents/ReactRouterFeature/Header'; 
+import Dropdown from './ReusableComponents/Dropdown/Dropdown';
 
 class App extends Component {
     constructor() {
@@ -57,6 +58,8 @@ class App extends Component {
                 <br />
                 <Modal />
                 <br />
+                <br />
+                <Dropdown dropdownlist = {["userone", "usertwo", "userthree", "userfour"]} />
             </div>
         );
     }
