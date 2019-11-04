@@ -2,13 +2,13 @@
 // Higher order functions... Arraya... TM
 // forEach  filter  map   sort   reduce
 const companies = [
-    {name: "company one", category: "finance"},
-    {name: "company Two", category: "indusrty"},
-    {name: "companyThree", category: "medical"},
-    {name: "company four", category: "medical"},
-    {name: "company five", category: "auto"},
-    {name: "company six", category: "Technology"},
-    {name: "company seven", category: "Retail"}
+    {name: "company one", category: "finance", start: 1981, end: 2018},
+    {name: "company Two", category: "indusrty", start: 1992, end: 2015},
+    {name: "companyThree", category: "medical", start: 1999, end: 2013},
+    {name: "company four", category: "medical", start: 1994, end: 2007},
+    {name: "company five", category: "auto", start: 1985, end: 2009},
+    {name: "company six", category: "Technology", start: 1987, end: 2006},
+    {name: "company seven", category: "Retail", start: 1989, end: 1999}
 ];  
 
 const ages=[21,24,25,31,33,42,45,56,43,41,37,39,29,28];
@@ -40,8 +40,8 @@ console.log(mapMethodHandler);
 
 // reduce
 const randomNos = [1,2,3,4,5];
-const reduceMethod = randomNos.reduce((total,age) => total+age, 0);
-console.log(reduceMethod);
+const randomNumsSum = randomNos.reduce((total,age) => total+age, 0);
+console.log(randomNumsSum);
 
 // combined methods
 const combined = ages
@@ -49,3 +49,8 @@ const combined = ages
     .filter(age => age >= 40)
     .reduce((a,b) => a+b,0);
 console.log(combined);
+
+// get company ages and sort it
+companies.forEach(ele => console.log("before sorting",ele));
+companies.sort((a,b) => a.start-b.start);
+companies.forEach(ele => console.log("after sorting", ele));

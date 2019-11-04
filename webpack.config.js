@@ -10,7 +10,10 @@ module.exports = {
     es6es7classes: './es2015-classes/es6es7classes.js',
     index: './reactRevamp/src/index.js',
     jsFeature: './Spotlight/es6-es7/jsFeatures.js',
-    jsFeature: './Spotlight/es6-es7/jsFeatures2.js'
+    jsFeature: './Spotlight/es6-es7/jsFeatures2.js',
+    basicLiterals: './basic_literals/basic_literals.js',
+    basicLiterals2: './basic_literals/basic_literals2.js',
+    basicLiterals3: './basic_literals/basic_literals3.js'
     },
     output :{
       path :path.join(__dirname, './dist'),
