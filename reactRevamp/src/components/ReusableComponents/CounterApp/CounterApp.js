@@ -8,13 +8,17 @@ class CounterApp extends Component {
         }
     }
 
-    componentDidMount() { 
-        
+    componentDidMount() {
+        const stringCount = localStorage.getItem("storedCount");
+        const initcount = parseInt(stringCount);
+        if(!isNaN(initcount)) {
+            this.setState(() => ({count:initcount}))
+        };
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.count !== this.state.count) {
-            
+            localStorage.setItem("storedCount", this.state.count);
         }
     }
 

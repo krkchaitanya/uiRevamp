@@ -16,16 +16,16 @@ const travelerDtls = {
 
 localStorage.setItem("trvlDtls", JSON.stringify(travelerDtls));
 localStorage.getItem("trvlDtls");
-localStorage.clear();
+// localStorage.clear();
 
 const randomNum =  33;
-localStorage.setItem("num", randomNum);
+// localStorage.setItem("num", randomNum);
 if (!Number.isNaN(parseInt(localStorage.getItem("num")))) {
     console.log("Successfully fetched the num value from localStorage");    
 } else {
     console.log("failure in fetching the num value from localStorage");
 }
-localStorage.clear();
+// localStorage.clear();
 
 
 export {ageCalculator, survivorInfMaker};
