@@ -107,3 +107,53 @@
 .padding-2rem {
     padding: 2rem;
 }
+
+.action-btn {
+    border-radius: 2rem;
+    padding: 0 0.5rem 0 0.5rem;
+    background-color: aliceblue;
+}
+
+.action-btn :hover {
+    background-color: blanchedalmond;
+}
+
+
+.width-20 {
+    width: 20rem;;
+}
+
+.background-lightgray {
+    background-color: lightgray;
+}
+
+
+/*  FlexBox */
+.display-flex {
+    display: flex;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.justify-content-spaceevenly {
+    justify-content: space-evenly;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-spacebetween {
+    justify-content: space-between;
+}
+

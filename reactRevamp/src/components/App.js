@@ -6,6 +6,7 @@ import UserDOBSection from './ReusableComponents/DOBValidator/UserDOBSection';
 import Modal from './ReusableComponents/Modal/Modal';
 import Header from './ReusableComponents/ReactRouterFeature/Header'; 
 import Dropdown from './ReusableComponents/Dropdown/Dropdown';
+import CounterApp from './ReusableComponents/CounterApp/CounterApp';
 import "./style.css";
 
 class App extends Component {
@@ -58,6 +59,7 @@ class App extends Component {
                 <div className="padding-2rem"></div>
                 <Dropdown dropdownlist = {this.state.dropdownItemsList} />
                 <div className="padding-2rem"></div>
+                <CounterApp />
             </div>
         );
     }
