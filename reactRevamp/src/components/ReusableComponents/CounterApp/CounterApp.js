@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import CounterButton from "./CounterButton";
 
 class CounterApp extends Component {
     constructor (props) {
@@ -51,23 +52,19 @@ class CounterApp extends Component {
     render () {
         return (
             <div className="background-lightgray padding-2rem">
-                <h1><bold> Count: {this.state.count} </bold></h1>
+                <h1>
+                    <strong>Count: {this.state.count}</strong>
+                </h1>
                 <br />
                 <div className="display-flex flex-direction-row justify-content-spaceevenly width-20">
                     <div className="flex-direction-column">
-                        <button className="action-btn" onClick={this.handleNumIncrement}>
-                            <h3> +1 </h3>
-                        </button>
+                        <CounterButton name=" +1 " btnAction = {this.handleNumIncrement}/>
                     </div>
                     <div className="flex-direction-column">
-                        <button className="action-btn" onClick={this.handleNumDecrement}>
-                            <h3> -1 </h3>
-                        </button>
+                        <CounterButton name=" -1 " btnAction = {this.handleNumDecrement}/>
                     </div>
                     <div className="flex-direction-column">
-                        <button className="action-btn" onClick={this.resetNumber}>
-                            <h3> Reset </h3>
-                        </button>
+                        <CounterButton name=" Reset " btnAction = {this.resetNumber}/>
                     </div>
                 </div>
             </div>
