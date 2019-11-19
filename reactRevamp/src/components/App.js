@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import PersonInfo from './ReusableComponents/PersonInfo/PersonInfo'; 
 import GroupTogglersSection from './ReusableComponents/Toggler/GroupTogglersSection';
 import Navbar from './ReusableComponents/Navbar/navbar';
@@ -7,6 +8,7 @@ import Modal from './ReusableComponents/Modal/Modal';
 import Header from './ReusableComponents/ReactRouterFeature/Header'; 
 import Dropdown from './ReusableComponents/Dropdown/Dropdown';
 import CounterApp from './ReusableComponents/CounterApp/CounterApp';
+import Indecisionapp from './ReusableComponents/indecisionApp/indecisionapp';
 import "./style.css";
 
 class App extends Component {
@@ -60,6 +62,8 @@ class App extends Component {
                 <Dropdown dropdownlist = {this.state.dropdownItemsList} />
                 <div className="padding-2rem"></div>
                 <CounterApp />
+                <div className="padding-2rem"></div>
+                <Indecisionapp />
             </div>
         );
     }
