@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 
-import Getdecisionbtn from './getdecisionbtn';
+import Getdecisionbtn from './Getdecisionbtn';
 import Options from "./decision_options/Options";
 
 import "./css/decision.css";
 
 class Indecisionapp extends Component {
-
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            decisionlist: ["material replacement", "bill payment", "Car rental confirmation"]
+        };
+    }
     getDecisionBtnFn = () => {
         console.log("--hitting getDecisionBtnFn--");
     };
 
+    
 
 
     render() {
@@ -25,7 +30,7 @@ class Indecisionapp extends Component {
                     <Getdecisionbtn getDecisionFn = {this.getDecisionBtnFn}/>
                 </div>
                 <br />
-                <Options />
+                <Options decisionlist = {this.state.decisionlist}/>
             </div>
         );
     };

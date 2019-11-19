@@ -14,7 +14,7 @@ class Option extends Component {
                     <h3>{this.state.decisionVal}</h3>
                 </div>
                 <div>
-                    <button>Remove</button>
+                    <button className="remove-decision-btn">Remove</button>
                 </div>
             </li>
         );

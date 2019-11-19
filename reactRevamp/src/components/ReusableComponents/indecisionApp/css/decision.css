@@ -41,3 +41,13 @@
 #decision-options {
     margin-right: 10rem; 
 }
+
+.remove-decision-btn {
+    border-radius: 2rem;
+    padding: 0 0.5rem 0 0.5rem;
+    background-color: rgb(164, 192, 171);
+}
+
+.remove-decision-btn:hover {
+    background-color: rgb(219, 245, 226);
+}

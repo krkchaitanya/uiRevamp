@@ -8,7 +8,7 @@ import Modal from './ReusableComponents/Modal/Modal';
 import Header from './ReusableComponents/ReactRouterFeature/Header'; 
 import Dropdown from './ReusableComponents/Dropdown/Dropdown';
 import CounterApp from './ReusableComponents/CounterApp/CounterApp';
-import Indecisionapp from './ReusableComponents/indecisionApp/indecisionapp';
+import Indecisionapp from './ReusableComponents/indecisionApp/Indecisionapp';
 import "./style.css";
 
 class App extends Component {

@@ -18,7 +18,7 @@ class Getdecisionbtn extends Component {
 }
 
 Getdecisionbtn.propTypes = {
-    whattodo: PropTypes.func.isRequired
+    getDecisionFn: PropTypes.func.isRequired
 };
 
 

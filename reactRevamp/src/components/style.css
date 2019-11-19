@@ -164,3 +164,7 @@
 .justify-content-center {
     justify-content: center;
 }
+
+.align-items-baseline {
+    align-items: baseline;
+}
