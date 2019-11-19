@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Getdecisionbtn from './getdecisionbtn';
-import Options from "./decision_option/Options";
+import Options from "./decision_options/Options";
 
 import "./css/decision.css";
 

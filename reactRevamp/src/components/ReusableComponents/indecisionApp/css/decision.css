@@ -29,3 +29,15 @@
     padding: 0 0.5rem 0 0.5rem;
     border-radius: 0.1rem;
 }
+
+#decision-option {
+    background-color: rgb(130, 150, 135);
+    align-items: baseline;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 0.3rem;
+    margin: 0.4rem 0 0.4rem 0;
+}
+
+#decision-options {
+    margin-right: 10rem; 
+}

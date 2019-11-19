@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Option from "./Option";
+
 class Options extends Component {
     render() {
         return (
@@ -16,9 +18,10 @@ class Options extends Component {
                 </div>
                 
                 {/* Decision options body */}
-                <div>
-                    
-                </div>
+                <ul  id="decision-options">
+                    <Option decisionVal="material completion"/>
+                    <Option decisionVal="material completion"/>
+                </ul>
 
             </div>
         );
