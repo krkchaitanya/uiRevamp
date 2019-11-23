@@ -11,6 +11,7 @@ class Options extends Component {
             decisionlist: props.decisionlist,
         };
     }
+
     render() {
         let optionlistarr = [];
         this.state.decisionlist.map(optnval => optionlistarr.push(<Option key={optnval} decisionVal = {optnval}/>));
