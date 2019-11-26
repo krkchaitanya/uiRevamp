@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Getdecisionbtn from './Getdecisionbtn';
 import Options from "./decision_options/Options";
+import AddOptions from "./decision_options/AddOptions";
 
 import "./css/decision.css";
 
@@ -14,17 +15,20 @@ class Indecisionapp extends Component {
         };
     }
 
-    selectDecision = () => {
+    handleSelectDecision = () => {
         this.setState((state, props) => {
             return {selectedDecision: state.decisionlist[Math.floor(Math.random()*state.decisionlist.length)]};
         });
     };
 
-
-    componentDidUpdate(prevState, nextState) {
-        console.log("prevState::", prevState.selectedDecision);
-        console.log("nextState::", nextState.selectedDecision);
-    }
+    handleAddDecisionFn = (newOption) => {
+        console.log("--entering handleAddDecisionFn--");
+        this.setState((state, props) => {
+            return {
+                decisionlist: state.decisionlist.push(newOption)
+            };
+        });
+    };
 
     render() {
         const selectedOption = this.state.selectedDecision;
@@ -36,12 +40,14 @@ class Indecisionapp extends Component {
                 <br />
                 <div className="display-flex justify-content-center">
                     <Getdecisionbtn 
-                        selectDecision = {this.selectDecision}
+                        handleSelectDecision = {this.handleSelectDecision}
                         selectedDecision={selectedOption}
                     />
                 </div>
                 <br />
                 <Options decisionlist = {this.state.decisionlist}/>
+                <br />
+                <AddOptions handleAddDecision={this.handleAddDecisionFn}/>
             </div>
         );
     };

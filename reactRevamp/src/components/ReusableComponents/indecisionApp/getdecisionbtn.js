@@ -10,10 +10,8 @@ class Getdecisionbtn extends Component {
         };
     }
 
-    componentWillReceiveProps(prevState, nextState) {
-        console.log("--Getdecisionbtn will recive props --");
-        console.log("prevState: ", prevState);
-        console.log("nextState: ", nextState);
+    componentWillReceiveProps(props) {
+        props.selectedDecision !== this.state.selectDecision && this.setState(() => ({selectedDecision: props.selectedDecision}));
     }
 
     render() {
@@ -24,7 +22,7 @@ class Getdecisionbtn extends Component {
                 <h3>What should i do ?</h3>
             </button>
             <br />
-            <h3>{this.props.selectedDecision}</h3>
+            <h3>{this.state.selectedDecision}</h3>
             </div>
         );
     }
