@@ -9,6 +9,7 @@ class Options extends Component {
         this.state = {
             decisionlist: props.decisionlist,
             handleDeleteDecisions: props.handleDeleteDecisions,
+            handleDeleteSingleDecision: props.handleDeleteSingleDecision
         };
     }
 
@@ -21,6 +22,7 @@ class Options extends Component {
             return null;
         }
     };
+
 
     render() {
         console.log("--this.state.decisionlist--", this.state.decisionlist );
@@ -40,7 +42,12 @@ class Options extends Component {
                 
                 {/* Decision options body */}
                 <ul  id="decision-options">
-                    {this.props.decisionlist.map(decision => <Option key={this.state.decisionlist.indexOf(decision)} decisionVal = {decision} />)}
+                    {this.props.decisionlist.map(decision => 
+                        <Option 
+                            key={this.state.decisionlist.indexOf(decision)} 
+                            decisionVal = {decision}
+                            handleDeleteSingleDecision = {this.props.handleDeleteSingleDecision}
+                        />)}
                 </ul>
 
             </div>

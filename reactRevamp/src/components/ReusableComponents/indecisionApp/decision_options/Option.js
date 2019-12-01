@@ -7,7 +7,10 @@ const Option = (props) => {
                 <h3>{props.decisionVal}</h3>
             </div>
             <div>
-                <button className="remove-decision-btn">Remove</button>
+                <button className="remove-decision-btn" 
+                    onClick={(e) => props.handleDeleteSingleDecision(props.decisionVal)}
+                > Remove
+                </button>
             </div>
         </li>
     );

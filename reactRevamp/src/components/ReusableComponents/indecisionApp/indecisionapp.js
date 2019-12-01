@@ -6,6 +6,7 @@ import AddOptions from "./decision_options/AddOptions";
 
 import "./css/decision.css";
 import { type } from "os";
+import { timingSafeEqual } from "crypto";
 
 class Indecisionapp extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Indecisionapp extends Component {
         this.handleDeleteDecisions = this.handleDeleteDecisions.bind(this);
         this.handleAddDecision = this.handleAddDecision.bind(this);
         this.handleSelectDecision = this.handleSelectDecision.bind(this);
+        this.handleDeleteSingleDecision = this.handleDeleteSingleDecision.bind(this);
         this.state = {
             decisionlist: ['decision1', 'decision2', 'decision3'],
             selectedDecision: '',
@@ -49,6 +51,16 @@ class Indecisionapp extends Component {
         });
     };
 
+    handleDeleteSingleDecision = (decision) => {
+        console.log(" -- deleting the decision --", decision);
+        this.state.decisionlist.includes(decision) && 
+        this.setState((prevState) => {
+            return {
+                decisionlist: prevState.decisionlist.filter(ele => ele !== decision)
+            };
+        });
+    };
+
 
     render() {
 
@@ -76,6 +88,7 @@ class Indecisionapp extends Component {
                 <Options 
                     decisionlist = {this.state.decisionlist}
                     handleDeleteDecisions = {this.handleDeleteDecisions}
+                    handleDeleteSingleDecision = {this.handleDeleteSingleDecision}
                 />
                 <br />
                 
