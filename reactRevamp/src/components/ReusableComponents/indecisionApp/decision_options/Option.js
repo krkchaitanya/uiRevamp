@@ -1,24 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Option extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            decisionVal : props.decisionVal
-        };
-    }
-    render() {
-        return (
-            <li id="decision-option" className="display-flex justify-content-spacebetween">
-                <div>
-                    <h3>{this.state.decisionVal}</h3>
-                </div>
-                <div>
-                    <button className="remove-decision-btn">Remove</button>
-                </div>
-            </li>
-        );
-    }
+const Option = (props) => {
+    return (
+        <li id="decision-option" className="display-flex justify-content-spacebetween">
+            <div>
+                <h3>{props.decisionVal}</h3>
+            </div>
+            <div>
+                <button className="remove-decision-btn">Remove</button>
+            </div>
+        </li>
+    );
 };
+
 
 export default Option;

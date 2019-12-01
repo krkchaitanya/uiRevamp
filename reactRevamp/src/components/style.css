@@ -104,14 +104,27 @@
     background-color: rgb(134, 131, 180)
 }
 
+.input-box {
+    width: 14rem;
+    border-radius: 1rem;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+}
+
 .padding-2rem {
     padding: 2rem;
 }
 .action-btn {
     border-radius: 2rem;
     padding: 0 0.5rem 0 0.5rem;
-    background-color: aliceblue;
+    background-color: rgb(126, 150, 170);
 }
+
+.action-btn-md {
+    border-radius: 2rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    background-color: rgb(184, 174, 180);
+}
+
 .action-btn :hover {
     background-color: blanchedalmond;
 }

@@ -48,10 +48,10 @@ class App extends Component {
                     React Components
                 </h2>
                 <br />
-                {/* <Header/> */}
+                <Header/>
                 <br />
                 {/* GroupTogglersSection component */}
-                {/* <GroupTogglersSection groupTogglesInputArr={this.state.togglerDataObj}/>
+                <GroupTogglersSection groupTogglesInputArr={this.state.togglerDataObj}/>
                 <div className="padding-2rem"></div>
                 <Navbar />
                 <div className="padding-2rem"></div>
@@ -61,7 +61,7 @@ class App extends Component {
                 <div className="padding-2rem"></div>
                 <Dropdown dropdownlist = {this.state.dropdownItemsList} />
                 <div className="padding-2rem"></div>
-                <CounterApp /> */}
+                <CounterApp />
                 <div className="padding-2rem"></div>
                 <Indecisionapp />
             </div>
