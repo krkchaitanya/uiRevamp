@@ -19,7 +19,7 @@ class AddOptions extends Component {
         const newDecisionVal = e.target.elements.option.value.trim();
         if(undefined != newDecisionVal &&  "" != newDecisionVal) {
           this.props.handleAddDecision(newDecisionVal);
-        };
+        }
         e.target.reset();
     };
 
@@ -34,14 +34,12 @@ class AddOptions extends Component {
 
 
     render() {
-        console.log("--isDecisionAlreadyExists--", this.state.isDecisionAlreadyExists);
-
         return(
             <div className="display-flex flex-direction-column padding-2rem ">
                <div>
                <form onSubmit={this.addNewDecision}>
-                    <input type="text" name="option" />
-                    <button>Add Option</button>
+                    <input className="input-box" type="text" name="option" />
+                    <button className="action-btn-md">Add Option</button>
                 </form>
                </div>
                 <div>
