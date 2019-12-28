@@ -16,7 +16,7 @@ class Indecisionapp extends Component {
         this.handleSelectDecision = this.handleSelectDecision.bind(this);
         this.handleDeleteSingleDecision = this.handleDeleteSingleDecision.bind(this);
         this.state = {
-            decisionlist: ['decision1', 'decision2', 'decision3'],
+            decisionlist: JSON.parse(localStorage.getItem("dicisionList")),
             selectedDecision: '',
             isDecisionAlreadyExists: false
         };
@@ -31,13 +31,18 @@ class Indecisionapp extends Component {
     };
 
     handleAddDecision = (newOption) => {      
-        console.log("-- executed handleAddDecision fn --");
 
         this.state.decisionlist.includes(newOption) ?
-        this.setState(() => ({isDecisionAlreadyExists: true})) :
         this.setState(() => {
+            return {isDecisionAlreadyExists: true};
+        }) :
+        this.setState(() => {
+            // Update the array using the array concat() method
+            // update the dicisionList variable value at localStorage
+            let newlyFormedSecisionList = JSON.parse(localStorage.getItem("dicisionList")).concat([newOption]);
+            localStorage.setItem("dicisionList", JSON.stringify(newlyFormedSecisionList));
             return {
-                decisionlist: this.state.decisionlist.concat([newOption]),
+                decisionlist: JSON.parse(localStorage.getItem("dicisionList")),
                 isDecisionAlreadyExists: false
             };
         })
@@ -45,6 +50,7 @@ class Indecisionapp extends Component {
 
     handleDeleteDecisions = () => {
         this.setState(() => {
+            localStorage.setItem("dicisionList", "[]");
             return {
                 decisionlist: []
             };
@@ -52,15 +58,29 @@ class Indecisionapp extends Component {
     };
 
     handleDeleteSingleDecision = (decision) => {
-        console.log(" -- deleting the decision --", decision);
-        this.state.decisionlist.includes(decision) && 
-        this.setState((prevState) => {
-            return {
-                decisionlist: prevState.decisionlist.filter(ele => ele !== decision)
-            };
-        });
+
+        if (this.state.decisionlist.includes(decision)) {
+            // remove the item from array in localStorage
+            // set the updated array value in localStorage variable
+            let updatedDecisionListArray = JSON.parse(localStorage.getItem("dicisionList")).filter(ele => ele !== decision);
+            localStorage.setItem("dicisionList", JSON.stringify(updatedDecisionListArray));
+            // update the state value
+            this.setState((prevState) => {
+                return {
+                    decisionlist: prevState.decisionlist.filter(ele => ele !== decision)
+                };
+            });
+        }; 
     };
 
+    componentWillMount() {
+        if (null == localStorage.getItem("dicisionList")) {
+            localStorage.setItem("dicisionList", "[]");
+        }
+        this.setState(() => ({decisionlist: JSON.parse(localStorage.getItem("dicisionList"))}));
+        console.log(" triggered componentWillMount from indecisionapp.js file:: ");
+        
+    }
 
     render() {
 

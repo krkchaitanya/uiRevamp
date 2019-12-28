@@ -14,9 +14,16 @@ class AddOptions extends Component {
     };
 
     addNewDecision = (e) => {
-        console.log(" -- executing addNewDecision methos -- ");
+        this.setState(() => ({ addingNewDecisionErrMsg : "" }));
+
         e.preventDefault();
         const newDecisionVal = e.target.elements.option.value.trim();
+
+        if (undefined == newDecisionVal || newDecisionVal.length == 0) {
+            this.setState(() => ({ addingNewDecisionErrMsg : "Enter valid decision value" }));
+        };
+
+        
         if(undefined != newDecisionVal &&  "" != newDecisionVal) {
           this.props.handleAddDecision(newDecisionVal);
         }
@@ -44,6 +51,7 @@ class AddOptions extends Component {
                </div>
                 <div>
                 <p>{this.state.isDecisionAlreadyExists && "Decision Already Exists"}</p>
+                <p>{this.state.addingNewDecisionErrMsg && this.state.addingNewDecisionErrMsg} </p>
                 </div>
             </div>
         );
