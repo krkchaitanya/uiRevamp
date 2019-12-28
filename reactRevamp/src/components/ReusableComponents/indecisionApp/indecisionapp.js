@@ -34,7 +34,9 @@ class Indecisionapp extends Component {
 
         this.state.decisionlist.includes(newOption) ?
         this.setState(() => {
-            return {isDecisionAlreadyExists: true};
+            return {
+                isDecisionAlreadyExists: true,
+            };
         }) :
         this.setState(() => {
             // Update the array using the array concat() method
@@ -43,7 +45,8 @@ class Indecisionapp extends Component {
             localStorage.setItem("dicisionList", JSON.stringify(newlyFormedSecisionList));
             return {
                 decisionlist: JSON.parse(localStorage.getItem("dicisionList")),
-                isDecisionAlreadyExists: false
+                isDecisionAlreadyExists: false,
+                selectedDecision: ''
             };
         })
     };
