@@ -14,24 +14,55 @@
         use Block Element Modifier naming convention
     -->
     <div class="header">
-        <div class="header_elements display-flex align-items-baseline justify-content-space-between">
+        <div class="header_elements display-flex flex-direction-row align-items-baseline justify-content-space-between">
+
+
             <!-- logo -->
             <div class="header_elements--logo">
                 <h3>StackThings</h3>
             </div>
+            
             <!-- navbar -->
             <div class="header_elements--nav">
-                <ul class="header_elements--navbar ">
-                    <li class="header_elements--navbar-landing">Landing</li>
-                    <li class="header_elements--navbar-pages">Pages</li>
-                    <li class="header_elements--navbar-account">Account</li>
-                    <li class="header_elements--navbar-documentation">Documentation</li>
+                <ul class="header_elements--navbar">
+                    
+                    <!-- landing -->
+                    <li class="header_elements--navbar-landing">
+                        <h3>Landing</h3>
+                        <div class="hovercontent">
+                            <div class="hovercontent_landing position-fixed">
+                                <div class="hovercontent_landing--section1 width-50percent float-left">
+                                    <p>Section1</p>
+                                </div>
+                                <div class="hovercontent_landing--section2 width-50percent float-left">
+                                    <p>Section2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+
+                    <!-- pages -->
+                    <li class="header_elements--navbar-pages">
+                        <h3>Pages</h3>
+                    </li>
+                    <!-- account -->
+                    <li class="header_elements--navbar-account">
+                        <h3>Account</h3>
+                    </li>
+                    <!-- documentation -->
+                    <li class="header_elements--navbar-documentation">
+                        <h3>Documentation</h3>
+                    </li>
                 </ul>
             </div>
+            
             <!-- buynow button -->
             <div class="header_elements--btn">
                 <button class="header_elements--btn-buynow">BuyNow</button>
             </div>
+
+
         </div>
     </div>
 

@@ -1,16 +1,43 @@
+/* declaring global variables */
+:root {
+    --blue-color: blue;
+    --font-size-md: 1rem;
+    --border-radius-sm: 0.5rem;
+    --text-white: white;
+    --padding-sm: 0.5rem;
+    --padding-md: 1rem;
+    --font-family-sans: font-family: ;
+    --font-size-larger: larger;
+    --font-size-large: large;
+    --font-size-medium: medium;
+    --display-none: none;   
+}
+
+
 /* common utils */
-.display-flex {
-    display: flex;
+.display-flex { display: flex; }
+.display-grid { display: grid; }
+.flex-direction-row { flex-direction: row; }
+.flex-direction-column { flex-direction: column; } 
+.align-items-baseline { align-items: baseline; }
+.justify-content-space-between { justify-content: space-between; }
+.padding-left-sm { padding-left: 0.5rem; }
+.display-hidden { display: hidden; }
+.position-fixed { position: fixed; }
+.width-50percent { width: 50% ;}
+.float-left { float: left; }
+
+
+/* body section */
+body {
+    font-family: sans-serif;
+    padding: 0 15rem 0 15rem;
 }
-.align-items-baseline {
-    align-items: baseline;
+
+.header {
+    font-size: var(--font-size-larger);
 }
-.justify-content-space-between {
-    justify-content: space-between;
-}
-.padding-left-sm {
-    padding-left: 0.5rem;
-}
+
 
 /* header section */
 .header_elements--navbar  {
@@ -19,5 +46,47 @@
 }
 .header_elements--navbar > li {
     display: inline-block;
-    padding-left: 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+}
+.header_elements--navbar > li :hover {
+    text-decoration: rgb(142, 173, 185) underline;
+}
+
+.header_elements--logo {
+    color: var(--blue-color);
+}
+
+.header_elements--btn > button {
+    border-radius: var(--border-radius-sm);
+    background-color: var(--blue-color);
+    color: var(--text-white);
+    padding: 0.6rem 1rem 0.6rem 1rem;
+}
+.navbaritemhover_landing {
+    display: var(--display-none);
+}
+
+.navbaritemhover_landing {
+    padding: 5rem;
+    width: 20rem;
+    background-color: lightblue;
+    margin-top: 5rem;
+    z-index: 10rem !important;
+}
+
+.navbaritemhover_landing > div {
+    width: 10rem;
+    float: left;
+}
+
+.hovercontent > .hovercontent_landing {
+    display: none;
+    position: fixed;
+    z-index: 10rem;
+    background-color: rgb(142, 173, 185);
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    vertical-align: baseline;
+    width: 20rem;
+    height: 7rem;
 }
