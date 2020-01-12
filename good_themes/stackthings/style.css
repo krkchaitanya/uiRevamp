@@ -32,6 +32,7 @@
 body {
     font-family: sans-serif;
     padding: 0 15rem 0 15rem;
+    background-color: rgb(218, 223, 226);
 }
 
 .header {
@@ -79,7 +80,11 @@ body {
     float: left;
 }
 
-.hovercontent > .hovercontent_landing {
+.hovercontent_landing,
+.hovercontent_pages,
+.hovercontent_account,
+.hovercontent_documentation
+{
     display: none;
     position: fixed;
     z-index: 10rem;
