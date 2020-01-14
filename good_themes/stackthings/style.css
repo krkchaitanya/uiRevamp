@@ -10,7 +10,10 @@
     --font-size-larger: larger;
     --font-size-large: large;
     --font-size-medium: medium;
+    --font-size-small: small;
     --display-none: none;   
+    --align-items-center: center;
+    --text-align-center: center;
 }
 
 
@@ -31,55 +34,31 @@
 /* body section */
 body {
     font-family: sans-serif;
-    padding: 0 15rem 0 15rem;
     background-color: rgb(218, 223, 226);
 }
 
+/* header */
 .header {
-    font-size: var(--font-size-larger);
+    font-size: var(--font-size-small);
 }
 
-
-/* header section */
-.header_elements--navbar  {
-    list-style-type: none;
-    display: flex;
-}
-.header_elements--navbar > li {
-    display: inline-block;
-    padding: 0 0.5rem 0 0.5rem;
-}
-.header_elements--navbar > li :hover {
-    text-decoration: rgb(142, 173, 185) underline;
+/* header elements */
+.header_elements {
+    grid-template-columns: 30% 10% 10% 10% 10% 30%;
+    grid-template-rows: 3rem;
+    align-items: var(--align-items-center);
 }
 
-.header_elements--logo {
+/* logo */
+.header_element--logo {
     color: var(--blue-color);
 }
 
-.header_elements--btn > button {
-    border-radius: var(--border-radius-sm);
-    background-color: var(--blue-color);
-    color: var(--text-white);
-    padding: 0.6rem 1rem 0.6rem 1rem;
-}
-.navbaritemhover_landing {
-    display: var(--display-none);
-}
-
-.navbaritemhover_landing {
-    padding: 5rem;
-    width: 20rem;
-    background-color: lightblue;
-    margin-top: 5rem;
-    z-index: 10rem !important;
-}
-
-.navbaritemhover_landing > div {
-    width: 10rem;
-    float: left;
-}
-
+/* navbar >> hover elements */
+.hover_element {
+    text-align: center;
+} 
+/* hidden hover content :: navbar elements */
 .hovercontent_landing,
 .hovercontent_pages,
 .hovercontent_account,
@@ -92,6 +71,16 @@ body {
     border-radius: var(--border-radius-sm);
     padding: 0.5rem 4rem 0.5rem 4rem;
     vertical-align: baseline;
-    width: 20rem;
+    width: 16rem;
     height: 7rem;
+}
+
+
+/* buynow button */
+.header_element--btn > button {
+    border-radius: var(--border-radius-sm);
+    background-color: var(--blue-color);
+    color: var(--text-white);
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    float: right;
 }
