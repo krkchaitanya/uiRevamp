@@ -1,6 +1,9 @@
 /* declaring global variables */
 :root {
-    --blue-color: blue;
+    --blue-color: #007bff;
+    --bg-light-blue: rgb(213, 223, 238);
+    --color-gray:gray;
+    --color-slategray: slategray;
     --font-size-md: 1rem;
     --border-radius-sm: 0.5rem;
     --text-white: white;
@@ -47,20 +50,20 @@
 .justify-self-start { justify-self: start;  }
 .justify-self-end   { justify-self: end;    }
 .justify-self-center{ justify-self: center; }
-
+.color-blue { color: var(--blue-color); }
 
 /* body section */
 body {
     font-family: sans-serif;
     margin: 0px 0px;
-    padding: 0 3rem 0 3rem;
+    padding: 0 15rem 0 15rem;
+    overflow-y: hidden;
 }
 
 /* header */
 .header {
     font-size: var(--font-size-small);
-    background-color: rgb(152, 185, 230);
-    padding: 0 1rem 0 1rem;
+    background-color: var(--bg-light-blue);
     border-radius: 0.2rem;
 }
 
@@ -74,6 +77,8 @@ body {
 /* logo */
 .header_element--logo {
     color: var(--blue-color);
+    font-size: var(--font-size-md);
+    margin-left: 0.2rem;
 }
 
 /* navbar >> hover elements */
@@ -89,12 +94,15 @@ body {
     display: none;
     position: fixed;
     z-index: 10rem;
-    background-color: rgb(142, 173, 185);
+    background-color: var(--bg-light-blue);
     border-radius: var(--border-radius-sm);
     padding: 0.5rem 4rem 0.5rem 4rem;
     vertical-align: baseline;
     width: 16rem;
     height: 7rem;
+    border: 2px solid lightblue;
+    margin-left: -8rem;
+    opacity: 0.8;
 }
 
 
@@ -107,6 +115,7 @@ body {
     color: var(--text-white);
     padding: 0.6rem 1rem 0.6rem 1rem;
     float: right;
+    margin-right: 0.2rem;
 }
 
 
@@ -114,12 +123,49 @@ body {
 .welcome_gridcontainer {
     grid-template-rows: 20rem;
     grid-template-columns: 50% 50%;
-    font-size: var(--font-size-x-large);    
-
+    font-size: var(--font-size-x-large);
 }
 
 .welcome_gridcontainer--element-2 {
     background: url(./assets/whitebg.jpeg) no-repeat;
     background-size: cover;
     background-position: var(--img-bgpos-center);
+}
+
+
+/* ====================features section======================= */
+.features_gridcontainer {
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 33.33% 33.33% 33.33%; 
+    grid-row-gap: 0.5rem;
+    grid-column-gap: 0.5rem;
+    justify-items: start;
+    align-items: center;
+    align-content: space-between;
+}
+
+.features_gridcontainer > div > i {
+     font-size: 4rem;
+     opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+/* ================Media queries===================  */
+
+@media all and (min-width: 1200px) and (max-width: 1500px) {
+    body {
+        padding: 0rem 5rem 0rem 5rem;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    body {
+        padding: 0rem 1rem 0rem 1rem;
+    }
 }
