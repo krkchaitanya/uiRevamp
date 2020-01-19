@@ -14,6 +14,12 @@
     --display-none: none;   
     --align-items-center: center;
     --text-align-center: center;
+    --font-size-x-large: x-large;
+    --font-size-large: large;
+    --font-size-small: small;
+    --img-bgpos-center: center;
+    --img-bgpos-top: top;
+    --img-bgpos-bottom: bottom;
 }
 
 
@@ -42,6 +48,7 @@
 .justify-self-end   { justify-self: end;    }
 .justify-self-center{ justify-self: center; }
 
+
 /* body section */
 body {
     font-family: sans-serif;
@@ -52,6 +59,9 @@ body {
 /* header */
 .header {
     font-size: var(--font-size-small);
+    background-color: rgb(152, 185, 230);
+    padding: 0 1rem 0 1rem;
+    border-radius: 0.2rem;
 }
 
 /* header elements */
@@ -104,9 +114,12 @@ body {
 .welcome_gridcontainer {
     grid-template-rows: 20rem;
     grid-template-columns: 50% 50%;
+    font-size: var(--font-size-x-large);    
+
 }
 
 .welcome_gridcontainer--element-2 {
     background: url(./assets/whitebg.jpeg) no-repeat;
     background-size: cover;
+    background-position: var(--img-bgpos-center);
 }
