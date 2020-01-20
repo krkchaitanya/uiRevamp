@@ -51,6 +51,8 @@
 .justify-self-end   { justify-self: end;    }
 .justify-self-center{ justify-self: center; }
 .color-blue { color: var(--blue-color); }
+.pos-fixed  { position: fixed; }
+
 
 /* body section */
 body {
@@ -85,6 +87,16 @@ body {
 .hover_element {
     text-align: center;
 } 
+
+.hover_element:hover {
+    color: var(--blue-color);
+} 
+
+.hovercontent > div > span {
+    margin-top: -0.8rem;
+}
+
+
 /* hidden hover content :: navbar elements */
 .hovercontent_landing,
 .hovercontent_pages,
@@ -119,7 +131,7 @@ body {
 }
 
 
-/* welcome section */
+/* =====================welcome section===================== */
 .welcome_gridcontainer {
     grid-template-rows: 20rem;
     grid-template-columns: 50% 50%;
@@ -144,7 +156,7 @@ body {
     align-content: space-between;
 }
 
-.features_gridcontainer > div > i {
+.feature-ele > span {
      font-size: 4rem;
      opacity: 0.8;
 }
