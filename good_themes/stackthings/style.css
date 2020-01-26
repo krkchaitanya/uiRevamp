@@ -53,6 +53,12 @@
 .color-blue { color: var(--blue-color); }
 .pos-fixed  { position: fixed; }
 
+/* DOM elements */
+strong {
+    font-family: cursive;
+    color: var(--blue-color);
+}
+
 
 /* body section */
 body {
@@ -131,21 +137,32 @@ body {
 }
 
 
-/* =====================welcome section===================== */
+/* =====================welcome section start===================== */
 .welcome_gridcontainer {
-    grid-template-rows: 20rem;
-    grid-template-columns: 50% 50%;
+    display: grid;
     font-size: var(--font-size-x-large);
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
 }
 
-.welcome_gridcontainer--element-2 {
+.welcome_gridcontainer > div {
+    min-width: 20rem;
+}
+
+.welcome_gridcontainer--element-2 > img{
     background: url(./assets/whitebg.jpeg) no-repeat;
-    background-size: cover;
-    background-position: var(--img-bgpos-center);
+    background-position: bottom;
+    padding: 8rem 12rem 8rem 12rem;
+    border-radius: 0.3rem;
 }
 
+/* =====================welcome section end===================== */
 
-/* ====================features section======================= */
+
+
+
+/* ====================features section start======================= */
 .features_gridcontainer {
     grid-template-rows: 50% 50%;
     grid-template-columns: 33.33% 33.33% 33.33%; 
@@ -160,19 +177,23 @@ body {
      font-size: 4rem;
      opacity: 0.8;
 }
+/* =====================features section end===================== */
 
 
-/* ==================brands======================= */
+
+/* =======================brands========================= */
 .brands {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: rgb(178, 192, 209);
     border-top: 1px solid rgb(178, 192, 209);
     border-bottom: 1px solid rgb(178, 192, 209);
+    flex-wrap: wrap;
 }
 
 .brands > .brand_element {
     padding: 1rem 0 1rem 0;
+    margin: 0 1rem 0 1rem;
 }
 
 
@@ -221,14 +242,38 @@ footer {
 
 /* ================Media queries===================  */
 
-@media all and (min-width: 1200px) and (max-width: 1500px) {
-    body {
-        padding: 0rem 5rem 0rem 5rem;
+/* large */
+@media all and (min-width: 1200px){
+
+    .welcome_gridcontainer {
+        grid-template-columns: repeat(2, minmax(5rem, 30rem));
     }
+
 }
 
-@media all and (max-width: 1200px) {
+
+/* medium */
+@media all and (min-width: 900px) and (max-width: 1200px){
+
     body {
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0 10rem 0 10rem;
+    }
+
+    .welcome_gridcontainer {
+        grid-template-columns: 25rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+ 
+}
+
+/* small */
+@media all and (min-width: 768px) and (max-width: 900px) {
+    body {
+        padding: 0 5rem 0 5rem;
+    }
+    .welcome_gridcontainer {
+        justify-content: center;
     }
 }
