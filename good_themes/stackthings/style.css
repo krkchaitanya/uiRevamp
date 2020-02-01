@@ -4,6 +4,7 @@
     --bg-light-blue: rgb(213, 223, 238);
     --color-gray:gray;
     --color-slategray: slategray;
+    --color-vltgray: rgb(252, 252, 253);
     --font-size-md: 1rem;
     --border-radius-sm: 0.5rem;
     --text-white: white;
@@ -38,9 +39,15 @@
 .position-fixed { position: fixed; }
 .width-50percent { width: 50% ;}
 .float-left { float: left; }
+.mt-sm { margin-top: 0.5rem; }
+.mt-md { margin-top: 1rem; }
+.mt-lg { margin-top: 3rem; }
 .pt-lg { padding-top: 5rem; }
 .pt-md { padding-top: 3rem; }
 .pt-sm { padding-top: 0.5rem; }
+.pb-lg { padding-bottom: 5rem; }
+.pb-md { padding-bottom: 3rem; }
+.pb-sm { padding-bottom: 0.5rem; }
 .pad-lr-sm { padding: 0rem 1rem 0rem 1rem; }
 .pad-lr-md { padding: 0rem 3rem 0rem 3rem; }
 .pad-lr-lg { padding: 0rem 5rem 0rem 5rem; }
@@ -195,6 +202,50 @@ body {
     padding: 1rem 0 1rem 0;
     margin: 0 1rem 0 1rem;
 }
+
+
+/* ===========About============== */
+.about-grid-container {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 35% 65%;
+    grid-gap: 1rem 1rem;
+}
+
+.about-grid-container > div {
+    align-self: center;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--color-vltgray);
+}
+
+.card > .card_info > h3 {
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid rgb(172, 176, 185);
+    color: rgb(114, 119, 126);
+}
+
+.card > .card_img > img {
+    background: url(./assets/cardimg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+    min-height: 20rem;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+dashboard-img > img {
+
+}
+
+
+
+
+
+
+
+
 
 
 /* ====================footer=================== */
