@@ -10,7 +10,6 @@
     --text-white: white;
     --padding-sm: 0.5rem;
     --padding-md: 1rem;
-    --font-family-sans: font-family: ;
     --font-size-larger: larger;
     --font-size-large: large;
     --font-size-medium: medium;
@@ -35,7 +34,7 @@
 .align-items-baseline { align-items: baseline; }
 .justify-content-space-between { justify-content: space-between; }
 .padding-left-sm { padding-left: 0.5rem; }
-.display-hidden { display: hidden; }
+.display-hidden { display: none; }
 .position-fixed { position: fixed; }
 .width-50percent { width: 50% ;}
 .float-left { float: left; }
@@ -206,7 +205,7 @@ body {
 }
 
 
-/* ===========About============== */
+/* ===========About section start============== */
 .about-grid-container {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 35% 65%;
@@ -262,10 +261,10 @@ body {
     text-align: center;
     background-image: linear-gradient(45deg, white, rgb(199, 199, 199));
     border-radius: 1rem;
-};
+}
 .text-info > p {
-    font-family: cursive !important;
-};
+    font-family: cursive;
+}
 #text-info_3 > ul {
     list-style-type: none;
     align-items: center;
@@ -279,10 +278,28 @@ body {
 }
 .exp-container p {
     color: grey;
-};
+}
 .exp-icon {
-    color: var(--blue-color)
-};
+    color: var(--blue-color);
+}
+/* ===========About section end============== */
+
+
+/* =========Testimonial section start======== */
+.testimonial_block > .testimonial_element {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    text-align: center;
+}
+
+/* =========Testimonial section end======== */
+
+
+
+
+
 
 
 
