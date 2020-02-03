@@ -60,6 +60,7 @@
 .color-blue { color: var(--blue-color); }
 .pos-fixed  { position: fixed; }
 
+
 /* DOM elements */
 strong {
     font-family: cursive;
@@ -69,7 +70,6 @@ strong {
 
 /* body section */
 body {
-    font-family: sans-serif;
     margin: 0px 0px;
     padding: 0 15rem 0 15rem;
     overflow-y: auto;
@@ -80,6 +80,7 @@ body {
     font-size: var(--font-size-small);
     background-image: linear-gradient(45deg, lightblue, rgb(126, 137, 143));
     border-radius: 0.2rem;
+    font-family: cursive;
 }
 
 /* header elements */
@@ -177,7 +178,8 @@ body {
     grid-column-gap: 0.5rem;
     justify-items: start;
     align-items: center;
-    align-content: space-between;
+    align-content: space-between;    
+    font-family: sans-serif;
 }
 
 .feature-ele > span {
@@ -209,6 +211,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 35% 65%;
     grid-gap: 1rem 1rem;
+    font-family: cursive;
 }
 
 .about-grid-container > div {
@@ -235,6 +238,18 @@ body {
     border-bottom-right-radius: 3rem;
     border-bottom-left-radius: 3rem;
 }
+
+#dwld-smpl-btn {
+    border-radius: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: rgb(145, 167, 151);
+    font-family: sans-serif;
+    font-weight: 700;
+}
+#dwld-smpl-btn:hover {
+    background-color: rgb(115, 143, 123);
+}
+
 .dashboard-img > img {
     background: url(./assets/dashkit.jpg);
     background-repeat: no-repeat;
@@ -243,9 +258,31 @@ body {
     box-sizing: border-box;
 }
 
-
-
-
+.text-info {
+    text-align: center;
+    background-image: linear-gradient(45deg, white, rgb(199, 199, 199));
+    border-radius: 1rem;
+};
+.text-info > p {
+    font-family: cursive !important;
+};
+#text-info_3 > ul {
+    list-style-type: none;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+}
+#text-info_3 > ul >li {
+    display: inline-block;
+    min-width: 15rem;
+    text-align: start;
+}
+.exp-container p {
+    color: grey;
+};
+.exp-icon {
+    color: var(--blue-color)
+};
 
 
 
@@ -322,9 +359,9 @@ footer {
 
     .about-grid-container {
         grid-template-rows: repeat(4,1fr);
-        grid-template-columns: 1fr;
+        grid-template-columns: 50rem;
         grid-row-gap: 0.5rem;
-
+        justify-content: center;
     }
 
  
