@@ -6,6 +6,7 @@
   "scripts": {
     "webpack": "webpack",
     "devserver": "webpack-dev-server",
+    "zserver":"nodemon z_server/mainServer.js",
     "client": "webpack --mode development --watch",
     "production": "webpack --mode production",
     "develop": "webpack --watch --config webpack.dev.js",

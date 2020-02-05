@@ -3,6 +3,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { NODE_ENV = 'development' } = process.env;
 
 module.exports = {
+
+  // mode
+  mode: NODE_ENV,
+  
+  // entry
   entry:{
     main : './src/index.js',
     es6_es7: './Spotlight/es6-es7/jsFeatures.js' ,
@@ -15,11 +20,14 @@ module.exports = {
     basicLiterals2: './basic_literals/basic_literals2.js',
     basicLiterals3: './basic_literals/basic_literals3.js'
     },
+
+    // output
     output :{
       path :path.join(__dirname, './dist'),
       filename: "js/[name].min.js"
     },
-    mode: NODE_ENV,
+   
+    // module
     module: {
         rules: [
             {
@@ -39,6 +47,8 @@ module.exports = {
             }
         ]
     },
+
+    // plugins
     plugins: [
       new HtmlWebpackPlugin({
         filename: "jsFeatures.html",
@@ -49,6 +59,8 @@ module.exports = {
         template: "./reactRevamp/src/index.html"
       })
     ],
+
+    // dev server
     devServer: {
         port: 2700,
         compress: true,
@@ -57,5 +69,7 @@ module.exports = {
         proxy: {
             "/api": "http://localhost:2600"
         }
-      }
+    }
+
+
 };
