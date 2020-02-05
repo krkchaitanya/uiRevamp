@@ -285,14 +285,27 @@ body {
 /* ===========About section end============== */
 
 
+
+
+
 /* =========Testimonial section start======== */
+
 .testimonial_block > .testimonial_element {
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem;
     text-align: center;
 }
+.testimonial_element--1 > h2 { 
+    color: var(--blue-color);
+    font-size: 2rem;
+    font-family: monospace;
+ }
+.testimonial_element--1 > p { color: gray; }
+
+
 
 /* =========Testimonial section end======== */
 
