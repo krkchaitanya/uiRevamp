@@ -158,7 +158,7 @@ body {
 }
 
 .welcome_gridcontainer--element-2 > img{
-    background: url(./assets/whitebg.jpeg) no-repeat;
+    background: url(./imgs/whitebg.jpeg) no-repeat;
     background-position: bottom;
     padding: 8rem 12rem 8rem 12rem;
     border-radius: 0.3rem;
@@ -229,7 +229,7 @@ body {
 }
 
 .card > .card_img > img {
-    background: url(./assets/cardimg.jpg);
+    background: url(./imgs/cardimg.jpg);
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
@@ -250,7 +250,7 @@ body {
 }
 
 .dashboard-img > img {
-    background: url(./assets/dashkit.jpg);
+    background: url(./imgs/dashkit.jpg);
     background-repeat: no-repeat;
     background-position: center;
     padding: 15rem 30rem 15rem 30rem;
