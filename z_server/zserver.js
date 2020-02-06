@@ -6,6 +6,7 @@ const path = require("path");
 const parallaxRouter = require("./routes/parallaxRoute");
 const stackThingsRouter = require("./routes/stackThingsRoute");
 const finalActThemeRouter = require("./routes/finalActThemeRoute");
+const gradientRouter = require("./routes/gradientRoute");
 
 
 // server initialization
@@ -25,10 +26,13 @@ mainServer.use('/parallax', parallaxRouter);
 mainServer.use('/stackThings', stackThingsRouter);
 mainServer.use(express.static(path.join(__dirname, "../good_themes/stackthings")));
 
-// finalAct theme
+// finalActPhotography theme
 mainServer.use('/finalActPhotography', finalActThemeRouter);
 mainServer.use(express.static(path.join(__dirname, "../FinalAct_photography")));
 
+//css gradient
+mainServer.use('/gradient', gradientRouter);
+mainServer.use(express.static(path.join(__dirname, "../cssAnimations"))); 
 
 // ==============Middlewares start===============
 
@@ -45,6 +49,6 @@ mainServer.get("/", (req, res) => {
 
 
 
-// main server port
+// Zserver port
 const {PORT = 2800} = process.env;
 mainServer.listen(PORT, () => console.log("MainServer is running on the port >>> ", PORT));
