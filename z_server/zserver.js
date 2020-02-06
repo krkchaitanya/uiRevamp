@@ -5,6 +5,8 @@ const path = require("path");
 // dependency routes
 const parallaxRouter = require("./routes/parallaxRoute");
 const stackThingsRouter = require("./routes/stackThingsRoute");
+const finalActThemeRouter = require("./routes/finalActThemeRoute");
+
 
 // server initialization
 const mainServer = express();
@@ -22,6 +24,10 @@ mainServer.use('/parallax', parallaxRouter);
 // stackThings theme
 mainServer.use('/stackThings', stackThingsRouter);
 mainServer.use(express.static(path.join(__dirname, "../good_themes/stackthings")));
+
+// finalAct theme
+mainServer.use('/finalActPhotography', finalActThemeRouter);
+mainServer.use(express.static(path.join(__dirname, "../FinalAct_photography")));
 
 
 // ==============Middlewares start===============
