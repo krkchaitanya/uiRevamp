@@ -1,6 +1,6 @@
 
 body{
-    padding: 0;
+    padding: 4rem;
     margin: 0;
     background-image: linear-gradient( rgb(36, 44, 38), rgb(146, 155, 149)); 
     background-repeat: no-repeat;
@@ -17,15 +17,22 @@ ul {
     list-style-type: none;
 }
 
+ul > li {
+    padding: 1rem 0 1rem 1rem;
+}
+
+
 li > a {
+    margin-left: 1rem;
     font-size: 3rem;
     font-family: cursive;
     color: rgb(38, 43, 38);
     text-decoration: none;
     font-weight: bolder;
+    padding-left: 1rem;
 }
 
-li > a:hover {
+li:hover {
     text-shadow: 0.2rem 0.2rem 0.2rem rgb(40, 44, 40);
     font-size: 3.5rem;
 }
@@ -33,3 +40,11 @@ li > a:hover {
 #zserver-themes {
     padding: 5rem 0 10rem 0;
 }
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid rgb(30, 32, 30);
+  }
