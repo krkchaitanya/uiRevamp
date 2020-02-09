@@ -1,0 +1,35 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient( rgb(36, 44, 38), rgb(146, 155, 149)); 
+    background-repeat: no-repeat;
+    background-color: rgb(146, 155, 149);
+}
+
+header > h2 {
+    text-shadow: 0.2rem 0.2rem 0.2rem rgb(155, 197, 155);
+    font-family: monospace;
+    font-size: 4rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li > a {
+    font-size: 3rem;
+    font-family: cursive;
+    color: rgb(38, 43, 38);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+li > a:hover {
+    text-shadow: 0.2rem 0.2rem 0.2rem rgb(40, 44, 40);
+    font-size: 3.5rem;
+}
+
+#zserver-themes {
+    padding: 5rem 0 10rem 0;
+}

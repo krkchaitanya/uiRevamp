@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 // dependency routes
+const defaultRouter =  require("./routes/defaultRoute");
 const parallaxRouter = require("./routes/parallaxRoute");
 const stackThingsRouter = require("./routes/stackThingsRoute");
 const finalActThemeRouter = require("./routes/finalActThemeRoute");
@@ -13,10 +14,15 @@ const gradientRouter = require("./routes/gradientRoute");
 const mainServer = express();
 
 
+
 // ==============Middlewares start===============
 
 mainServer.use(bodyParser.json());
 mainServer.use(bodyParser.urlencoded({extended: false}));
+
+// Default route
+mainServer.use("/", defaultRouter);
+mainServer.use("/zserver", express.static(path.join(__dirname, "./zserver_utils")));
 
 // parallax theme
 mainServer.use('/parallaxAssets', express.static(path.join(__dirname,"../parallax/assets")));
@@ -37,15 +43,6 @@ mainServer.use(express.static(path.join(__dirname, "../cssAnimations")));
 // ==============Middlewares start===============
 
 
-
-
-// default route
-mainServer.get("/", (req, res) => {
-    res.send({
-        title: "Main server",
-        Description: "Currently we are in the default route of the mainServer"
-    });
-});
 
 
 
