@@ -26,8 +26,8 @@ li > a {
     margin-left: 1rem;
     font-size: 3rem;
     font-family: cursive;
-    color: rgb(38, 43, 38);
-    text-decoration: none;
+    color: rgb(38, 40, 43);
+    text-decoration: underline;
     font-weight: bolder;
     padding-left: 1rem;
 }

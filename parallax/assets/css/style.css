@@ -5,22 +5,25 @@ body {
     line-height: 1.5;
     font-family: 15px;
     background-color: #ffffff;
+    overflow-x: hidden;
+    border-top: #813d3d 3px solid;
+    border-bottom: #813d3d 3px solid;
 }
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
+
 header {
     background: #3d3e47;
     color: #ffffff;
-    padding-top: 20px;
-    min-height: 50px;
+    min-height: 40px;
     border-bottom: #813d3d 3px solid;
 }
-header .highlight {
-    color: #ad6666!important;
+
+header > .container {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 header a {
     color: #ffffff;
     text-decoration: none;
@@ -29,47 +32,66 @@ header a {
 }
 
 header #branding {
+    width: 50%;
     float: left;
 }
 
-header #branding h1{
-    margin: 0;
-}
-
-header nav {
+header #navbar{
     float: right;
-    margin-top: 15px
+    margin-top: 15px;
+    width: 50%;
 }
 
-header ul{
+#branding > h1{
     margin: 0;
-    padding: 0;
+    font-size: 2rem;
+}
+
+nav > ul{
+    margin: 0;
+    padding-right: 1rem;
     display: inline-block;
+    float: right;
 } 
 header ul li {
     display: inline;
     padding:  0 20px 0 20px;
-    float: left;
 }
+
+ul > li > a:hover {
+    color: salmon;
+}
+
 img{
     width: 100px;
     height: 100px;
 }
+
 #showcase {
-    text-align: center;
     background: url("../images/4x4-desert-dust-1149066.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    top: -200px;
     min-height: 500px;
-    background-position: 50% 200%;
+    background-position-y: 70%;
     background-size: cover;
     opacity: 0.8;
 }
+
+#showcase > .container {
+    width: 40%;
+    float: left;
+    padding-left: 1rem;
+}
+
+#showcase > .container > p {
+    color: gray;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
 #showcase .highlight {
-    margin-top: 200px;
-    color: #ffffff;
-    font-size: 50px;
+    color: rgb(119, 79, 67);
+    font-size: 4rem;
+    text-shadow: 0.2rem 0.2rem 0.3rem black;
 }
 #newsletter {
     text-align: center;
@@ -94,14 +116,15 @@ button:hover {
     width: 100%;
 }
 #boxes .container {
-    width: 33.33%;
     display: inline;
+    width: 33.33%;
     float: left;
     text-align: center;
     opacity: 0.5;
     padding: 10px 0 10px 0;
 }
-footer .container{
+footer > .container{
+    overflow: hidden;
     background-color: #3d3e47;
     height: 75px;
     width: 100%;
@@ -109,4 +132,19 @@ footer .container{
     text-align: center;
     font-weight: bolder;
     font-family: fantasy;
+}
+
+
+@media all and (max-width: 768px) {
+    #showcase > .container {
+        width: 100%;
+        float: left;
+        padding-left: 1rem;
+    }
+    header #branding, header #navbar {
+        width: 100%;
+    }
+    #boxes .container { 
+        width: 100%;
+    }
 }
