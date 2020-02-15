@@ -40,6 +40,10 @@ mainServer.use(express.static(path.join(__dirname, "../FinalAct_photography")));
 mainServer.use('/gradient', gradientRouter);
 mainServer.use(express.static(path.join(__dirname, "../cssAnimations"))); 
 
+// static content like bootstrap, jQuery, font-awesome minied files
+mainServer.use('/staticFiles', express.static(path.join(__dirname, "./../staticFiles")));
+
+
 // ==============Middlewares start===============
 
 

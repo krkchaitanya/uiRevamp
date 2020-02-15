@@ -32,6 +32,7 @@
 .flex-direction-row { flex-direction: row; }
 .flex-direction-column { flex-direction: column; } 
 .align-items-baseline { align-items: baseline; }
+.align-items-center { align-items: center; }
 .justify-content-space-between { justify-content: space-between; }
 .padding-left-sm { padding-left: 0.5rem; }
 .display-hidden { display: none; }
@@ -58,7 +59,8 @@
 .justify-self-center{ justify-self: center; }
 .color-blue { color: var(--blue-color); }
 .pos-fixed  { position: fixed; }
-
+.visibility-hidden { visibility: hidden; }
+.visibility-visible { visibility: visible;}
 
 /* DOM elements */
 strong {
@@ -294,7 +296,7 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 2fr;
     grid-row-gap: 1rem;
     text-align: center;
 }
@@ -305,9 +307,47 @@ body {
  }
 .testimonial_element--1 > p { color: gray; }
 
+.testimonial_element--2 { 
+    background-color: lightgray;
+    justify-content: space-between;
+ }
+
+.slides {
+    background-color: lightgray;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+
+.slide_1 > div, .slide_2 > div {
+    width: 50%;
+}
+
+.slide_1 img {
+    background-image: url("./imgs/peoplesmiles.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 8rem 10rem 8rem 10rem;
+}
+
+.slide_2 img {
+    background-image: url("./imgs/personlaptop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 8rem 10rem 8rem 10rem;
+}
+
+.slides_info {
+    display: none;
+};
 
 
 /* =========Testimonial section end======== */
+
+
+
 
 
 

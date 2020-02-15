@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./stackthings_assets/static/css/all.min.css" />
     <link rel="stylesheet" href="./stackthings_assets/static/css/solid.min.css" />
     <link rel="stylesheet" href="./stackthings_assets/stacktngs.css" />
+    <link rel="icon" href="./stackthings_assets/imgs/favicon1.png" type="image/x-icon" />
 </head>
 <body>
 
@@ -269,9 +270,37 @@
                     Here are a few nice things folks have said about our themes over the years.</p>
             </div>
             <!-- card -->
-            <div class=" testimonial_element--2">
-                <div>
-                    <h2>card section of testimonial</h2>
+            <div class=" testimonial_element--2 display-flex flex-direction-row align-items-center">
+                <!-- button left arrow -->
+                <div class="slides_btn--left">
+                    <button id="slide-left">&#10094;</button>
+                </div>
+                <!-- slides -->
+                <div class="slides">
+                    <div class="slides_info slide_1 ">
+                        <div>
+                            <img >
+                        </div>
+                        <div>
+                            <h2>Airnnb</h2>
+                            <p>“Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, 
+                                quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione.”</p>
+                        </div>
+                    </div>
+                    <div class="slides_info slide_2 ">
+                        <div>
+                            <img >
+                        </div>
+                        <div>
+                            <h2>PeoplesGram</h2>
+                            <p>“È sopravvissuto non solo a più di cinque secoli,
+                                 ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato.”</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- button right arrow -->
+                <div class="slides_btn--right">
+                    <button id="slide-right">&#10095;</button>
                 </div>
             </div>
         </div>
@@ -289,6 +318,7 @@
     </footer>
 
 
+    <script src="http://localhost:2800/staticFiles/js/jquery.min.js"></script>
     <script src="./stackthings_assets/stacktngs.js" type="text/javascript"></script>
     <script src="./stackthings_assets/static/js/all.min.js" ></script>
 </body>
