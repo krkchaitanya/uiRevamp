@@ -61,6 +61,7 @@
 .pos-fixed  { position: fixed; }
 .visibility-hidden { visibility: hidden; }
 .visibility-visible { visibility: visible;}
+.text-align-center { text-align: var(--text-align-center);}
 
 /* DOM elements */
 strong {
@@ -74,6 +75,7 @@ body {
     margin: 0px 0px;
     padding: 0 15rem 0 15rem;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* header */
@@ -213,12 +215,12 @@ body {
     grid-template-columns: 35% 65%;
     grid-gap: 1rem 1rem;
     font-family: cursive;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
 
-.about-grid-container > div {
-    align-self: center;
-    width: 100%;
-}
+.about-grid-container .card { width: 100%; };
 
 .card {
     background-color: var(--color-vltgray);
@@ -254,9 +256,10 @@ body {
 .dashboard-img > img {
     background: url(./imgs/dashkit.jpg);
     background-repeat: no-repeat;
-    background-position: center;
-    padding: 15rem 30rem 15rem 30rem;
+    background-position: right;
+    padding: 15rem 20rem 15rem 20rem;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .text-info {
@@ -308,8 +311,9 @@ body {
 .testimonial_element--1 > p { color: gray; }
 
 .testimonial_element--2 { 
-    background-color: lightgray;
+    background-color: var(--color-gray);
     justify-content: space-between;
+    border-radius: 1rem;
  }
 
 .slides {
@@ -318,9 +322,19 @@ body {
     box-sizing: border-box;
 }
 
+.testimonial_element--2 button {
+    background-color: lightgray;
+    border-radius: 0.1rem;
+}
+
+.slide_1, .slide_2 {
+    width: 100%;
+    box-sizing: border-box;
+}
 
 .slide_1 > div, .slide_2 > div {
     width: 50%;
+    float: left;
 }
 
 .slide_1 img {
@@ -359,15 +373,15 @@ body {
 
 
 
-/* ====================footer=================== */
+/* ====================footer start=================== */
 footer {
     margin-top: 20rem;
 }
+/* ====================footer end=================== */
 
 
 
-
-/* =========scrollbar styling=============== */
+/* =========scrollbar styling start=============== */
 
 /* scrollbar section */
 ::-webkit-scrollbar {
@@ -391,6 +405,7 @@ footer {
     background: gray; 
   }
 
+/* =========scrollbar styling end=============== */
 
 
 
@@ -400,9 +415,7 @@ footer {
 
 
 
-
-
-/* ================Media queries===================  */
+/* ================Media queries start===================  */
 
 /* large */
 @media all and (min-width: 1200px){
@@ -418,7 +431,8 @@ footer {
 @media all and (min-width: 900px) and (max-width: 1200px){
 
     body {
-        padding: 0 10rem 0 10rem;
+        padding: 0 5rem 0 15rem;
+        text-align: center;
     }
 
     .welcome_gridcontainer {
@@ -434,15 +448,31 @@ footer {
         justify-content: center;
     }
 
+    
+    .slide_1 > div, .slide_2 > div {
+        width: 100%;
+    }
  
 }
 
 /* small */
-@media all and (min-width: 768px) and (max-width: 900px) {
+@media all and (max-width: 900px) {
     body {
-        padding: 0 5rem 0 5rem;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
     }
     .welcome_gridcontainer {
         justify-content: center;
     }
+    .about-grid-container {
+        grid-template-rows: repeat(4,1fr);
+        grid-template-columns: 20rem;
+        grid-row-gap: 0.5rem;
+        justify-content: center;
+    }
+    .slide_1 > div, .slide_2 > div {
+        width: 100%;
+    }
 }
+
+/* ================Media queries end===================  */

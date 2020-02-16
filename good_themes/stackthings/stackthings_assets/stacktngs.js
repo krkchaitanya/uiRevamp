@@ -1,3 +1,5 @@
+var slideNo = 1;
+
 (function() {
 
     console.log("-----stacktngs js file init-----");
@@ -35,27 +37,33 @@ if (undefined != navbarelements && navbarelements.length > 0) {
 
 // slides button onclick functionality
 // Consider there is a list of items and by default show the first one in the list
+
+
 $("#slide-left").on("click", handleSlideFunctionality);
 $("#slide-right").on("click", handleSlideFunctionality);
 
 function handleSlideFunctionality(e) {
 
-    var slideNo = 0;
+
     if (undefined !== e) {
         if ("slide-left" === e.target.id) {
-            var slideNo = slideNo-1;
+            slideNo = slideNo - 1;
         } else if ("slide-right" === e.target.id) {
-            var slideNo = slideNo + 1;
+            slideNo = slideNo + 1;
         }
-    }
-
-    var listOfSlides = Array.from($(".slides").children());
-    listOfSlides.forEach(function(sld) { sld.style.display = "none" });
-    var currentSlide = listOfSlides[slideNo];
-    if (undefined !== currentSlide) {
-        currentSlide.style.display = "block";
     } else {
-        listOfSlides[0].style.display = "block";
+        slideNo = 1;
     }
+    
+    var listOfSlides = Array.from($(".slides").children());
+
+    if (slideNo > listOfSlides.length) { slideNo = 1 };
+    if(0 === slideNo && "slide-left" === e.target.id) { slideNo = listOfSlides.length };
+
+
+    console.log("--slideno--", slideNo);
+
+    listOfSlides.forEach(function(sld) { sld.style.display = "none" });
+    listOfSlides[slideNo-1].style.display = "block";
 
 };
