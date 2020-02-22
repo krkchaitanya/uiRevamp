@@ -27,6 +27,7 @@
 
 
 /* common utils */
+.text-primary { color: var(--blue-color); }
 .display-flex { display: flex; }
 .display-grid { display: grid; }
 .flex-direction-row { flex-direction: row; }
@@ -34,6 +35,7 @@
 .align-items-baseline { align-items: baseline; }
 .align-items-center { align-items: center; }
 .justify-content-space-between { justify-content: space-between; }
+.justify-content-center { justify-content: center; }
 .padding-left-sm { padding-left: 0.5rem; }
 .display-hidden { display: none; }
 .position-fixed { position: fixed; }
@@ -42,12 +44,16 @@
 .mt-sm { margin-top: 0.5rem; }
 .mt-md { margin-top: 1rem; }
 .mt-lg { margin-top: 3rem; }
+.mt-xl { margin-top: 5rem; }
 .pt-lg { padding-top: 5rem; }
 .pt-md { padding-top: 3rem; }
 .pt-sm { padding-top: 0.5rem; }
 .pb-lg { padding-bottom: 5rem; }
 .pb-md { padding-bottom: 3rem; }
 .pb-sm { padding-bottom: 0.5rem; }
+.pr-sm { padding-right: 0.5rem; }
+.pr-md { padding-right: 3rem; }
+.pr-lg { padding-right: 5rem; }
 .pad-lr-sm { padding: 0rem 1rem 0rem 1rem; }
 .pad-lr-md { padding: 0rem 3rem 0rem 3rem; }
 .pad-lr-lg { padding: 0rem 5rem 0rem 5rem; }
@@ -62,6 +68,7 @@
 .visibility-hidden { visibility: hidden; }
 .visibility-visible { visibility: visible;}
 .text-align-center { text-align: var(--text-align-center);}
+.br-1 { border-right: 1px solid gray; }
 
 /* DOM elements */
 strong {
@@ -361,7 +368,18 @@ body {
 /* =========Testimonial section end======== */
 
 
-
+/* stats section start */
+.statsblock { overflow: hidden; width: 100%; box-sizing: border-box; }
+.statsblock_ele1, .statsblock_ele2 {
+    width: 50%;
+    float: right;
+}
+.statsblock_ele1 > img {
+    width: 100%;
+    height: auto;
+    float: right;
+}
+/* stats section end */
 
 
 
@@ -473,6 +491,17 @@ footer {
     .slide_1 > div, .slide_2 > div {
         width: 100%;
     }
+    .statsblock_ele1, .statsblock_ele2 {
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+    .statsblock_ele1 > img {
+        width: 14rem;
+        height: 12rem;
+        float: none;
+    }
+
 }
 
 /* ================Media queries end===================  */
