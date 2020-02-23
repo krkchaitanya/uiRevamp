@@ -31,6 +31,7 @@
 .display-flex { display: flex; }
 .display-grid { display: grid; }
 .flex-direction-row { flex-direction: row; }
+.flex-direction-row-r { flex-direction: row-reverse; }
 .flex-direction-column { flex-direction: column; } 
 .align-items-baseline { align-items: baseline; }
 .align-items-center { align-items: center; }
@@ -64,6 +65,7 @@
 .justify-self-end   { justify-self: end;    }
 .justify-self-center{ justify-self: center; }
 .color-blue { color: var(--blue-color); }
+.color-gray { color: var(--color-gray); }
 .pos-fixed  { position: fixed; }
 .visibility-hidden { visibility: hidden; }
 .visibility-visible { visibility: visible;}
@@ -369,7 +371,6 @@ body {
 
 
 /* stats section start */
-.statsblock { width: 100%; }
 .statsblock_ele1, .statsblock_ele2 {
     width: 50%;
     float: right;
@@ -384,7 +385,59 @@ body {
 
 
 /* pricing feature start */
-
+#pricing {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.pricing_fee {
+    display: flex;
+}
+.pricing_fee--ele1, .pricing_fee--ele2 {
+    width: 50%;
+    padding: 1rem;
+    float: left;
+    border: 0.5px solid lightgray;
+    background-color:  #fff;
+    border-radius: 1rem;
+    align-self: center;
+    text-align: center;
+}
+.pricing_fee--ele1 {
+    z-index: 45;
+    box-shadow:  0 2rem 4rem rgba(22,28,45,.1)!important;;
+}
+.pricing_fee--ele2 {
+    height: 22rem;
+    padding-left: 2rem;
+    margin-left: -0.75rem!important;
+    z-index: 44;
+    font-size: var(--font-size-md);
+    text-align: left;
+}
+.fa-check {
+    background-color: var(--bg-light-blue);
+    font-size: 0.7rem;
+    border-radius: 0.8rem;
+    padding: 0.1rem;
+}
+.pr-grid-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 20% 80%;
+    align-items: baseline;
+    justify-items: start;
+    align-self: center;
+    padding: 0 2rem 0 2rem;
+}
+.pr-grid-container p {
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.pr-grid-container span {
+    padding: 0;
+    margin: 0;
+}
+/* pricing feature end */
 
 
 
