@@ -8,6 +8,7 @@ const parallaxRouter = require("./routes/parallaxRoute");
 const stackThingsRouter = require("./routes/stackThingsRoute");
 const finalActThemeRouter = require("./routes/finalActThemeRoute");
 const gradientRouter = require("./routes/gradientRoute");
+const flexboxRouter = require("./routes/flexboxRoute");
 
 
 // server initialization
@@ -25,20 +26,24 @@ mainServer.use("/", defaultRouter);
 mainServer.use("/zserver", express.static(path.join(__dirname, "./zserver_utils")));
 
 // parallax theme
-mainServer.use('/parallaxAssets', express.static(path.join(__dirname,"../parallax/assets")));
+mainServer.use('/parallaxAssets', express.static(path.join(__dirname,"../parallax/parallaxAssets")));
 mainServer.use('/parallax', parallaxRouter);
 
 // stackThings theme
 mainServer.use('/stackThings', stackThingsRouter);
-mainServer.use(express.static(path.join(__dirname, "../good_themes/stackthings")));
+mainServer.use('/stackthings_assets', express.static(path.join(__dirname, "../good_themes/stackthings/stackthings_assets")));
 
 // finalActPhotography theme
 mainServer.use('/finalActPhotography', finalActThemeRouter);
-mainServer.use(express.static(path.join(__dirname, "../FinalAct_photography")));
+mainServer.use('/finalact_assets', express.static(path.join(__dirname, "../FinalAct_photography/finalact_assets")));
 
 //css gradient
 mainServer.use('/gradient', gradientRouter);
-mainServer.use(express.static(path.join(__dirname, "../cssAnimations"))); 
+mainServer.use('/cssanim_assets', express.static(path.join(__dirname, "../cssAnimations/cssanim_assets"))); 
+
+// CSS Flex-Box
+mainServer.use("/flexbox", flexboxRouter);
+mainServer.use("/flexbox_assets", express.static(path.join(__dirname, "./../flex_box/flexbox_assets")));
 
 // static content like bootstrap, jQuery, font-awesome minied files
 mainServer.use('/staticFiles', express.static(path.join(__dirname, "./../staticFiles")));

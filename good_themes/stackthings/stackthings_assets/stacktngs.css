@@ -369,7 +369,7 @@ body {
 
 
 /* stats section start */
-.statsblock { overflow: hidden; width: 100%; box-sizing: border-box; }
+.statsblock { width: 100%; }
 .statsblock_ele1, .statsblock_ele2 {
     width: 50%;
     float: right;
@@ -383,7 +383,7 @@ body {
 
 
 
-
+/* pricing feature start */
 
 
 
