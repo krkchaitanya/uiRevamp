@@ -187,20 +187,31 @@ body {
 
 /* ====================features section start======================= */
 .features_gridcontainer {
-    grid-template-rows: 50% 50%;
-    grid-template-columns: 33.33% 33.33% 33.33%; 
-    grid-row-gap: 0.5rem;
-    grid-column-gap: 0.5rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     text-align: center;
-    align-items: center;
+}
+
+.features_gridcontainer > div:nth-child(1),
+.features_gridcontainer > div:nth-child(2),
+.features_gridcontainer > div:nth-child(3)
+{
+    align-self: end;
+    justify-self: center;
+}
+
+.features_gridcontainer > div {
+    box-sizing: border-box;
+    padding: 0.5rem;
 }
 
 .feature-ele > span {
-     font-size: 4rem;
+     font-size: 3.5rem;
      opacity: 0.8;
      font-weight: bolder;
 }
+.feature-ele > h3, .feature-ele > p { font-size: 0.9rem; }
 
 .feature-ele > h3, .feature-ele > p { color: gray; font-weight: bold;}
 /* =====================features section end===================== */
@@ -558,11 +569,20 @@ footer {
         grid-template-columns: 25rem;
         text-align: center;
         justify-content: center;
+        font-size: 1.2rem;
     }
+
+    .features { padding-top: 0; }
+    .feature-ele > span { font-size: 2.5rem; }
+    .feature_gridcontainer--element-1, .feature_gridcontainer--element-2,
+    .feature_gridcontainer--element-3 { font-size: 1rem; }
+    .feature-ele { font-size: 0.5rem; }
+
+    .brands > .brand_element > h2 { font-size: 1.2rem; }
 
     .about-grid-container {
         grid-template-rows: repeat(4,1fr);
-        grid-template-columns: 50rem;
+        grid-template-columns: 1fr;
         grid-row-gap: 0.5rem;
         justify-content: center;
     }
@@ -576,16 +596,30 @@ footer {
 
 /* small */
 @media all and (max-width: 900px) {
+    
     body {
         padding: 0 2rem 0 2rem;
         text-align: center;
     }
+
     .welcome_gridcontainer {
+        grid-template-columns: 25rem;
+        text-align: center;
         justify-content: center;
+        font-size: 1rem;
     }
+
+    .features { padding-top: 0; }
+    .feature-ele > span { font-size: 2.5rem; }
+    .feature_gridcontainer--element-1, .feature_gridcontainer--element-2,
+    .feature_gridcontainer--element-3 { font-size: 1rem; }
+    .feature-ele { font-size: 0.5rem; }
+
+    .brands > .brand_element > h2 { font-size: 1rem; }
+
     .about-grid-container {
         grid-template-rows: repeat(4,1fr);
-        grid-template-columns: 20rem;
+        grid-template-columns: 1fr;
         grid-row-gap: 0.5rem;
         justify-content: center;
     }
