@@ -410,9 +410,11 @@ body {
 
 /* pricing feature start */
 #pricing {
-    font-family: sans-serif;
+    font-family: Nanum Gothic;
     text-align: -webkit-center;
+    color: var(--color-black-lt);
 }
+#pricing h2 { color: var(--color-black-lt); }
 .pricing_fee {
     display: flex;
     max-width: 60rem;
@@ -474,7 +476,7 @@ body {
     font-family: monospace;
     padding: 3rem 0 3rem 0;
     position: relative;
-    box-shadow: .5rem 0.6rem 0.8rem black;
+    box-shadow: 0.6rem 0.6rem 0.6rem black;
 }
 .faq_block {
     display: grid;
@@ -499,7 +501,70 @@ body {
 /* FAQ section end */
 
 
+/* CAT start */
+#cat {
+    padding: 5rem 0rem;
+    text-align: center;
+    font-family: monospace;
+    font-weight: bolder;
+    background-color: #364770!important;
+    box-shadow: 0.6rem 0.6rem 0.6rem black;
+    font-size: 1.3rem;
+    color: var(--color-gray-lite);
+}
+#cat  button {
+    padding: 0.3rem;
+    border: 1px solid var(--blue-color);
+    border-radius: 1rem;
+    background-color: var(--bg-light-blue);
+}
+.cat_btn > button {
+    color: black;
+    opacity: 0.5;
+    background-color: var(--color-gray-lite);
+}
+.cat_buybtn > button { 
+    font-size: 0.8rem;
+    font-weight: bold!important;
+    background-color: #42ba96!important;
+    padding: 0.8rem 0.5rem!important;
+ }
+ .cat_buybtn > button:hover {
+    background-color: var(--blue-color)!important;
+    transition: 0.5s ease;
+    color: white;
+}
+/* CAT end */
 
+/* footer start */
+#footer { margin: 5rem 0rem 6rem 0rem;}
+.footblock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: start;
+}
+.footblock > div:first-child > h2:first-child {
+    color: var(--blue-color);
+    font-weight: bolder!important;
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--blue-color);
+}
+.footblock svg {
+    color: var(--blue-color);
+    opacity: 0.7;
+    padding: 0 0.4rem;
+}
+.footblock svg:hover { color: rgb(22, 57, 90); }
+.footblock ul {
+    list-style-type: none;
+}
+.footblock > div:nth-child(2),
+.footblock > div:nth-child(3),
+.footblock > div:nth-child(4)
+{ color: var(--color-gray); }
+/* footer end */
 
 
 
