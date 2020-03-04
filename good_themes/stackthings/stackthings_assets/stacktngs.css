@@ -95,14 +95,18 @@ body {
     font-size: var(--font-size-small);
     background-image: linear-gradient(45deg, lightblue, rgb(126, 137, 143));
     border-radius: 0.2rem;
-    font-family: cursive;
+    font-family: Nanum Gothic;
+    height: auto;
 }
 
 /* header elements */
 .header_elements {
-    grid-template-columns: 30% 10% 10% 10% 10% 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* grid-template-columns: 30% 10% 10% 10% 10% 30%;
     grid-template-rows: 3rem;
-    align-items: var(--align-items-center);
+    align-items: var(--align-items-center); */
 }
 
 /* logo */
@@ -110,6 +114,7 @@ body {
     color: var(--blue-color);
     font-size: var(--font-size-md);
     margin-left: 0.2rem;
+    font-weight: bolder;
 }
 
 /* navbar >> hover elements */
@@ -119,6 +124,7 @@ body {
 
 .hover_element:hover {
     color: var(--blue-color);
+    border-bottom: 3px solid darkblue;
 } 
 
 .hovercontent > div > span {
@@ -135,15 +141,17 @@ body {
     display: none;
     position: fixed;
     z-index: 10rem;
-    background-color: var(--bg-light-blue);
+    background-color: rgb(126, 165, 173);
     border-radius: var(--border-radius-sm);
     padding: 0.5rem 4rem 0.5rem 4rem;
     vertical-align: baseline;
     width: 16rem;
     height: 7rem;
     border: 2px solid lightblue;
-    margin-left: -8rem;
-    opacity: 0.8;
+    margin-left: -10rem;
+    opacity: 0.9;
+    color: white;
+    font-weight: bolder;
 }
 
 
@@ -154,9 +162,16 @@ body {
     border-radius: var(--border-radius-sm);
     background-color: var(--blue-color);
     color: var(--text-white);
-    padding: 0.6rem 1rem 0.6rem 1rem;
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
     float: right;
     margin-right: 0.2rem;
+    border: 1px solid var(--blue-color);
+}
+
+.header_element--btn > div > button:hover {
+    opacity: 0.8;
+    border: 1px solid white;
+    transition: border 500ms linear;
 }
 
 
@@ -626,9 +641,11 @@ footer {
 @media all and (min-width: 900px) and (max-width: 1200px){
 
     body {
-        padding: 0 5rem 0 15rem;
+        padding: 0 5rem 0 5rem;
         text-align: center;
     }
+
+    .hover_element > h3 { font-size: 0.8rem; }
 
     .welcome_gridcontainer {
         grid-template-columns: 25rem;
@@ -666,6 +683,8 @@ footer {
         padding: 0 2rem 0 2rem;
         text-align: center;
     }
+
+    .hover_element, .header_element--btn { display: none; }
 
     .welcome_gridcontainer {
         grid-template-columns: 25rem;
