@@ -1,10 +1,25 @@
 var slideNo = 1;
+let navbarelements = [];
+let navitems = []; 
 
 (function() {
 
-    console.log("-----stacktngs js file init-----");
-    handleSlideFunctionality();
+    localStorage.setItem("HamburgerVisibility", "hidden");
 
+    // get navbar items list
+    navbarelements = document.querySelector(".header_elements").children;
+    navbarelementsArr = Array.from(navbarelements);
+    if (undefined != navbarelements && navbarelements.length > 0) {
+        let i = 1;
+        while(i < navbarelementsArr.length-1) {
+            toggleNavBarItemsContent(navbarelementsArr[i].children.item(0).innerText.toLowerCase());
+            navitems.push(navbarelementsArr[i].children.item(0).innerText);
+            i++;
+        }
+    }
+
+    handleSlideFunctionality();
+    toggleHamburger();
 })();
 
 
@@ -12,33 +27,16 @@ var slideNo = 1;
 function toggleNavBarItemsContent(elem) {
     const navbarEleContent = document.getElementsByClassName("hovercontent_"+elem)[0];
     document.querySelector(".header_element--"+elem).addEventListener("mouseenter", function(elem) {
-        navbarEleContent.style.display = "block";
+        if (window.innerWidth > 900) navbarEleContent.style.display = "block";
     });
     document.querySelector(".header_element--"+elem).addEventListener("mouseleave", function(elem) {
-        navbarEleContent.style.display = "none";
+        if (window.innerWidth > 900) navbarEleContent.style.display = "none";
     });
 };
 
 
-// get navbar items list
-let navbarelements = [];
-let navitems = [];    
-navbarelements = document.querySelector(".header_elements").children;
-navbarelementsArr = Array.from(navbarelements);
-if (undefined != navbarelements && navbarelements.length > 0 && window.innerWidth > 900) {
-    let i = 1;
-    while(i < navbarelementsArr.length-1) {
-        toggleNavBarItemsContent(navbarelementsArr[i].children.item(0).innerText.toLowerCase());
-        navitems.push(navbarelementsArr[i].children.item(0).innerText);
-        i++;
-    }
-}
-
-
 // slides button onclick functionality
 // Consider there is a list of items and by default show the first one in the list
-
-
 $("#slide-left").on("click", handleSlideFunctionality);
 $("#slide-right").on("click", handleSlideFunctionality);
 
@@ -72,7 +70,13 @@ function handleSlideFunctionality(e) {
 
 // hamburger onclick functionality
 
-$("#hamburger").on("click", function() {
-    console.log("hello hamburger");
-});
+$("#hamburger").on("click", toggleHamburger);
 
+function toggleHamburger() {
+    console.log("hello hamburger");
+    var burgerVisibility = localStorage.getItem("HamburgerVisibility");
+    for(i=1; i<navbarelements.length; i++) {
+        navbarelements[i].style.display = burgerVisibility === "visible" ? "block" : "none";
+    }
+    localStorage.setItem("HamburgerVisibility", burgerVisibility === "visible" ? "hidden" : "visible");
+};
