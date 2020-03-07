@@ -765,6 +765,8 @@ footer {
     .slide_1 > div, .slide_2 > div {
         width: 100%;
     }
+
+    .statsblock { flex-direction: column;}
     .statsblock_ele1, .statsblock_ele2 {
         width: 100%;
         float: left;
@@ -775,6 +777,9 @@ footer {
         height: 12rem;
         float: none;
     }
+
+    .pricing_fee div{ font-size: 0.8rem; overflow: hidden}
+
     .faq {padding: 1rem 0 1rem 0}
     .faq_block {
         display: grid;
