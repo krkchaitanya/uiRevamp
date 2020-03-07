@@ -25,7 +25,7 @@ let navbarelements = [];
 let navitems = [];    
 navbarelements = document.querySelector(".header_elements").children;
 navbarelementsArr = Array.from(navbarelements);
-if (undefined != navbarelements && navbarelements.length > 0) {
+if (undefined != navbarelements && navbarelements.length > 0 && window.innerWidth > 900) {
     let i = 1;
     while(i < navbarelementsArr.length-1) {
         toggleNavBarItemsContent(navbarelementsArr[i].children.item(0).innerText.toLowerCase());
@@ -67,3 +67,12 @@ function handleSlideFunctionality(e) {
     listOfSlides[slideNo-1].style.display = "block";
 
 };
+
+
+
+// hamburger onclick functionality
+
+$("#hamburger").on("click", function() {
+    console.log("hello hamburger");
+});
+
