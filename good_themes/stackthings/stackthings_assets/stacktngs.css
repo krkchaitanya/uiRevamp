@@ -745,7 +745,7 @@ footer {
         font-size: 1rem;
     }
 
-    .features { padding-top: 0; }
+    .features { padding-top: 0; } 
     .feature-ele > span { font-size: 2.5rem; }
     .feature_gridcontainer--element-1, .feature_gridcontainer--element-2,
     .feature_gridcontainer--element-3 { font-size: 1rem; }
@@ -793,6 +793,14 @@ footer {
 
     
     #footer { margin: 5rem 0rem 6rem 0rem;}
+}
+
+@media all and (max-width: 670px) {
+    .features_gridcontainer > div:nth-child(4) p,
+    .features_gridcontainer > div:nth-child(5) p,
+    .features_gridcontainer > div:nth-child(6) p {
+        display: none;
+    } 
 }
 
 /* ================Media queries end===================  */

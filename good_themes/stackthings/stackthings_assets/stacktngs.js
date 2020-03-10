@@ -71,7 +71,6 @@ function handleSlideFunctionality(e) {
 // hamburger onclick functionality
 
 $("#hamburger").on("click", toggleHamburger);
-
 function toggleHamburger() {
     console.log("hello hamburger");
     var burgerVisibility = localStorage.getItem("HamburgerVisibility");
@@ -80,3 +79,4 @@ function toggleHamburger() {
     }
     localStorage.setItem("HamburgerVisibility", burgerVisibility === "visible" ? "hidden" : "visible");
 };
+
