@@ -179,6 +179,8 @@ body {
     opacity: 0.9;
     color: white;
     font-weight: bolder;
+    animation-name: fadein;
+    animation-duration: 2s;
 }
 
 
@@ -212,7 +214,7 @@ body {
 }
 #hamburger:hover { 
     color: red!important;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
     transition: 1s ease;
  }
 
@@ -229,6 +231,8 @@ body {
 
 .welcome_gridcontainer > div {
     min-width: 20rem;
+    animation-name: fadeinLeft;
+    animation-duration: 2s;
 }
 
 .welcome_gridcontainer--element-2 > img{
@@ -409,6 +413,8 @@ body {
     background-color: var(--color-gray-lite);
     border-radius: 1rem;
     box-sizing: border-box;
+    animation-name: fadein;
+    animation-duration: 2s;
 }
 
 .testimonial_element--2 button {
@@ -804,3 +810,30 @@ footer {
 }
 
 /* ================Media queries end===================  */
+
+
+
+/* key frames start*/
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeinLeft {
+    from {
+        opacity: 0;
+        margin-left: -2rem;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+/* key frames end */

@@ -26,12 +26,12 @@ let navitems = [];
 // function definition - Toggle the navbar items content
 function toggleNavBarItemsContent(elem) {
     const navbarEleContent = document.getElementsByClassName("hovercontent_"+elem)[0];
-    document.querySelector(".header_element--"+elem).addEventListener("mouseenter", function(elem) {
-        if (window.innerWidth > 900) navbarEleContent.style.display = "block";
-    });
-    document.querySelector(".header_element--"+elem).addEventListener("mouseleave", function(elem) {
-        if (window.innerWidth > 900) navbarEleContent.style.display = "none";
-    });
+    // document.querySelector(".header_element--"+elem).addEventListener("mouseenter", function(elem) {
+    //     if (window.innerWidth > 900) navbarEleContent.style.display = "block";
+    // });
+    // document.querySelector(".header_element--"+elem).addEventListener("mouseleave", function(elem) {
+    //     if (window.innerWidth > 900) navbarEleContent.style.display = "none";
+    // });
 };
 
 
