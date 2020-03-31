@@ -68,6 +68,10 @@ nav #hamburgerI span:hover { background-color: var(--color-indred); }
 /* media queries 
 start */
 
+@media all and (min-width: 900px) {
+    nav ul > li { display: block; }
+}
+
 @media all and (max-width: 900px) and (min-width: 680px) {
     nav #hamburgerI { display: block; }
     nav ul { flex-direction: column; padding-left: 1rem; }
