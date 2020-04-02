@@ -133,5 +133,9 @@
     font-weight: bolder;
 }
 
+.menu-wrap .menu ul > li > a:hover {
+    color: rgb(221, 189, 153);
+}
+
 
 .menu-wrap .menu ul { list-style-type: none; }
