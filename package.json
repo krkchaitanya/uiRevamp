@@ -6,7 +6,7 @@
   "scripts": {
     "webpack": "webpack",
     "devserver": "webpack-dev-server",
-    "zserver":"nodemon z_server/zserver.js",
+    "zserver": "nodemon z_server/zserver.js",
     "client": "webpack --mode development --watch",
     "production": "webpack --mode production",
     "develop": "webpack --watch --config webpack.dev.js",
@@ -37,6 +37,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "util": "^0.12.0"
   },

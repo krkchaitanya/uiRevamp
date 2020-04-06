@@ -9,6 +9,7 @@ import Header from './ReusableComponents/ReactRouterFeature/Header';
 import Dropdown from './ReusableComponents/Dropdown/Dropdown';
 import CounterApp from './ReusableComponents/CounterApp/CounterApp';
 import Indecisionapp from './ReusableComponents/indecisionApp/Indecisionapp';
+import AccordianWrap from "./ReusableComponents/accordian/AccordianWrap";
 import "./style.css";
 
 class App extends Component {
@@ -47,6 +48,10 @@ class App extends Component {
                     }}>
                     React Components
                 </h2>
+                <br />
+                <br />
+                <AccordianWrap />
+                <br />
                 <br />
                 <Header/>
                 <br />
