@@ -1,3 +1,13 @@
+#active-elem { 
+    background-color: rgba(99, 131, 131, 0.9);
+}
+#active-elem .accd__elem--angle h3 {
+    background-color: rgba(34,4,66,0.75);
+    color: white;
+}
+#active-elem .accd__elem--angle h3>svg {
+    transform: rotate(180deg);
+}
 
 .accd__wrap {
     background-image: linear-gradient(45deg, rgba(34,4,66,0.75), rgba(34,78,78,0.90));
@@ -24,6 +34,7 @@
     transform: scale(1);
     transition: 0.3s ease-out;
 }
+
 .accd__elem {
     display: flex;
     flex-direction: row;
@@ -37,4 +48,17 @@
 
 .accd__elem--angle:hover {
     color: #ffff;
+}
+
+.accd__elem--angle h3 {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 0.2rem;
+    margin-top: -0.1rem;
+}
+
+.accd__elem--angle h3 > svg { margin-top: 0.2rem; }
+
+.accd__elem--angle h3:hover {
+    background-color: rgba(34,4,66,0.75);
 }

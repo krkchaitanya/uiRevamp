@@ -15,13 +15,13 @@ class AccordianElement extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <div className="accd__elemwrap">
+                <div className="accd__elemwrap" id={(this.props.showAccdData && this.props.id === this.props.userObj.id) ? "active-elem" : "inactive-elem"}>
                     <div className="accd__elem">
                         <div className="accd__elem--id">
                             <h3>User ID - {this.props.id}</h3>
                         </div>
                         <div className="accd__elem--angle">
-                            <h3><FaAngleDoubleDown onClick={this.props.handleAccdChevron}/></h3>
+                            <h3 onClick={this.props.handleAccdChevron}><FaAngleDoubleDown /></h3>
                         </div>
                     </div>
                     <div>
