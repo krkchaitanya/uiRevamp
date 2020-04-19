@@ -11,6 +11,20 @@
     width: 80%;
     height: auto;
     background: linear-gradient(90deg, rgb(82, 53, 53), rgb(77, 35, 35));
+    border-radius: 0.3rem;
+}
+
+.container > div:nth-child(1),
+.container > div:nth-child(2) {
+    width: 60%;
+    margin: auto;
+}
+
+.container > div:nth-child(1) {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(116, 98, 98);
+    padding: 1rem;
 }
 
 .app-wrapper {
@@ -32,6 +46,9 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-weight: 900;
+    font-size: 1.4rem;
+    font-family: monospace;
 }
 .list-item > div:nth-child(1) {
     flex: 5;
@@ -52,4 +69,38 @@ ul {
 }
 .list-item div button:first-child:hover {
     color: lightgray;
+}
+
+.task-form {
+    font-family: monospace sans-serif;
+    padding: 1rem;
+}
+.task-form input {
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    width: 100%;
+    border: none;
+    height: 2rem;
+    background-color: rgb(68, 56, 56);
+    color: lightgray;
+    font-weight: bolder;
+}
+
+.task-form .buttons {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-evenly;
+}
+.task-form .btn {
+    color: gray;
+    font-weight: bolder;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgb(77, 35, 35);
+    border: 1px solid black;
+}
+.task-form .btn:hover {
+    background-color: rgb(97, 56, 56);
 }
