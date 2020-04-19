@@ -10,6 +10,7 @@ import Dropdown from './ReusableComponents/Dropdown/Dropdown';
 import CounterApp from './ReusableComponents/CounterApp/CounterApp';
 import Indecisionapp from './ReusableComponents/indecisionApp/Indecisionapp';
 import AccordianWrap from "./ReusableComponents/accordian/AccordianWrap";
+import TaskManagerWrapper from "./ReusableComponents/taskManager/TaskManagerWrapper";
 import "./style.css";
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
                     React Components
                 </h2>
                 <br />
+                <TaskManagerWrapper />
                 <br />
                 <AccordianWrap />
                 <br />
