@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {TaskListContext} from "./context/TaskListContext";
+import { TaskListContext } from "./context/TaskListContext";
 
 import Task from "./Task";
 

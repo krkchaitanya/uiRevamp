@@ -47,7 +47,7 @@ ul {
     flex-direction: row;
     align-items: center;
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: monospace;
 }
 .list-item > div:nth-child(1) {
