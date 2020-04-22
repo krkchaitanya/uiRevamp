@@ -2,7 +2,7 @@
     --bg-color: rgb(3,3,3);
     --font-clr: rgb(64, 110, 60);
     --main-color: rgb(68, 171, 189);
-    --anim-speed: 0.8s;
+    --anim-speed: 1s;
 }
 
 * {

@@ -9,6 +9,7 @@ const stackThingsRouter = require("./routes/stackThingsRoute");
 const finalActThemeRouter = require("./routes/finalActThemeRoute");
 const gradientRouter = require("./routes/gradientRoute");
 const flexboxRouter = require("./routes/flexboxRoute");
+const cssEffect1_router = require("./routes/css_effect1");
 
 
 // server initialization
@@ -48,6 +49,9 @@ mainServer.use("/flexbox_assets", express.static(path.join(__dirname, "./../flex
 // static content like bootstrap, jQuery, font-awesome minied files
 mainServer.use('/staticFiles', express.static(path.join(__dirname, "./../staticFiles")));
 
+// css effect 1
+mainServer.use('/cssEffect1', cssEffect1_router);
+mainServer.use('/csseffect1_assets', express.static(path.join(__dirname, "./../good_themes/css_effect_1/csseffect1_assets")));
 
 // ==============Middlewares start===============
 
