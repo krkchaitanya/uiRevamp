@@ -2,9 +2,9 @@
 body{
     padding: 4rem;
     margin: 0;
-    background-image: linear-gradient( rgb(36, 44, 38), rgb(146, 155, 149)); 
+    background-image: linear-gradient( rgb(37, 31, 31), rgb(17, 29, 21)); 
     background-repeat: no-repeat;
-    background-color: rgb(146, 155, 149);
+    background-color: rgb(17, 29, 21);
 }
 
 header > h2 {
@@ -19,6 +19,7 @@ ul {
 
 ul > li {
     padding: 1rem 0 1rem 1rem;
+    color: indianred;
 }
 
 
@@ -26,7 +27,7 @@ li > a {
     margin-left: 1rem;
     font-size: 3rem;
     font-family: cursive;
-    color: rgb(38, 40, 43);
+    color: rgb(153, 156, 161);
     text-decoration: underline;
     font-weight: bolder;
     padding-left: 1rem;
@@ -46,5 +47,5 @@ li:hover {
     height: 0; 
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid rgb(30, 32, 30);
+    border-left: 15px solid rgb(42, 50, 56);
   }
