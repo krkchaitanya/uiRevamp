@@ -1,0 +1,36 @@
+
+:root {
+    --overall-bg: rgb(177, 139, 84);
+    --overall-bg-lite: rgba(245, 173, 106, 0.7);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, var(--overall-bg-lite), var(--overall-bg));
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+header, form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
