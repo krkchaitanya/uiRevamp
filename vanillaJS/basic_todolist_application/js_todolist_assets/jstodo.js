@@ -1,13 +1,24 @@
+let todoListItems;
+
+triggerDefault();
+function triggerDefault() {
+    localStorage.clear();
+    const todos = {todosArr : []};
+    localStorage.setItem("todolist", JSON.stringify(todos));
+    todoListItems = JSON.parse(localStorage.getItem("todolist"));
+};
+
 
 // selectors
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todolist = document.querySelector(".todo-list");
+const filterTodos = document.querySelector(".filter-todos");
 
 // event listeners
 todoButton.addEventListener("click", addTodo);
 todolist.addEventListener("click", deleteCheck);
-
+filterTodos.addEventListener("change", filterTodo);
 
 
 // ======= functions start==========
@@ -19,32 +30,56 @@ function addTodo(event) {
     if (undefined === todoInput.value || "" === todoInput.value.trim()) {
         validationMsgHandler("Enter Valid TODO item");
     } else {
-        validationMsgHandler("");
-        // Creatin DOM elements
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo");
-
-        const newTodo = document.createElement("li");
-        newTodo.innerText = todoInput.value;
-        newTodo.classList.add("todo-item");
-        todoDiv.appendChild(newTodo);
-
-        const completedButton = document.createElement("button");
-        completedButton.innerHTML='<i class="fas fa-check"></i>';
-        completedButton.classList.add("completed-button");
-        todoDiv.appendChild(completedButton);
-
-        const trashButton = document.createElement("button");
-        trashButton.innerHTML='<i class="fas fa-trash"></i>';
-        trashButton.classList.add("trash-button");
-        todoDiv.appendChild(trashButton);
-
-        todolist.appendChild(todoDiv);
-
-        todoInput.value = "";
+        
+        // setting the todo item in the localStorage
+        if(!todoListItems.todosArr.includes(todoInput.value))     
+        {
+            todoListItems.todosArr.push(todoInput.value);
+            console.log("--todoListItems--", todoListItems);
+            localStorage.setItem("todolist", JSON.stringify(todoListItems));
+        }
+        // clear all the list items
+        var lis = document.querySelectorAll('.todo-list li');
+        for(var i=0; li=lis[i]; i++) {
+            li.parentNode.remove();
+        }
+        // Append the todo items to the DOM
+        todoListItems.todosArr.forEach(todoITem => addTodoDOMElement(todoITem));
+        
     }
     
 }
+
+// Append todo item to the DOM
+function addTodoDOMElement(todoITem) {
+    event.preventDefault();
+    validationMsgHandler("");
+
+    // Creatin DOM elements
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+
+    const newTodo = document.createElement("li");
+    newTodo.innerText = todoITem;
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo);
+
+    const completedButton = document.createElement("button");
+    completedButton.innerHTML='<i class="fas fa-check"></i>';
+    completedButton.classList.add("completed-button");
+    todoDiv.appendChild(completedButton);
+
+    const trashButton = document.createElement("button");
+    trashButton.innerHTML='<i class="fas fa-trash"></i>';
+    trashButton.classList.add("trash-button");
+    todoDiv.appendChild(trashButton);
+
+    todolist.appendChild(todoDiv);
+
+    todoInput.value = "";
+}
+
+
 
 // handle validation message
 function validationMsgHandler(message) {
@@ -90,6 +125,14 @@ function deleteCheck(e) {
         item.parentElement.classList.toggle("completed");
     }
 
+}
+
+
+// filter todos
+function filterTodo(e) {
+    const optionSelected = e.target.value;
+    ("" !== optionSelected) &&
+        console.log("--validated the logical AND condition--");
 }
 
 
