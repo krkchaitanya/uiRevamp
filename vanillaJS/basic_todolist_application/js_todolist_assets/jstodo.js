@@ -1,11 +1,24 @@
 let todoListItems;
+let checkedTodoList;
+let deletedTodoList;
 
+// Trigger the function by default when the JS file loads
 triggerDefault();
 function triggerDefault() {
+    //clear the local storage
     localStorage.clear();
+    // set the inital todo objects
     const todos = {todosArr : []};
+    const checkedTodos = {checkedTodosArr : []};
+    const deletedTodos = {deletedTodosArr : []};
+    // set items in the local storage
     localStorage.setItem("todolist", JSON.stringify(todos));
+    localStorage.setItem("checkedList", JSON.stringify(checkedTodos));
+    localStorage.setItem("deletedList", JSON.stringify(deletedTodos));
+    
     todoListItems = JSON.parse(localStorage.getItem("todolist"));
+    checkedTodoList = JSON.parse(localStorage.getItem("checkedList"));
+    deletedTodoList = JSON.parse(localStorage.getItem("deletedList"));
 };
 
 
@@ -14,6 +27,7 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todolist = document.querySelector(".todo-list");
 const filterTodos = document.querySelector(".filter-todos");
+
 
 // event listeners
 todoButton.addEventListener("click", addTodo);
@@ -38,19 +52,35 @@ function addTodo(event) {
             console.log("--todoListItems--", todoListItems);
             localStorage.setItem("todolist", JSON.stringify(todoListItems));
         }
-        // clear all the list items
-        var lis = document.querySelectorAll('.todo-list li');
-        for(var i=0; li=lis[i]; i++) {
-            li.parentNode.remove();
-        }
-        // Append the todo items to the DOM
-        todoListItems.todosArr.forEach(todoITem => addTodoDOMElement(todoITem));
+      
+        clearAndAppendTodos(todoListItems);
         
     }
     
 }
 
-// Append todo item to the DOM
+
+// clear and append todo list to the DOM
+function clearAndAppendTodos(todoItems) {
+    console.log("---all-----", todoListItems === todoItems);
+    console.log("---completed-----", checkedTodoList === todoItems);
+    console.log("---uncompleted-----", deletedTodoList === todoItems);
+    // clear all the list items
+    var lis = document.querySelectorAll('.todo-list li');
+    for(var i=0; li=lis[i]; i++) {
+        li.parentNode.remove();
+    }
+    // Append the todo items to the DOM
+    todoListItems === todoItems &&
+    todoItems.todosArr.forEach(todoITem => addTodoDOMElement(todoITem));
+    checkedTodoList === todoItems &&
+    todoItems.checkedTodosArr.forEach(todoITem => addTodoDOMElement(todoITem));
+    deletedTodoList === todoItems &&
+    todoItems.deletedTodosArr.forEach(todoITem => addTodoDOMElement(todoITem));
+
+}
+
+// Append todo item to the DOM todo list element
 function addTodoDOMElement(todoITem) {
     event.preventDefault();
     validationMsgHandler("");
@@ -119,10 +149,16 @@ function deleteCheck(e) {
         todo.addEventListener("transitionend", function() {
             todo.remove();
         });
+        //update local storage
+        deletedTodoList.deletedTodosArr.push(item.parentElement.innerText);
+        localStorage.setItem("deletedList", JSON.stringify(deletedTodoList));
     }
 
     if (item.classList[0] === "completed-button") {
         item.parentElement.classList.toggle("completed");
+        //update local storage
+        checkedTodoList.checkedTodosArr.push(item.parentElement.innerText);
+        localStorage.setItem("checkedList", JSON.stringify(checkedTodoList));
     }
 
 }
@@ -131,8 +167,23 @@ function deleteCheck(e) {
 // filter todos
 function filterTodo(e) {
     const optionSelected = e.target.value;
-    ("" !== optionSelected) &&
-        console.log("--validated the logical AND condition--");
+    console.log("---", optionSelected);
+    if ("" !== optionSelected) {
+        switch(optionSelected) {
+            case "all":
+                clearAndAppendTodos(todoListItems);
+                break;
+            case "completed":
+                clearAndAppendTodos(checkedTodoList);
+                break;
+            case "uncompleted":
+                clearAndAppendTodos(deletedTodoList);
+                break;
+            default: 
+                clearAndAppendTodos(todoListItems);
+        }
+    }
+        
 }
 
 
