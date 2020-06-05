@@ -61,10 +61,7 @@ function addTodo(event) {
 
 
 // clear and append todo list to the DOM
-function clearAndAppendTodos(todoItems) {
-    console.log("---all-----", todoListItems === todoItems);
-    console.log("---completed-----", checkedTodoList === todoItems);
-    console.log("---uncompleted-----", deletedTodoList === todoItems);
+function clearAndAppendTodos(todoItems) { 
     // clear all the list items
     var lis = document.querySelectorAll('.todo-list li');
     for(var i=0; li=lis[i]; i++) {
@@ -73,19 +70,23 @@ function clearAndAppendTodos(todoItems) {
     // Append the todo items to the DOM
     todoListItems === todoItems &&
     todoItems.todosArr.forEach(todoITem => addTodoDOMElement(todoITem));
-    checkedTodoList === todoItems &&
-    todoItems.checkedTodosArr.forEach(todoITem => addTodoDOMElement(todoITem));
-    deletedTodoList === todoItems &&
-    todoItems.deletedTodosArr.forEach(todoITem => addTodoDOMElement(todoITem));
-
+    if(checkedTodoList === todoItems) {
+        todoItems.checkedTodosArr.forEach(todoITem => {
+            addTodoDOMElement(todoITem);
+        });
+        appendCss();
+    }
+    if (deletedTodoList === todoItems) {
+        todoItems.deletedTodosArr.forEach(todoITem => addTodoDOMElement(todoITem));
+    }
 }
 
 // Append todo item to the DOM todo list element
-function addTodoDOMElement(todoITem) {
+function addTodoDOMElement(todoITem, classnm) {
     event.preventDefault();
     validationMsgHandler("");
 
-    // Creatin DOM elements
+    // Creating DOM elements
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
 
@@ -185,6 +186,18 @@ function filterTodo(e) {
     }
         
 }
+
+// append css to the todo items
+ function appendCss() {
+
+    const todoDomElementsArr = Array.of(todolist.children)[0];
+    const cssTodoList = todoDomElementsArr.filter(todo => todoListItems.todosArr.includes(todo.innerText));
+
+    const cssCheckedTodoList = todoDomElementsArr.filter(todo => checkedTodoList.todosArr.includes(todo.innerText));
+    cssCheckedTodoList.forEach(checkedTodo => checkedTodo.classList.add("completed"));
+
+
+ }
 
 
 // ======= functions end==========
