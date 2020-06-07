@@ -189,13 +189,26 @@ function filterTodo(e) {
 
 // append css to the todo items
  function appendCss() {
-
+    let cssTodoListItems = [];
+    let cssCheckedTodoList = [];
+    let cssDeletedTodoList = [];
     const todoDomElementsArr = Array.of(todolist.children)[0];
-    const cssTodoList = todoDomElementsArr.filter(todo => todoListItems.todosArr.includes(todo.innerText));
 
-    const cssCheckedTodoList = todoDomElementsArr.filter(todo => checkedTodoList.todosArr.includes(todo.innerText));
-    cssCheckedTodoList.forEach(checkedTodo => checkedTodo.classList.add("completed"));
+    for(var todoelem of todoDomElementsArr) { 
+        
+        undefined !== checkedTodoList.checkedTodosArr && 
+        cssCheckedTodoList.push(checkedTodoList.checkedTodosArr.includes(todoelem.innerText) && todoelem);
 
+        undefined !== deletedTodoList.deletedTodosArr &&
+        cssDeletedTodoList.push(deletedTodoList.deletedTodosArr.includes(todoelem.innerText) && todoelem);
+
+        undefined !== todoListItems.todosArr &&
+        cssTodoListItems.push(todoListItems.todosArr.includes(todoelem.innerText) && todoelem);
+
+    };
+
+    for(var todoelemCss of cssCheckedTodoList) 
+    todoelemCss.classList.add("completed");
 
  }
 
