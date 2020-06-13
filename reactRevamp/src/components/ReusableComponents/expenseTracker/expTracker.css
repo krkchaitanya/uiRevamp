@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* wrapper */
+.exp-wrap {
+    margin: auto;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgb(236, 213, 223), transparent);
+}
+.exp-wrap > div {
+    padding: 1rem;
+    margin: 1rem 0rem;
+    border: 1px solid lightblue;
+}
+
+
+/* income expense section */
+.exp-incomeExpemse {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+.exp-incomeExpemse > div {
+    border: 0.2px solid lightgray;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+
+/* transactions history */
+.exp-transactions h2{
+    text-decoration: underline;
+    margin: 0.8rem 0;
+}
+.exp-transactions ul {
+    list-style-type: none;
+}
+.exp-transactions ul li {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.1rem;
+    margin: 0.3rem 0;
+}
+.exp-transactions button {
+    border: none;
+}
+.exp-transactions button svg:hover {
+    color: red;
+    transition: 0.3s all ease;
+}
+
+
+/* add new transaction */
+.exp-addNewTransaction h2 {
+    text-decoration: underline;
+    margin: 0.8rem 0;
+}
+.exp-addNewTransaction .form-control {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0.8rem 0;
+}
+.exp-addNewTransaction input,
+.exp-addNewTransaction button {
+    padding: 0.2rem 0.1rem;
+    border-radius: 0.2rem;
+    border: none;
+}
+.exp-addNewTransaction button {
+    border: 1px solid lightblue;
+}
+.exp-addNewTransaction button:hover {
+    background-color: lightblue;
+    transition: 0.3s all ease-in;
+}
