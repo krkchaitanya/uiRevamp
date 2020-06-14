@@ -20,6 +20,7 @@ export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     // Event handling functions
+    // delete transaction
     function deleteTransaction(id) {
         console.log("--entering into the deleteTransaction method--", id);
         dispatch({
@@ -28,11 +29,20 @@ export const GlobalProvider = ({children}) => {
         });        
     }
 
+    // Add transaction
+    function addTransaction(transaction) {
+        dispatch({
+            type: "ADD_TRANSACTION",
+            payload: transaction
+        });
+    }
+
 
     return (
         <GlobalContext.Provider value={{
             transactions: state.transactions,
-            deleteTransaction
+            deleteTransaction,
+            addTransaction
         }}>
             {children}
         </GlobalContext.Provider>

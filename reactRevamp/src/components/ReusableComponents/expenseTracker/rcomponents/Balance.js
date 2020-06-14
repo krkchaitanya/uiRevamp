@@ -5,7 +5,7 @@ const Balance = () => {
 
     const { transactions } = useContext(GlobalContext);
     const amountArr = transactions.map(transaction => transaction.amount);
-    const totalAmt = amountArr.reduce((accumulator, initialvalue) => accumulator += initialvalue, 0).toFixed();
+    const totalAmt = amountArr.reduce((accumulator, initialvalue) => accumulator += initialvalue, 0).toFixed(2);
 
     return (
         <div className="exp-balance">

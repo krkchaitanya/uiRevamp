@@ -5,8 +5,8 @@ const IncomeExpense = () => {
 
     const { transactions } = useContext(GlobalContext);
     const amtArr = transactions.map(transaction => transaction.amount);
-    const totalIncome = amtArr.filter(amt => amt > 0).reduce((acc, initVal) => acc+=initVal, 0).toFixed();
-    const totalExpense = (amtArr.filter(amt => amt < 0).reduce((acc, initVal) => acc+=initVal, 0)*-1).toFixed();
+    const totalIncome = amtArr.filter(amt => amt > 0).reduce((acc, initVal) => acc+=initVal, 0).toFixed(2);
+    const totalExpense = (amtArr.filter(amt => amt < 0).reduce((acc, initVal) => acc+=initVal, 0)*-1).toFixed(2);
 
     return(
         <div className="exp-incomeExpemse">
