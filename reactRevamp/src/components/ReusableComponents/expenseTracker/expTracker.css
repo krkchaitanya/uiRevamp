@@ -8,15 +8,22 @@
 .exp-wrap {
     margin: auto;
     width: 80%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background: linear-gradient(90deg, rgb(236, 213, 223), transparent);
+    font-family: sans-serif;
 }
 .exp-wrap > div {
     padding: 1rem;
     margin: 1rem 0rem;
     border: 1px solid lightblue;
+}
+
+/* balance */
+.exp-balance h4 {
+    color: rgb(133, 105, 57);
+    font-size: 1.2rem;
 }
 
 
@@ -31,6 +38,8 @@
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
+.income h4 { color: green; }
+.expense h4 { color: red; }
 
 
 /* transactions history */
@@ -46,13 +55,13 @@
     flex-direction: row;
     width: 40%;
     justify-content: space-between;
-    border: 1px solid gray;
     border-radius: 0.4rem;
     padding: 0.2rem 0.1rem;
     margin: 0.3rem 0;
 }
 .exp-transactions button {
     border: none;
+    background: transparent;
 }
 .exp-transactions button svg:hover {
     color: red;
@@ -73,9 +82,13 @@
 }
 .exp-addNewTransaction input,
 .exp-addNewTransaction button {
-    padding: 0.2rem 0.1rem;
+    padding: 0.3rem 0.2rem;
     border-radius: 0.2rem;
     border: none;
+}
+.exp-addNewTransaction label {
+    margin: 0.2rem 0;
+    
 }
 .exp-addNewTransaction button {
     border: 1px solid lightblue;
@@ -83,4 +96,12 @@
 .exp-addNewTransaction button:hover {
     background-color: lightblue;
     transition: 0.3s all ease-in;
+}
+
+/* transaction border styling based on positive and negative values */
+.plus {
+    border: 1px solid green;
+}
+.minus {
+    border: 1px solid red;
 }

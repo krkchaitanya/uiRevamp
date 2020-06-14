@@ -1,23 +1,19 @@
-import React from "react";
-import {FaTrashAlt} from "react-icons/fa";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
+
+import Transaction from "./Transaction";
 
 const Transactions = () => {
+
+    const { transactions } = useContext(GlobalContext);
 
     return(
         <div className="exp-transactions">
             <h2>History</h2>
             <ul>
-                <li>
-                    <span>
-                        <button><FaTrashAlt /></button>
-                    </span>
-                    <span>
-                        <h4>Text</h4>
-                    </span>
-                    <span>
-                        <h4>$0.00</h4>
-                    </span>
-                </li>
+                {
+                    transactions.map(transaction => <Transaction transaction={transaction} />)
+                }
             </ul>
         </div>
     );

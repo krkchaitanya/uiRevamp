@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 const Balance = () => {
+
+    const { transactions } = useContext(GlobalContext);
+    const amountArr = transactions.map(transaction => transaction.amount);
+    const totalAmt = amountArr.reduce((accumulator, initialvalue) => accumulator += initialvalue, 0).toFixed();
 
     return (
         <div className="exp-balance">
             <h2>Your Balance</h2>
-            <h4>$200</h4>
+            <h4>{totalAmt}$</h4>
         </div>
     );
 }
