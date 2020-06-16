@@ -4,45 +4,72 @@
     box-sizing: border-box;
 }
 
+body {
+    background: linear-gradient( rgb(236, 213, 223), transparent);
+}
+
 /* wrapper */
 .exp-wrap {
     margin: auto;
-    width: 80%;
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(90deg, rgb(236, 213, 223), transparent);
+    background: linear-gradient(180deg, transparent, rgb(158, 143, 148));
     font-family: sans-serif;
+    border-radius: 0.5rem;
+}
+.exp-header {
+    background-color: rgb(189, 166, 126);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 .exp-wrap > div {
     padding: 1rem;
     margin: 1rem 0rem;
-    border: 1px solid lightblue;
 }
+.exp-wrap > div:nth-child(1),
+.exp-wrap > div:nth-child(2),
+.exp-wrap > div:nth-child(3),
+.exp-wrap > div:nth-child(4),
+.exp-wrap > div:nth-child(5) {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.exp-wrap > div:nth-child(5) { text-align: start; }
 
 /* balance */
+.exp-balance h2 {
+    opacity: 0.7;
+}
 .exp-balance h4 {
-    color: rgb(133, 105, 57);
+    color: rgb(42, 56, 21);
     font-size: 1.2rem;
+    background-color: rgb(158, 143, 148);
+    border-radius: 0.5rem;
 }
 
 
 /* income expense section */
 .exp-incomeExpemse {
     display: flex;
-    width: 30%;
     justify-content: space-between;
 }
 .exp-incomeExpemse > div {
-    border: 0.2px solid lightgray;
+    background-color: rgb(194, 174, 174);
     padding: 0.5rem;
     border-radius: 0.5rem;
+    margin: 0.2rem;
 }
 .income h4 { color: green; }
 .expense h4 { color: red; }
 
 
 /* transactions history */
+.exp-transactions { width: 100%; }
 .exp-transactions h2{
     text-decoration: underline;
     margin: 0.8rem 0;
@@ -53,7 +80,6 @@
 .exp-transactions ul li {
     display: flex;
     flex-direction: row;
-    width: 40%;
     justify-content: space-between;
     border-radius: 0.4rem;
     padding: 0.2rem 0.1rem;
@@ -77,7 +103,6 @@
 .exp-addNewTransaction .form-control {
     display: flex;
     flex-direction: column;
-    width: 40%;
     margin: 0.8rem 0;
 }
 .exp-addNewTransaction input,
@@ -92,6 +117,7 @@
 }
 .exp-addNewTransaction button {
     border: 1px solid lightblue;
+    background-color: rgb(149, 166, 177);
 }
 .exp-addNewTransaction button:hover {
     background-color: lightblue;
